@@ -1,7 +1,13 @@
 .banner-carousel {
   margin: 0;
 }
-
+.banner-carousel .banner {
+  display: inline-block;
+}
 .banner {
   margin: 0;
+  max-width: 500px;
+}
+.banner img {
+  max-width: 100%;
 }

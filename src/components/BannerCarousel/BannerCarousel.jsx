@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React,{ useState,useEffect } from "react";
 import "./BannerCarousel.css";
 import Button from "../common/Button";
 
-export default function BannerCarousel({ banners }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+function BannerCarousel({banners}) {
+  const [currentIndex,setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (banners.length === 0) return;
 
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === banners.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-
+    const interval = setInterval(() => 
+      setCurrentIndex((prevIndex) => 
+        prevIndex===banners.length-1 ? 0 : prevIndex + 1
+      ), 5000);
     return () => clearInterval(interval);
   }, [banners.length]);
 
@@ -22,11 +20,11 @@ export default function BannerCarousel({ banners }) {
   };
 
   const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? banners.length - 1 : currentIndex - 1);
+    setCurrentIndex(currentIndex === 0 ? banners.length - 1 : currentIndex -1);
   };
 
   const goToNext = () => {
-    setCurrentIndex(currentIndex === banners.length - 1 ? 0 : currentIndex + 1);
+    setCurrentIndex(currentIndex===banners.length - 1 ? 0 : currentIndex +1 );
   };
 
   if (banners.length === 0) {
@@ -95,3 +93,5 @@ export default function BannerCarousel({ banners }) {
     </div>
   );
 }
+
+export default BannerCarousel;
