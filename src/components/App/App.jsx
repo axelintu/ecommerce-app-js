@@ -1,4 +1,5 @@
 import BannerCarousel from "../BannerCarousel/BannerCarousel";
+import Layout from "../../layout/Layout";
 
 function App() {
   const images = [
@@ -45,11 +46,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <main>
-        <BannerCarousel banners={images} />
-      </main>
-    </div>
+      <Layout>
+        <main>
+          <BannerCarousel banners={images} />
+        </main>
+      </Layout>
   );
 }
 

@@ -73,12 +73,13 @@ function BannerCarousel({banners}) {
       {/* Indicadores */}
       <div className="carousel-indicators">
         {banners.map((banner, index) => {
+          return(
           <button
             key={index}
             className={`indicator ${index === currentIndex ? "active" : ""}`}
             onClick={() => goToSlide(index)}
             aria-label={`Ir al banner ${index + 1}`}
-          />;
+          >&nbsp;</button>)
         })}
       </div>
       {/* banners.map((banner, index) => {
