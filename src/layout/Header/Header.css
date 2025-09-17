@@ -3,6 +3,7 @@
 .icon svg,
 .logo svg {
   width: 20px;
+  vertical-align: middle;
 }
 
 .header {
@@ -15,10 +16,30 @@
 
 /* Top bar */
 .header-top {
-  background: var(--accent);
+  /* background: var(--accent); */
+  background-position: center;
   color: var(--accent-contrast);
   padding: 8px 0;
-  font-size: 13px;
+  font-size: 14px;
+  background-image: url('../../../public/images/design/hokusai_bg.jpg');
+  position: relative;
+  text-shadow: rgba(45, 45, 45, 0.75) 0 2px;
+}
+.header-top::after {
+  content: '';
+  position:absolute;
+  background: linear-gradient(0deg,rgba(66, 66, 66, 0) 0%, rgba(46, 46, 46, 0.5) 35%, rgba(43, 43, 43, 1) 100%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.header-top .container {
+  position: relative;
+  padding: 12px 24px;
+  z-index: 1;
 }
 
 .header-top .delivery-info {
@@ -40,7 +61,7 @@
 
 /* Main header */
 .header-main {
-  padding: 12px 0;
+  padding: 6px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -49,6 +70,7 @@
   grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: center;
+  padding: 6px 0;
 }
 
 /* Logo */
@@ -59,6 +81,11 @@
   text-decoration: none;
   letter-spacing: -1px;
   white-space: nowrap;
+  display: flex;
+  vertical-align: middle;
+}
+.logo-img {
+  max-width: 48px;
 }
 
 .logo:hover {
@@ -70,7 +97,10 @@
 .search-form {
   flex: 1;
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  position: relative;
 }
 
 .search-container {
@@ -94,6 +124,8 @@
   background: transparent;
   font-size: 14px;
   color: var(--text);
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 20%);
 }
 
 .search-input::placeholder {
@@ -105,17 +137,35 @@
 }
 
 .search-btn {
-  padding: 12px 16px;
-  background: var(--accent);
+  background-color: transparent;
   border: none;
-  color: var(--accent-contrast);
+  border-left: 1px solid #ccc;
+  padding: 10px 16px;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.2s;
+  transition: background 0.6s;
+  position: absolute;
+  right: 0;
+  line-height: 20px;
+  vertical-align: middle;
+  display: flex;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.search-btn:hover {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+.search-btn span {
+  padding-left: 5px;
+}
+.search-btn svg {
+  width: 18px;
+
 }
 
 .search-btn:hover {
-  background: color-mix(in srgb, var(--accent) 90%, black);
+  background: color-mix(in srgb, var(--muted) 90%, black);
 }
 
 /* Header actions */
@@ -187,7 +237,9 @@
   margin-left: 4px;
   transition: transform 0.2s;
 }
-
+.action-text .dropdown-arrow {
+  display: inline-block;
+}
 .user-dropdown:hover .dropdown-arrow {
   transform: rotate(180deg);
 }

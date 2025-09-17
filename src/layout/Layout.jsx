@@ -1,5 +1,6 @@
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import "./Layout.css";
 
 // stateless
 export default function Layout({children}) {

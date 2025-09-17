@@ -2,10 +2,11 @@ import { useState } from "react";
 import "./Header.css"
 export default function Header() {
   let searchTerm = '';
+  const [signedIn, toggleSignedIn] = useState(true);
   const [showUserMenu, toggleUserMenu] = useState(false);
+  const toggleUserEvent = () => { toggleUserMenu(showUserMenu => !showUserMenu); };
   const handleSearch = () => {};
   const onChangeSearchTerm = () => {};
-  const toggleUserEvent = () => { toggleUserMenu(showUserMenu => !showUserMenu); };
   const closeSession = () => {};
   return (<header>
     {/* Tobar con información adicional */}
@@ -23,10 +24,11 @@ export default function Header() {
       <div className="container header-content">
         {/* LOGO */}
         <a href="/" className="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-        </svg>
-        fujioka.com</a>
+        </svg> */}
+        <img src="/images/design/logo_sm.png" alt="Fujitsune Logo" className="logo-img" />
+        Fox of Wisteria</a>
         {/* Barra de búsqueda */}
         <form action="" className="search-form" onSubmit={handleSearch}>
           <input 
@@ -40,7 +42,7 @@ export default function Header() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
-            Buscar
+            <span>Buscar</span>
           </button>
         </form>
         {/* Acciones del usuario */}
@@ -65,11 +67,10 @@ export default function Header() {
           </button>
           {/* Funciones de usuario */}
           <div className="user-menu" >
+            { signedIn ? (
             <div className="user-dropdown">
               <button className="action-btn user-btn" onClick={toggleUserEvent} aria-label="Menú de usuario">
-                <span className="icon">👤</span>
-                <span className="action-text">Mi cuenta</span>
-                <span className="dropdown-arrow">&#9660;</span>
+                <span className="icon">👤</span><span className="action-text">Mi cuenta <span className="dropdown-arrow">&#9660;</span></span>
               </button>
               { showUserMenu && (
               <div className="dropdown-menu">
@@ -81,11 +82,13 @@ export default function Header() {
                 <button onClick={closeSession}>Cerrar sesión</button>
               </div>
               )}
-            </div>
+            </div> ) : (
             <div className="auth-buttons">
               <button className="btn-primary">Iniciar sesión</button>
               <button className="btn-primary">Registrarse</button>
             </div>
+            )
+            }
           </div>
         </div>
       </div>
