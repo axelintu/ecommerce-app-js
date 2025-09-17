@@ -1,8 +1,8 @@
-import BannerCarousel from "../BannerCarousel/BannerCarousel";
-import Layout from "../../layout/Layout";
-import ProductCard from "../ProductCard/ProductCard";
-import {products} from "../../data/products.js";
 import "./App.css";
+import Layout from "../../layout/Layout";
+import BannerCarousel from "../BannerCarousel/BannerCarousel";
+import {products} from "../../data/products.js";
+import Home from "../Home/Home";
 
 function App() {
   const images = [
@@ -52,11 +52,7 @@ function App() {
       <Layout>
         <main>
           <BannerCarousel banners={images} />
-          <div className="products-grid">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          <Home products={products}></Home>
         </main>
       </Layout>
   );
