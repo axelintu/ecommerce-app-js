@@ -2,7 +2,7 @@ import "./App.css";
 import Layout from "../../layout/Layout";
 import BannerCarousel from "../BannerCarousel/BannerCarousel";
 import {products} from "../../data/products.js";
-import Home from "../Home/Home";
+import Home from "../../pages/Home/Home.jsx";
 
 function App() {
   const images = [
@@ -43,11 +43,6 @@ function App() {
       backgroundColor: "#79bf87",
     },
   ];
-
-  function click() {
-    alert("OK");
-  }
-
   return (
       <Layout>
         <main>

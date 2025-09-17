@@ -64,6 +64,11 @@
   padding: 6px 0;
   border-bottom: 1px solid var(--border);
 }
+@media (max-width: 768px) {
+  .header-main {
+    padding: 6px;
+  }
+}
 
 .header-content {
   display: grid;
@@ -84,8 +89,12 @@
   display: flex;
   vertical-align: middle;
 }
+.logo > * {
+  line-height: 48px;
+}
 .logo-img {
   max-width: 48px;
+  margin-right: 6px;
 }
 
 .logo:hover {
@@ -120,7 +129,7 @@
 .search-input {
   flex: 1;
   padding: 12px 16px;
-  border: none;
+  border: 1px solid #ddd;
   background: transparent;
   font-size: 14px;
   color: var(--text);
@@ -158,10 +167,19 @@
 }
 .search-btn span {
   padding-left: 5px;
+  color: var(--accent);
+}
+.search-btn:hover span {
+  color: var(--accent-contrast);
 }
 .search-btn svg {
   width: 18px;
-
+}
+.search-btn svg {
+  stroke: var(--accent);
+}
+.search-btn:hover svg {
+  stroke: var(--accent-contrast);
 }
 
 .search-btn:hover {

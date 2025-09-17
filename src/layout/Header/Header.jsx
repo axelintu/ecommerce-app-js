@@ -4,10 +4,11 @@ export default function Header() {
   let searchTerm = '';
   const [signedIn, toggleSignedIn] = useState(true);
   const [showUserMenu, toggleUserMenu] = useState(false);
+  const closeSession = () => { toggleSignedIn( signedIn => false ); };
+  const initSession = () => { toggleSignedIn(signedIn => true ); }
   const toggleUserEvent = () => { toggleUserMenu(showUserMenu => !showUserMenu); };
   const handleSearch = () => {};
   const onChangeSearchTerm = () => {};
-  const closeSession = () => {};
   return (<header>
     {/* Tobar con información adicional */}
     <div className="header-top">
@@ -24,11 +25,9 @@ export default function Header() {
       <div className="container header-content">
         {/* LOGO */}
         <a href="/" className="logo">
-        {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-        </svg> */}
-        <img src="/images/design/logo_sm.png" alt="Fujitsune Logo" className="logo-img" />
-        Fox of Wisteria</a>
+          <img src="/images/design/logo_sm.png" alt="Fujitsune Logo" className="logo-img" />
+          <span>Fox of Wisteria</span>
+        </a>
         {/* Barra de búsqueda */}
         <form action="" className="search-form" onSubmit={handleSearch}>
           <input 
@@ -39,7 +38,7 @@ export default function Header() {
             onChange={onChangeSearchTerm} 
             className="search-input" />
           <button type="submit" className="search-btn" aria-label="Buscar">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
             <span>Buscar</span>
@@ -84,7 +83,7 @@ export default function Header() {
               )}
             </div> ) : (
             <div className="auth-buttons">
-              <button className="btn-primary">Iniciar sesión</button>
+              <button className="btn-primary" onClick={initSession}>Iniciar sesión</button>
               <button className="btn-primary">Registrarse</button>
             </div>
             )

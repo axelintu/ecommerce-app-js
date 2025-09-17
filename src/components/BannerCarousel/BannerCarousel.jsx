@@ -82,15 +82,6 @@ function BannerCarousel({banners}) {
           >&nbsp;</button>)
         })}
       </div>
-      {/* banners.map((banner, index) => {
-        return (
-          <div key={index} className="banner">
-            <img src={banner.image} alt={banner.title} />
-            <h2>{banner.title}</h2>
-            <p>{banner.description}</p>
-          </div>
-        );
-      })*/}
     </div>
   );
 }
