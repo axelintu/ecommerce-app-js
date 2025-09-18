@@ -56,12 +56,8 @@ src/
     └── .gitkeep
 ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-<hr/>
-
-In the project directory, you can run:
-
-### `npm start`
+<img src="2025-09-17_19-00.png" />
+<img src="localhost_3000_(iPhone SE).png" />
+<img src="localhost_3000_(iPhone SE)-02.png" />
 
 
