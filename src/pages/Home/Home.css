@@ -8,6 +8,10 @@
 }
 .home-products h3 {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 @media (max-width: 768px) {
   .products-grid {

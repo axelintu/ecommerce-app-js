@@ -5,7 +5,6 @@ import BannerCarousel from "../../components/BannerCarousel";
 import homeImages from "../../data/homeImages.json";
 import Loader from "../../components/Loader";
 import { fetchProducts } from "../../services/productService";
-// import products from "../../data/products.json";
 
 export default function Home () {
   const [products, setProducts] = useState([]);
@@ -30,7 +29,7 @@ export default function Home () {
     <main>
       <BannerCarousel banners={homeImages} />
       {loading ? (
-        <Loader type="products"></Loader>
+        <Loader type="products" loadingMessage={"Cargando productos..."}></Loader>
       ) : products && products.length > 0 ? (
         <div>
           <div className="container home-products">

@@ -14,16 +14,6 @@
 .ld-container .ld-element:nth-child(3n) .ld-placeholder {
   animation-delay: .75s;
 }
-/* Debug */
-/* .ld-container .ld-element:nth-child(3n +1) .ld-placeholder {
-  border: 1px solid yellow;
-}
-.ld-container .ld-element:nth-child(3n +2) .ld-placeholder {
-  border: 1px solid blue;
-}
-.ld-container .ld-element:nth-child(3n) .ld-placeholder {
-  border: red 1px solid;
-} */
 
 @keyframes shimmer {
   0% {
@@ -36,3 +26,23 @@
 .loader .product-card:hover {
   transform: translateY(0);
 }
+
+.loader-spinner-line {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #333;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

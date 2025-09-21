@@ -1,8 +1,7 @@
 import "./Loader.css";
 
-function Loader ({type}) {
+function Loader ({type, loadingMessage}) {
  const products = (
-    
       <div className="products-grid ld-container">
         <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
         <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
@@ -24,19 +23,7 @@ function Loader ({type}) {
       break;
   }
   return (<div
-    className="loader"
-    style={{
-      textAlign: "center",
-      padding: "2rem",
-      background: "var(--surface)",
-      borderRadius: "18px",
-      border: "1px solid var(--border)",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-  >
+    className="loader">{loadingMessage ? (<div className="container home-products"><h3><span className="loader-spinner-line"></span> <span>{loadingMessage}</span></h3></div>): '<div></div>'}
     {loader}    
   </div>);
 }
