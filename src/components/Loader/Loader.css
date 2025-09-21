@@ -1,0 +1,38 @@
+.ld-placeholder {
+  background-color: #f0f0f0; /* Base placeholder color */
+  background-image: linear-gradient(to right, #f0f0f0 0%, #e0e0e0 20%, #f0f0f0 40%, #f0f0f0 100%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.ld-container .ld-element:nth-child(3n +1) .ld-placeholder {
+  animation-delay: .25s;
+}
+.ld-container .ld-element:nth-child(3n +2) .ld-placeholder {
+  animation-delay: .5s;
+}
+.ld-container .ld-element:nth-child(3n) .ld-placeholder {
+  animation-delay: .75s;
+}
+/* Debug */
+/* .ld-container .ld-element:nth-child(3n +1) .ld-placeholder {
+  border: 1px solid yellow;
+}
+.ld-container .ld-element:nth-child(3n +2) .ld-placeholder {
+  border: 1px solid blue;
+}
+.ld-container .ld-element:nth-child(3n) .ld-placeholder {
+  border: red 1px solid;
+} */
+
+@keyframes shimmer {
+  0% {
+      background-position: -468px 0; 
+  }
+  100% {
+      background-position: 468px 0;
+  }
+}
+.loader .product-card:hover {
+  transform: translateY(0);
+}
