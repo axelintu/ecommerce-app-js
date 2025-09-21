@@ -1,4 +1,4 @@
-export const products = [
+[
   {
     "id": 1,
     "name": "Paquete de 5 cuadernos de raya B5",
@@ -10,13 +10,13 @@ export const products = [
       "/images/products/5-cuadernos-raya/4548076316145_02_1260_1260x1260_result.jpg",
       "/images/products/5-cuadernos-raya/4548076316145_1260_1260x1260_result.jpg",
       "/images/products/5-cuadernos-raya/muji13815_1330x1269_result.jpg",
-      "/images/products/5-cuadernos-raya/Notebooks_cbf3e10b-79db-4886-9c3b-29b2ca9f31b0_1500x917_result.jpg",
+      "/images/products/5-cuadernos-raya/Notebooks_cbf3e10b-79db-4886-9c3b-29b2ca9f31b0_1500x917_result.jpg"
     ],
     "category": "Papelería",
     "stock": 25,
     "typeName": "",
     "type": "",
-    o: "https://www.muji.us/collections/paper-goods/products/5-pack-notebook"
+    "o": "https://www.muji.us/collections/paper-goods/products/5-pack-notebook"
   },
   {
     "id": 2,
@@ -27,13 +27,13 @@ export const products = [
     "images": [
       "/images/products/cuaderno-plano-japones/1071188810010210811488087120_m.jpg",
       "/images/products/cuaderno-plano-japones/4550182111262_org_2000x2000_m.jpg",
-      "/images/products/cuaderno-plano-japones/4550182111286_02_org_2000x2000_m.jpg",
+      "/images/products/cuaderno-plano-japones/4550182111286_02_org_2000x2000_m.jpg"
     ],
     "category": "Papelería",
     "stock": 40,
     "typeName": "Tamaño",
     "type": "A6",
-    o: "https://www.muji.us/collections/paper-goods/products/recycled-paper-bind-plain-pocket-notebook-9s62"
+    "o": "https://www.muji.us/collections/paper-goods/products/recycled-paper-bind-plain-pocket-notebook-9s62"
   },
   {
     "id": 3,
@@ -43,7 +43,7 @@ export const products = [
     "image": "/images/products/agenda-mes-papel-reciclado/4550182109757_02_1260_1260x1260_m.jpg",
     "images": [
       "/images/products/agenda-mes-papel-reciclado/4550182109757_02_1260_1260x1260_m.jpg",
-      "/images/products/agenda-mes-papel-reciclado/4550182109757_org_2000x2000_m.jpg",
+      "/images/products/agenda-mes-papel-reciclado/4550182109757_org_2000x2000_m.jpg"
     ],
     "category": "Papelería",
     "stock": 30,
@@ -59,7 +59,7 @@ export const products = [
     "image": "/images/products/agenda-semana-papel-reciclado/4550182109740_org_2000x2000_m.jpg",
     "images": [
       "images/products/agenda-semana-papel-reclicado/4550182109740_org_2000x2000_m.jpg",
-      "images/products/agenda-semana-papel-reclicado/4550182109740_02_1260_1260x1260_m.jpg",
+      "images/products/agenda-semana-papel-reclicado/4550182109740_02_1260_1260x1260_m.jpg"
     ],
     "category": "Papelería",
     "stock": 80,
@@ -83,7 +83,7 @@ export const products = [
       "/images/products/rollo-adhesivo-colores/4550583366803_org_2000x2000_m.jpg",
       "/images/products/rollo-adhesivo-colores/4550583366810_01_org_2000x2000_m.jpg",
       "/images/products/rollo-adhesivo-colores/4550583366810_04_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366810_org_2000x2000_m.jpg",
+      "/images/products/rollo-adhesivo-colores/4550583366810_org_2000x2000_m.jpg"
     ],
     "category": "Papelería",
     "typeName": "Color",
@@ -100,12 +100,12 @@ export const products = [
     "images": [
       "/images/products/sticky-notes-gatos/4550583873516_01_org_2000x2000_m.jpg",
       "/images/products/sticky-notes-gatos/4550583873516_02_org_2000x2000_m.jpg",
-      "/images/products/sticky-notes-gatos/4550583873516_org_2000x2000_m.jpg",
+      "/images/products/sticky-notes-gatos/4550583873516_org_2000x2000_m.jpg"
     ],
     "category": "Papelería",
     "typeName": "",
     "type": "",
     "stock": 50,
     "o": "https://www.muji.us/collections/paper-goods/products/cat-sticky-notes-24ss"
-  },
+  }
 ]
