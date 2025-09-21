@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Header.css"
+import "./Header.css";
 export default function Header() {
   let searchTerm = '';
   const [signedIn, toggleSignedIn] = useState(true);

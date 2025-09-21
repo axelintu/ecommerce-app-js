@@ -6,6 +6,9 @@
   margin: 0 auto;
   padding: 1rem 0;
 }
+.home-products h3 {
+  text-align: center;
+}
 @media (max-width: 768px) {
   .products-grid {
     padding: 6px;
