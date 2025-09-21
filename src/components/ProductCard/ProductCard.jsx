@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProductCard.css"
 import Button from "../common/Button";
-import Badge from "../common/Badge/Badge";
+import Badge from "../common/Badge";
 
 function ProductCard({ product }) {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import BannerCarousel from "../../components/BannerCarousel/BannerCarousel";
+import ProductCard from "../../components/ProductCard";
+import BannerCarousel from "../../components/BannerCarousel";
 import homeImages from "../../data/homeImages.json";
 import { fetchProducts } from "../../services/productService";
 // import products from "../../data/products.json";
