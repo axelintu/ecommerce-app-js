@@ -1,17 +1,20 @@
 import "./Loader.css";
 
 function Loader ({type, loadingMessage}) {
- const products = (
+  function productsHTML(key) {
+    return (<div key={key} className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>);
+  };
+  let productsCollection = [];
+  const numberOfPlaceHolders = 6;
+  for (let i = 0; i < numberOfPlaceHolders; i++) {
+    productsCollection.push(productsHTML(i));
+  }
+  const products = (
       <div className="products-grid ld-container">
-        <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
-        <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
-        <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
-        <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
-        <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
-        <div className="product-card ld-el"><div className="img ld-placeholder"></div><div className="ld-placeholder">&nbsp;</div></div>
+        {productsCollection}
       </div>
-    
   );
+
   let loader = '';
   const defaultLoader = (<div>Cargando...</div>);
   switch (type) {

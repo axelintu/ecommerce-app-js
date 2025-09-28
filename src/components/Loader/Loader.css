@@ -5,13 +5,13 @@
   animation: shimmer 1.5s infinite linear;
 }
 
-.ld-container .ld-element:nth-child(3n +1) .ld-placeholder {
+.ld-container .ld-el:nth-child(3n +1) .ld-placeholder {
   animation-delay: .25s;
 }
-.ld-container .ld-element:nth-child(3n +2) .ld-placeholder {
+.ld-container .ld-el:nth-child(3n +2) .ld-placeholder {
   animation-delay: .5s;
 }
-.ld-container .ld-element:nth-child(3n) .ld-placeholder {
+.ld-container .ld-el:nth-child(3n) .ld-placeholder {
   animation-delay: .75s;
 }
 
