@@ -14,6 +14,9 @@ export default function Header() {
     <div className="header-top">
       <div className="container flex-between">
         <span className="delivery-info">Envío gratis en pedidos de más de $999</span>
+        <div>
+          { signedIn ? '✅ Sesión Iniciada ' : '🛑 Sin iniciar sesión' }
+        </div>
         <div className="top-links">
           <a href="/help">Ayuda</a>
           <a href="/track">Rastrear</a>

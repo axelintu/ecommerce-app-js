@@ -32,6 +32,7 @@ export default function Home () {
         <Loader type="products" loadingMessage={"Cargando productos..."}></Loader>
       ) : products && products.length > 0 ? (
         <div>
+          <Loader type="products" loadingMessage={"Cargando productos..."}></Loader>
           <div className="container home-products">
             <h3>Productos destacados</h3>
           </div>
