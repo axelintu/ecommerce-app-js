@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Header.css";
+import { useTheme } from "../../context/ThemeContext";
 export default function Header() {
   let searchTerm = '';
   const [signedIn, toggleSignedIn] = useState(true);
@@ -9,6 +10,10 @@ export default function Header() {
   const toggleUserEvent = () => { toggleUserMenu(showUserMenu => !showUserMenu); };
   const handleSearch = () => {};
   const onChangeSearchTerm = () => {};
+  const {theme, isDarkMode, toggleTheme, sethTheme} = useTheme();
+  if (signedIn !== '') {
+    
+  }
   return (<header>
     {/* Tobar con información adicional */}
     <div className="header-top">
