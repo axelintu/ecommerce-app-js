@@ -54,9 +54,10 @@ function SearchResults() {
     let result = products.filter((product)=>{
       const matchesName = product.name.toLowerCase().includes(normalizedQuery);
       const matchesDescription = product.description.toLowerCase().includes(normalizedQuery);
-      const matchesCategory = product.category.name.toLowerCase().includes(normalizedQuery);
+      // const matchesCategory = product.category.name.toLowerCase().includes(normalizedQuery);
       
-      return  matchesName || matchesDescription || matchesCategory 
+      // return  matchesName || matchesDescription || matchesCategory
+      return  matchesName || matchesDescription 
     });
     result = result.sort((a,b)=>{
       let valA = sortBy === "price" ? a.price : a.name.toLowerCase();
@@ -107,10 +108,10 @@ function SearchResults() {
         </div>
       )}
       {loading && (
-        <loading>
+        <Loading>
           <h3>Buscando productos...</h3>
-          <p>ESto puede tomar unos segundos.</p>
-        </loading>
+          <p>Esto puede tomar unos segundos.</p>
+        </Loading>
       )}
       {/* !loading && showsNoResults && (
         <ErrorMessage>
