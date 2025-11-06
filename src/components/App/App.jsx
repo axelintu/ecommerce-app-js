@@ -4,6 +4,9 @@ import Layout from "../../layout";
 import Home from "../../pages/Home";
 import SearchResults from "../../pages/SearchResultsList";
 import ProtectedRoute from "../../pages/ProtectedRoute";
+import PurchaseOrder from "../../pages/PurchaseOrder";
+import Settings from "../../pages/Setttings";
+import WishList from "../../pages/WishList";
 
 function App() {
   return (
@@ -16,11 +19,35 @@ function App() {
             element={
               <ProtectedRoute 
                 redirectTo="/login" 
-                allowedRoles={["admin","customer"]}
+                allowedRoles={["admin","customer","cliente"]}
               >
                 <Profile />
               </ProtectedRoute>
             }/>
+            <Route
+              path="/orders"
+              element={
+                <ProtectedRoute>
+                  <PurchaseOrder></PurchaseOrder>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/wishlist"
+              element={
+                <ProtectedRoute>
+                  <WishList></WishList>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <Settings></Settings>
+                </ProtectedRoute>
+              }
+            />
             <Route path="*" element={<div>Ruta no encontrada</div>} />
           </Routes>
         </Layout>
