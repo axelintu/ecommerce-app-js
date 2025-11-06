@@ -1,8 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import {useSearchParams} from 'react-router-dom';
 import './SearchResults.css';
+import List from '../../components/List';
+import ErrorMessage from '../../components/common/ErrorMessage'
 import Button from "../../components/common/Button";
 import { fetchProducts } from '../../services/productService';
+import Loading from '../../components/common/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 function SearchResults() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -108,15 +112,15 @@ function SearchResults() {
           <p>ESto puede tomar unos segundos.</p>
         </loading>
       )}
-      {!loading && showNoResults && (
+      {/* !loading && showsNoResults && (
         <ErrorMessage>
           <h3>No encontramos coincidencias</h3>
           <p>Prueba con otros términos o recorre nuestras <Link to="/offers">ofertas destacadas</Link></p>
         </ErrorMessage>
-      )}
-      {!loading && hasQuery && !showsNoResults (
+      ) */}
+      {/* !loading && hasQuery && !showsNoResults (
         <List products={filteredProducts} layout="vertical" title={`Resultados para ${query}`}></List>
-      )}
+      ) */}
       {!loading && !hasQuery && (
         <ErrorMessage>
           <h3>¿Buscas algo en especial?</h3>
