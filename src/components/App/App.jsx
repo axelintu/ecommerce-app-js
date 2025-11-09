@@ -2,10 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "../../layout";
 import Home from "../../pages/Home";
-import SearchResults from "../../pages/SearchResultsList";
+import SearchResults from "../../pages/SearchResults";
 import ProtectedRoute from "../../pages/ProtectedRoute";
 import PurchaseOrder from "../../pages/PurchaseOrder";
-import Settings from "../../pages/Setttings";
+import Settings from "../../pages/Settings";
 import WishList from "../../pages/WishList";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                 redirectTo="/login" 
                 allowedRoles={["admin","customer","cliente"]}
               >
-                <Profile />
+                {/* <Profile /> */}
               </ProtectedRoute>
             }/>
             <Route

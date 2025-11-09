@@ -1,9 +1,20 @@
 import './PurchaseOrder.css';
 import CartView from '../../components/Cart/CartView/CartView';
+import Input from '../../components/common/Input/Input';
 import Button from '../../components/common/Button';
 
 function PurchaseOrder() {
   const addressList = [
+    {
+      name: "Home",
+      address1: "Calle 1",
+      address2: "Colonia 1",
+      postalCode: "20000",
+      city: "Aguascalientes",
+      country: "México",
+      reference: "Entre calle A y B",
+      default: true
+    },
     {
       name: "Work",
       address1: "Calle 2",
@@ -12,23 +23,23 @@ function PurchaseOrder() {
       city: "Aguascalientes",
       country: "México",
       reference: "Entre calle A y B",
-      default: true
+      default: false
     }
   ];
   const paymentMethodList = [
     {
       alias: "Tarjeta1",
       cardNumber: "4444-4444-4444-4444",
-      cardHolder: "Rodrigo",
-      expiryDate: "08/31",
+      placeHolder: "Rodrigo",
+      expireDate: "08/31",
       cvv: "123",
       default: true
     },
     {
       alias: "Tarjeta2",
       cardNumber: "4444-4444-4444-4444",
-      cardHolder: "Rodrigo",
-      expiryDate: "08/31",
+      placeHolder: "Rodrigo",
+      expireDate: "08/31",
       cvv: "123",
       default: false
     }
