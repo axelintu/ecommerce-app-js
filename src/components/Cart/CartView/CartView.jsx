@@ -1,10 +1,51 @@
 import { useCart } from "../../../context/CartContext";
+import Button from "../../common/Button";
+import Icon from "../../common/Icon/Icon";
 import './CartView.css';
 
 function CartView() {
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
   return (
-    <div className="cart-view">
-      <h1>Estos son los productos en tu carrito</h1>
+    <div className="cart-items">
+      {cartItems &&
+        cartItems.map((item) => (
+          <div className="cart-item product-card" key={item.id}>
+            <div className="cart-item-image">
+              <img src={item.image} alt={item.name} />
+            </div>
+
+            <div className="cart-item-info">
+              <h3>{item.name}</h3>
+              <p className="cart-item-price">{`$${item.price.toFixed(2)}`}</p>
+            </div>
+
+            <div className="cart-item-quantity">
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => updateQuantity(item.id, item.quantity - 1)}
+              >
+                <Icon name="minus" size={15}></Icon>
+              </Button>
+              <span>{item.quantity}</span>
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => updateQuantity(item.id, item.quantity + 1)}
+              >
+                <Icon name="plus" size={15}></Icon>
+              </Button>
+            </div>
+
+            <div className="cart-item-total">
+              ${(item.price * item.quantity).toFixed(2)}
+            </div>
+
+            <Button size="sm" onClick={() => removeFromCart(item.id)}>
+              <Icon name="trash" size={15}></Icon>
+            </Button>
+          </div>
+        ))}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Button from '../../components/common/Button';
 import Icon from '../../components/common/Icon'
 import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
+import CartView from '../../components/Cart/CartView/CartView';
 
 function Cart() {
   const {
@@ -42,19 +43,19 @@ function Cart() {
         </Button>
       </div>
       <div className="cart-items">
-        {/* <CartView /> */}
-        <div className="cart-summary">
-          <div className="cart-total">
-            <h2>Total: ${getTotalPrice().toFixed(2)}</h2>
-          </div>
-          <Button
-            variant="primary"
-            onClick={() => navigate("/orders")}
-            size="md"
-          >
-            Proceder al pago
-          </Button>
+        <CartView />
+      </div>
+      <div className="cart-summary">
+        <div className="cart-total">
+          <h2>Total: ${getTotalPrice().toFixed(2)}</h2>
         </div>
+        <Button
+          variant="primary"
+          onClick={() => navigate("/orders")}
+          size="md"
+        >
+          Proceder al pago
+        </Button>
       </div>
     </div>
   );
