@@ -26,7 +26,7 @@ export default function List({
         {products.map((product) => {
           return (
             <ProductCard
-              key={product._id}
+              key={product.id}
               product={product}
               orientation={orientationProduct}
             />
