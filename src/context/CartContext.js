@@ -3,17 +3,25 @@ import { createContext, useContext, useEffect, useState } from "react";
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      setCartItems(JSON.parse(savedCart));
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const savedCart = localStorage.getItem("cart");
+      if (!savedCart) return [];
+      const savedCartParsed = JSON.parse(savedCart);
+      return Array.isArray(savedCartParsed) ? savedCartParsed : [];
+    } catch (error) {
+      console.error("CartInit - No se pudo cargar el carrito desde localStorage", error);
+      return [];
     }
-  }, []);
+  }
+);
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    try {
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    } catch (error) {
+      console.error("CartChanged - No se pudo guardar el carrito a localStorage", error);
+    }
   }, [cartItems]);
 
   const removeFromCart = (productId) => {

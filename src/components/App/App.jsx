@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CartProvider } from "../../context/CartContext";
 import "./App.css";
 import Layout from "../../layout";
 import Home from "../../pages/Home";
@@ -11,6 +12,7 @@ import WishList from "../../pages/WishList";
 
 function App() {
   return (
+    <CartProvider>
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -54,6 +56,7 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
+    </CartProvider>
   );
 }
 

@@ -1,7 +1,7 @@
-.search-btn svg,
-.action-btn svg,
-.icon svg,
-.logo svg {
+header .search-btn svg,
+header .action-btn svg,
+header .icon svg,
+header .logo svg {
   width: 20px;
   vertical-align: middle;
 }
