@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "../../layout";
 import Home from "../../pages/Home";
+import Cart from "../../pages/Cart/Cart";
 import SearchResults from "../../pages/SearchResults";
 import ProtectedRoute from "../../pages/ProtectedRoute";
 import PurchaseOrder from "../../pages/PurchaseOrder";
@@ -14,6 +15,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/search" element={<SearchResults />} />
             <Route path="/profile"
             element={
