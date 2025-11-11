@@ -42,7 +42,7 @@ function CartView() {
             </div>
 
             <Button size="sm" onClick={() => removeFromCart(item.id)}>
-              <Icon name="trash" size={15}></Icon>
+              <Icon name="close" size={15}></Icon>
             </Button>
           </div>
         ))}

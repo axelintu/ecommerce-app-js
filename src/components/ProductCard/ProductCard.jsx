@@ -6,7 +6,7 @@ import Badge from "../common/Badge";
 
 function ProductCard({ product, orientation = "vertical"  }) {
   const { addToCart } = useCart();
-  const { name, price, stock, image, description } = product;
+  const { name, price, stock, image } = product;
 
   if (!product) {
     return (
@@ -42,7 +42,6 @@ function ProductCard({ product, orientation = "vertical"  }) {
           variant="primary"
           disabled={stock === 0}
           onClick={handleAddToCart}
-          disabled={product.stock === 0}
         >
           Agregar al carrito
         </Button>

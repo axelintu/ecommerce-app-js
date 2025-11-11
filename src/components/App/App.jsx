@@ -3,6 +3,9 @@ import { CartProvider } from "../../context/CartContext";
 import "./App.css";
 import Layout from "../../layout";
 import Home from "../../pages/Home";
+import Login from "../../pages/Login";
+import Product from "../../pages/Product";
+import Profile from "../../pages/Profile";
 import Cart from "../../pages/Cart/Cart";
 import SearchResults from "../../pages/SearchResults";
 import ProtectedRoute from "../../pages/ProtectedRoute";
@@ -17,15 +20,18 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login /> } />
             <Route path="/cart" element={<Cart />} />
             <Route path="/search" element={<SearchResults />} />
-            <Route path="/profile"
-            element={
+            <Route path="/product/:productId" element={<Product />} />
+            <Route 
+              path="/profile"
+              element={
               <ProtectedRoute 
                 redirectTo="/login" 
                 allowedRoles={["admin","customer","cliente"]}
               >
-                {/* <Profile /> */}
+                <Profile />
               </ProtectedRoute>
             }/>
             <Route

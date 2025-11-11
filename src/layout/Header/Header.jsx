@@ -1,14 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Header.css";
 import { useTheme } from "../../context/ThemeContext";
+import { getCurrentUser, isAuthenticated, logout } from "../../utils/auth";
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 export default function Header() {
   let searchTerm = '';
-  const [signedIn, toggleSignedIn] = useState(true);
   const [showUserMenu, toggleUserMenu] = useState(false);
-  const closeSession = () => { toggleSignedIn( signedIn => false ); };
-  const initSession = () => { toggleSignedIn(signedIn => true ); }
   const toggleUserEvent = () => { toggleUserMenu(showUserMenu => !showUserMenu); };
   const handleSearch = () => {};
   const onChangeSearchTerm = () => {};
@@ -17,16 +15,57 @@ export default function Header() {
   const { getTotalItems } = useCart();
   const totalItems = getTotalItems();
 
-  if (signedIn !== '') {
-    
-  }
+  const [isAuth, setIsAuth] = useState(true);
+  const [user, setUser] = useState(getCurrentUser());
+
+  useEffect(() => {
+    const updateAuthState = () => {
+      setIsAuth(isAuthenticated());
+      setUser(getCurrentUser());
+    };
+
+    window.addEventListener("storage", updateAuthState);
+    updateAuthState();
+
+    return () => {
+      window.addEventListener("storage", updateAuthState);
+    };
+  }, []);
+
+  const handleRegister = () => {
+    console.log("Redirigir a registro");
+  };
+
+  const handleLogout = () => {
+    logout();
+    setIsAuth(false);
+    setUser(null);
+    window.location.reload();
+  };
+
+  const getUserInitials = (userData) => {
+    if (!userData || userData.name) return "U";
+    return userData.name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 2);
+  };
+
+  const getDisplayName = (userData) => {
+    if (!userData) return "Usuario";
+    return userData.name || userData.email || "Usuario";
+  };
+
+
   return (<header>
     {/* Tobar con información adicional */}
     <div className="header-top">
       <div className="container flex-between">
         <span className="delivery-info">Envío gratis en pedidos de más de $999</span>
         <div>
-          { signedIn ? '✅ Sesión Iniciada ' : '🛑 Sin iniciar sesión' }
+          { isAuth ? '✅ Sesión Iniciada ' : '🛑 Sin iniciar sesión' }
         </div>
         <div className="top-links">
           <a href="/help">Ayuda</a>
@@ -84,7 +123,7 @@ export default function Header() {
           </Link>
           {/* Funciones de usuario */}
           <div className="user-menu" >
-            { signedIn ? (
+            { isAuth ? (
             <div className="user-dropdown">
               <button className="action-btn user-btn" onClick={toggleUserEvent} aria-label="Menú de usuario">
                 <span className="icon">👤</span><span className="action-text">Mi cuenta <span className="dropdown-arrow">&#9660;</span></span>
@@ -96,13 +135,13 @@ export default function Header() {
                 <a href="/addresses">Direcciones</a>
                 <a href="/payment">Métodos de pago</a>
                 <hr />
-                <button onClick={closeSession}>Cerrar sesión</button>
+                <button onClick={handleLogout}>Cerrar sesión</button>
               </div>
               )}
             </div> ) : (
             <div className="auth-buttons">
-              <button className="btn-primary" onClick={initSession}>Iniciar sesión</button>
-              <button className="btn-primary">Registrarse</button>
+              <Link to="/login" className="btn-primary">Iniciar sesión</Link>
+              <button className="btn-primary" onClick={handleRegister}>Registrarse</button>
             </div>
             )
             }
