@@ -1,9 +1,9 @@
-import './PurchaseOrder.css';
+import './Checkout.css';
 import CartView from '../../components/Cart/CartView/CartView';
 import Input from '../../components/common/Input/Input';
 import Button from '../../components/common/Button';
 
-function PurchaseOrder() {
+function Checkout() {
   const addressList = [
     {
       name: "Home",
@@ -125,4 +125,4 @@ function PurchaseOrder() {
   )
 }
 
-export default PurchaseOrder;
+export default Checkout;

@@ -9,7 +9,7 @@ import Profile from "../../pages/Profile";
 import Cart from "../../pages/Cart/Cart";
 import SearchResults from "../../pages/SearchResults";
 import ProtectedRoute from "../../pages/ProtectedRoute";
-import PurchaseOrder from "../../pages/PurchaseOrder";
+import Checkout from "../../pages/Checkout";
 import Settings from "../../pages/Settings";
 import WishList from "../../pages/WishList";
 
@@ -38,7 +38,7 @@ function App() {
               path="/orders"
               element={
                 <ProtectedRoute>
-                  <PurchaseOrder></PurchaseOrder>
+                  <Checkout></Checkout>
                 </ProtectedRoute>
               }
             />
