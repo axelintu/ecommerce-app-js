@@ -2,6 +2,7 @@ import './Checkout.css';
 import CartView from '../../components/Cart/CartView/CartView';
 import Input from '../../components/common/Input/Input';
 import Button from '../../components/common/Button';
+import AddressForm from '../../components/Checkout/Address/AddressForm';
 
 function Checkout() {
   const addressList = [
@@ -70,18 +71,7 @@ function Checkout() {
               })}
             </ul>
           </div>
-          <form className="address-form">
-            <Input label="name" type="text" />
-            <Input label="address1" type="text" />
-            <Input label="address2" type="text" />
-            <Input label="postalCode" type="text" />
-            <Input label="city" type="text" />
-            <Input label="country" type="text" />
-            <Input label="reference" type="text" />
-            <label>Guardar como predeterminada: </label>
-            <input type="check"></input>
-            <Button>Guardar</Button>
-          </form>
+          <AddressForm />
         </div>
         <div className="order-payment">
           <p>
