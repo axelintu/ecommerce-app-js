@@ -42,16 +42,14 @@ function Cart() {
           Limpiar Carrito
         </Button>
       </div>
-      <div className="cart-items">
-        <CartView />
-      </div>
+      <CartView />
       <div className="cart-summary">
         <div className="cart-total">
           <h2>Total: ${getTotalPrice().toFixed(2)}</h2>
         </div>
         <Button
           variant="primary"
-          onClick={() => navigate("/orders")}
+          onClick={() => navigate("/checkout")}
           size="md"
         >
           Proceder al pago

@@ -1,4 +1,4 @@
-import AddressItem from '../AddressItem'
+import AddressItem from '../AddressItem';
 import Button from '../../../common/Button';
 import './AddressList.css';
 
@@ -17,7 +17,7 @@ function AddressList({
       </div>
       <div className="address-list-content">
         {addresses.map((address) => {
-          <AddresItem key={address.id || address.name} address={address} isDefault={selectedAddress?.name===address.name} onSelect={onSelect} onEdit={onEdit} />
+          <AddressItem key={address.id || address.name} address={address} isDefault={selectedAddress?.name===address.name} onSelect={onSelect} onEdit={onEdit} />
         })}
       </div>
     </div>

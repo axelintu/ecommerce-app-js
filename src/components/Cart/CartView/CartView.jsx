@@ -9,7 +9,7 @@ function CartView() {
     <div className="cart-items">
       {cartItems &&
         cartItems.map((item) => (
-          <div className="cart-item product-card" key={item.id}>
+          <div className="cart-item" key={item.id}>
             <div className="cart-item-image">
               <img src={item.image} alt={item.name} />
             </div>

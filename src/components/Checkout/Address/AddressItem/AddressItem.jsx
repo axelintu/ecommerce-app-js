@@ -1,3 +1,4 @@
+import Button from '../../../common/Button';
 import './AddressItem.css';
 
 function AddressItem({address, isDefault, onSelect, onEdit}) {

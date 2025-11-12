@@ -1,32 +1,16 @@
+import { useState } from 'react';
 import './Checkout.css';
 import CartView from '../../components/Cart/CartView/CartView';
+import shippingAddress from '../../data/shippingAddress.json'
 import Input from '../../components/common/Input/Input';
 import Button from '../../components/common/Button';
+import AddressList from '../../components/Checkout/Address/AddressList';
 import AddressForm from '../../components/Checkout/Address/AddressForm';
 
 function Checkout() {
-  const addressList = [
-    {
-      name: "Home",
-      address1: "Calle 1",
-      address2: "Colonia 1",
-      postalCode: "20000",
-      city: "Aguascalientes",
-      country: "México",
-      reference: "Entre calle A y B",
-      default: true
-    },
-    {
-      name: "Work",
-      address1: "Calle 2",
-      address2: "Colonia 2",
-      postalCode: "20000",
-      city: "Aguascalientes",
-      country: "México",
-      reference: "Entre calle A y B",
-      default: false
-    }
-  ];
+  const [isAddressEdit, setIsAddressEdit] = useState(false);
+  const [isPymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
+
   const paymentMethodList = [
     {
       alias: "Tarjeta1",
@@ -50,28 +34,21 @@ function Checkout() {
     <div className="order-container">
       <div className="order-left">
         <div className="order-address">
+          { !isAddressEdit && 
+              (<Button onClick={()=>{setIsAddressEdit(true)}}>Cambiar</Button>) }
           <p>
-            {addressList.find((a) => a.default === true).name}
-            {addressList.find((a) => a.default === true).address1}
+            {shippingAddress.find((a) => a.default === true).name}{" "}
+            {shippingAddress.find((a) => a.default === true).address1}
           </p>
-          <Button>Cambiar</Button>
-          <div className="address-list">
-            <ul>
-              {addressList.map((addss) => {
-                return (
-                  <li>
-                    <h3>{addss.name}</h3>
-                    <p>{addss.address1}</p>
-                    <p>{addss.address2}</p>
-                    <p>{addss.postalCode}</p>
-                    <p>{addss.city}</p>
-                    <p>{addss.reference}</p>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <AddressForm />
+          { isAddressEdit 
+            ? <>
+              <AddressForm />
+              <Button onClick={()=>{setIsAddressEdit(false)}}>Guardar</Button>
+              </>
+            : <>
+              <AddressList addresses={shippingAddress}></AddressList>
+              </>
+          }
         </div>
         <div className="order-payment">
           <p>
@@ -83,7 +60,7 @@ function Checkout() {
             <ul>
               {paymentMethodList.map((payment) => {
                 return (
-                  <li>
+                  <li key={payment.alias}>
                     <h3>{payment.alias}</h3>
                     <p>{payment.placeHolder}</p>
                   </li>
