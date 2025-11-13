@@ -4,7 +4,7 @@ import Input from '../../../common/Input/Input';
 import Button from '../../../common/Button';
 import './AddressForm.css';
 
-function AddressForm(isEdit = false, onSubmit, initialValues = {}) {
+function AddressForm({isEdit = false, onSubmit, initialValues = {}}) {
   const [formData, setFormData]= useState({
     "name": "",
     "address1": "",
