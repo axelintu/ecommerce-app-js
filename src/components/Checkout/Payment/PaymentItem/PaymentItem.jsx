@@ -1,4 +1,4 @@
-import React from 'react';
+import Button from '../../../common/Button';
 import './PaymentItem.css';
 
 function PaymentItem({paymentMethod, isDefault, onSelect, onEdit}) {

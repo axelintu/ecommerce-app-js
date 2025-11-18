@@ -1,95 +1,122 @@
-import { useState } from 'react';
-import './Checkout.css';
+import { useEffect, useState } from 'react';
 import CartView from '../../components/Cart/CartView/CartView';
-import shippingAddress from '../../data/shippingAddress.json'
-import Input from '../../components/common/Input/Input';
+import shippingAddress from '../../data/shippingAddress.json';
+import { getShippingAddresses, getDefaultshippingAddress } from '../../services/shippingService';
+import { getPaymentMethods, getDefaultPaymentMethods } from '../../services/paymentService';
 import Button from '../../components/common/Button';
+import ErrorMessage from '../../components/common/ErrorMessage'; 
 import AddressList from '../../components/Checkout/Address/AddressList';
 import AddressForm from '../../components/Checkout/Address/AddressForm';
+import PaymentForm from '../../components/Checkout/Payment/PaymentForm';
+import PaymentList from '../../components/Checkout/Payment/PaymentList';
+import PaymentItem from '../../components/Checkout/Payment/PaymentItem';
+import SummarySection from '../../components/Checkout/shared/summarySection';
+import Loading from '../../components/common/Loading/Loading';
+import './Checkout.css';
 
 function Checkout() {
+  const [addresses, setAddresses] = useState([]);
+  const [selectedAddress, setSelectedAddress] = useState(null);
+  const [payments, setPayments] = useState([]);
+  const [selectedPayment, setSelectedPayment] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const [isAddressEdit, setIsAddressEdit] = useState(false);
   const [isPymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
 
-  const paymentMethodList = [
-    {
-      alias: "Tarjeta1",
-      cardNumber: "4444-4444-4444-4444",
-      placeHolder: "Rodrigo",
-      expireDate: "08/31",
-      cvv: "123",
-      default: true
-    },
-    {
-      alias: "Tarjeta2",
-      cardNumber: "4444-4444-4444-4444",
-      placeHolder: "Rodrigo",
-      expireDate: "08/31",
-      cvv: "123",
-      default: false
+  async function loadData() {
+    setLoading(true);
+    setError(null);
+    try {
+      const [
+        addrList, 
+        defaultAdd, 
+        payList, 
+        defaultPay
+      ] = await Promise.all([
+          getShippingAddresses(),
+          getDefaultshippingAddress(),
+          getPaymentMethods(),
+          getDefaultPaymentMethods()
+      ]);
+
+      setAddresses(addrList || []);
+
+      const normalizedPayments = (payList || []).map((p) => ({
+        id: p._id || Date.now().toString(),
+        alias: p.alias || `Tarjeta ****${(p.cardNumber || "").slice(-4)}`,
+        cardNumber: p.cardNumber || "",
+        placeHolder: p.placeHolder || "",
+        expiryDate: p.expiryDate || "",
+        isDefault: p.isDefault || false,
+      }));
+      setPayments(payList || []);
+      setSelectedAddress(defaultAdd);
+      setSelectedPayment(defaultPay);
+    } catch (error) {
+      setError('No se pudieron cargar las direcciones o métodos de pago');
+      console.error(error);
+    } finally {
+      setLoading(false)
     }
-  ];
+  }
+
+  useEffect(()=>{
+    let mounted = true;
+    if (mounted) loadData();
+    return ()=> {mounted = false}
+  },[])
+
+  const handleAddressSubmit = (formData) => {console.log(formData) };
+  const handlePaymentSubmit = (formData) => {console.log(formData) };
+  const handleAddressEdit = (address) => { console.log(address) };
+  const handlePaymentEdit = (payment) => { console.log(payment) };
 
   return (
-    <div className="order-container">
-      <div className="order-left">
-        <div className="order-address">
-          { !isAddressEdit && 
-              (<Button onClick={()=>{setIsAddressEdit(true)}}>Cambiar</Button>) }
-          <p>
-            {shippingAddress.find((a) => a.default === true).name}{" "}
-            {shippingAddress.find((a) => a.default === true).address1}
-          </p>
-          { isAddressEdit 
-            ? <>
-              <AddressForm />
-              <Button onClick={()=>{setIsAddressEdit(false)}}>Guardar</Button>
-              </>
-            : <>
-              <AddressList addresses={shippingAddress}></AddressList>
-              </>
-          }
-        </div>
-        <div className="order-payment">
-          <p>
-            {paymentMethodList.find((p) => p.default === true).alias}
-            {paymentMethodList.find((p) => p.default === true).placeHolder}
-          </p>
-          <Button>Cambiar</Button>
-          <div className="payments-list">
-            <ul>
-              {paymentMethodList.map((payment) => {
-                return (
-                  <li key={payment.alias}>
-                    <h3>{payment.alias}</h3>
-                    <p>{payment.placeHolder}</p>
-                  </li>
-                );
-              })}
-            </ul>
+    loading 
+    ? (<div className="checkout-loading">
+      <Loading><p>Cargando direcciones y métodos de pago</p></Loading>
+    </div> )
+    : error 
+      ? (<ErrorMessage>{error}</ErrorMessage>)
+      : (<div className='checkout-container'>
+          <div className="checkout-left">
+            <SummarySection 
+              title="1. Dirección de envio" 
+              selected={selectedAddress} 
+              summaryContent={
+                <div className='selected-address'>
+                  <p>{selectedAddress?.name}</p>
+                  <p>{selectedAddress?.address1}</p>
+                  <p>{selectedAddress?.city}, {selectedAddress.postalCode}</p>
+                </div>}
+              isExpanded={false}
+              onToggle={()=> {
+                console.log(`Expand ${selectedAddress}`); 
+              }}>
+                <AddressList
+                  addresses={addresses}
+                  selectedAddress={selectedAddress}
+                  onSelect={(address) => {
+                    setSelectedAddress(address);
+                  }}
+                  onEdit={handleAddressEdit}
+                  onAdd={() => console.log("Add address")} >
+                </AddressList>
+                <AddressForm
+                  onSubmit={handleAddressSubmit}
+                  initialValues={null}
+                  isEdit={false} >
+                  </AddressForm>
+            </SummarySection>
           </div>
-          <form className="payment-form">
-            <Input label="name" type="text" />
-            <Input label="address1" type="text" />
-            <Input label="address2" type="text" />
-            <Input label="postalCode" type="text" />
-            <Input label="city" type="text" />
-            <Input label="country" type="text" />
-            <Input label="reference" type="text" />
-            <label>Guardar como predeterminada: </label>
-            <input type="check"></input>
-            <Button>Guardar</Button>
-          </form>
+          <div className="checkout-right">
+            Right column
+          </div>
         </div>
-        <CartView />
-      </div>
-      <div className="order-right">
-        <h3>Total: </h3>
-        <p>Fecha de entrega: </p>
-        <Button>Pagar</Button>
-      </div>
-    </div>
-  )
+      )
+    );
 }
 
 export default Checkout;

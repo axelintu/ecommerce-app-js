@@ -1,5 +1,5 @@
-
-import React from 'react';
+import Button from '../../../common/Button';
+import PaymentItem from '../PaymentItem';
 import './PaymentList.css';
 
 function PaymentList({
@@ -17,7 +17,7 @@ function PaymentList({
       </div>
       <div className="payment-method-list-content">
         {paymentMethods.map((method) => {
-          <PaymentItem key={method.id || method.name} paymentMethod={paymentMethod} isDefault={selectedMethod?.name===method.name} onSelect={onSelect} onEdit={onEdit} />
+          <PaymentItem key={method.id || method.name} paymentMethod={method} isDefault={selectedMethod?.name===method.name} onSelect={onSelect} onEdit={onEdit} />
         })}
       </div>
     </div>

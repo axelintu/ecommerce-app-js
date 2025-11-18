@@ -1,3 +1,23 @@
-.checkout {
-
-} 
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .checkout-container {
+    flex-direction: row;
+  }
+  .checkout-left {
+    flex: 2;
+  }
+  .checkout-right {
+    flex: 1;
+  }
+}
+.checkout-container > [class*="checkout-"] {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.3);
+  border-radius: 3px;
+}
