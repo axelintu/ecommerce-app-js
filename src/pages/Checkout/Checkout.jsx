@@ -56,7 +56,7 @@ function Checkout() {
         expiryDate: p.expiryDate || "",
         isDefault: p.isDefault || false,
       }));
-      setPayments(payList || []);
+      setPayments(normalizedPayments || []);
       setSelectedAddress(defaultAdd);
       setSelectedPayment(defaultPay);
     } catch (error) {
@@ -105,7 +105,6 @@ function Checkout() {
               isExpanded={isAddressExpanded}
               onToggle={()=> {
                 console.log(`Expand ${JSON.stringify(selectedAddress)}`);
-                // toggleAddrExpanded()
                 setIsAddressExpanded(true);
               }}>
                 <AddressList
@@ -126,6 +125,9 @@ function Checkout() {
                   isEdit={false} >
                 </AddressForm>
             </SummarySection>
+
+            
+
             <SummarySection 
               title="2. Método de pago" 
               selected={selectedPayment} 
@@ -138,7 +140,6 @@ function Checkout() {
               isExpanded={isPaymentExpanded}
               onToggle={()=> {
                 console.log(`Expand ${JSON.stringify(selectedPayment)}`);
-                // toggleAddrExpanded()
                 setIsPaymentExpanded(true);
               }}>
                 <PaymentList

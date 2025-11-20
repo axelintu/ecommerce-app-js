@@ -17,7 +17,7 @@ function PaymentList({
       </div>
       <div className="payment-method-list-content">
         {paymentMethods.map((method) => {
-          <PaymentItem key={method.id || method.name} paymentMethod={method} isDefault={selectedMethod?.name===method.name} onSelect={onSelect} onEdit={onEdit} />
+          return (<PaymentItem key={method.id || method.name} paymentMethod={method} isDefault={selectedMethod?.name===method.name} onSelect={onSelect} onEdit={onEdit} />)
         })}
       </div>
     </div>
