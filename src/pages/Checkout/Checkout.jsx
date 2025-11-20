@@ -24,9 +24,11 @@ function Checkout() {
 
   const [isAddressEdit, setIsAddressEdit] = useState(false);
   const [addressBeingEdited, setAddressBeingEdited] = useState(null);
-  const [isPymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
+  const [isPaymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
+  const [paymentMethodBeingEdited, setPaymentMethodBeingEdited] = useState(null);
 
   const [isAddressExpanded, setIsAddressExpanded] = useState(false);
+  const [isPaymentExpanded, setIsPaymentExpanded] = useState(false);
 
   async function loadData() {
     setLoading(true);
@@ -74,10 +76,13 @@ function Checkout() {
   const handleAddressSubmit = (formData) => {console.log(formData) };
   const handlePaymentSubmit = (formData) => {console.log(formData) };
   const handleAddressEdit = (address) => { 
-    setAddressBeingEdited();
+    setAddressBeingEdited(address);
     console.log(address) 
   };
-  const handlePaymentEdit = (payment) => { console.log(payment) };
+  const handlePaymentEdit = (payment) => { 
+    setPaymentMethodBeingEdited(payment);
+    console.log(payment) 
+  };
 
   return (
     loading 
@@ -120,6 +125,39 @@ function Checkout() {
                   initialValues={null}
                   isEdit={false} >
                 </AddressForm>
+            </SummarySection>
+            <SummarySection 
+              title="2. Método de pago" 
+              selected={selectedPayment} 
+              summaryContent={
+                <div className='selected-payment'>
+                  <p>{selectedPayment?.alias}</p>
+                  <p>{selectedPayment?.cardHolderName}</p>
+                  <p>{selectedPayment?.expiryDate}</p>
+                </div>}
+              isExpanded={isPaymentExpanded}
+              onToggle={()=> {
+                console.log(`Expand ${JSON.stringify(selectedPayment)}`);
+                // toggleAddrExpanded()
+                setIsAddressExpanded(true);
+              }}>
+                <PaymentList
+                  paymentMethods={payments}
+                  selectedMethod={selectedPayment}
+                  onSelect={(method) => {
+                    setSelectedPayment(method);
+                  }}
+                  onEdit={handlePaymentEdit}
+                  onAdd={() => console.log("Add payment method")} >
+                </PaymentList>
+                { isPaymentMethodEdit && paymentMethodBeingEdited && (
+                  <div>IS BEING EDITED</div>
+                ) }
+                <PaymentForm
+                  onSubmit={handlePaymentEdit}
+                  initialValues={null}
+                  isEdit={false} >
+                </PaymentForm>
             </SummarySection>
           </div>
           <div className="checkout-right">
