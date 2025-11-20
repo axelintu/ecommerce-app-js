@@ -17,7 +17,9 @@ function AddressList({
       </div>
       <div className="address-list-content">
         {addresses.map((address) => {
+          return(
           <AddressItem key={address.id || address.name} address={address} isDefault={selectedAddress?.name===address.name} onSelect={onSelect} onEdit={onEdit} />
+        )
         })}
       </div>
     </div>

@@ -10,7 +10,7 @@ import AddressForm from '../../components/Checkout/Address/AddressForm';
 import PaymentForm from '../../components/Checkout/Payment/PaymentForm';
 import PaymentList from '../../components/Checkout/Payment/PaymentList';
 import PaymentItem from '../../components/Checkout/Payment/PaymentItem';
-import SummarySection from '../../components/Checkout/shared/summarySection';
+import SummarySection from '../../components/Checkout/shared/SummarySection';
 import Loading from '../../components/common/Loading/Loading';
 import './Checkout.css';
 
@@ -23,7 +23,10 @@ function Checkout() {
   const [error, setError] = useState(null);
 
   const [isAddressEdit, setIsAddressEdit] = useState(false);
+  const [addressBeingEdited, setAddressBeingEdited] = useState(null);
   const [isPymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
+
+  const [isAddressExpanded, setIsAddressExpanded] = useState(false);
 
   async function loadData() {
     setLoading(true);
@@ -58,7 +61,7 @@ function Checkout() {
       setError('No se pudieron cargar las direcciones o métodos de pago');
       console.error(error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
 
@@ -70,7 +73,10 @@ function Checkout() {
 
   const handleAddressSubmit = (formData) => {console.log(formData) };
   const handlePaymentSubmit = (formData) => {console.log(formData) };
-  const handleAddressEdit = (address) => { console.log(address) };
+  const handleAddressEdit = (address) => { 
+    setAddressBeingEdited();
+    console.log(address) 
+  };
   const handlePaymentEdit = (payment) => { console.log(payment) };
 
   return (
@@ -89,11 +95,13 @@ function Checkout() {
                 <div className='selected-address'>
                   <p>{selectedAddress?.name}</p>
                   <p>{selectedAddress?.address1}</p>
-                  <p>{selectedAddress?.city}, {selectedAddress.postalCode}</p>
+                  <p>{selectedAddress?.city}, {selectedAddress?.postalCode}</p>
                 </div>}
-              isExpanded={false}
+              isExpanded={isAddressExpanded}
               onToggle={()=> {
-                console.log(`Expand ${selectedAddress}`); 
+                console.log(`Expand ${JSON.stringify(selectedAddress)}`);
+                // toggleAddrExpanded()
+                setIsAddressExpanded(true);
               }}>
                 <AddressList
                   addresses={addresses}
@@ -104,11 +112,14 @@ function Checkout() {
                   onEdit={handleAddressEdit}
                   onAdd={() => console.log("Add address")} >
                 </AddressList>
+                { isAddressEdit && addressBeingEdited && (
+                  <div>IS BEING EDITED</div>
+                ) }
                 <AddressForm
                   onSubmit={handleAddressSubmit}
                   initialValues={null}
                   isEdit={false} >
-                  </AddressForm>
+                </AddressForm>
             </SummarySection>
           </div>
           <div className="checkout-right">
