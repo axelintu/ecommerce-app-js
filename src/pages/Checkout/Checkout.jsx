@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react';
 import CartView from '../../components/Cart/CartView/CartView';
-import shippingAddress from '../../data/shippingAddress.json';
 import { getShippingAddresses, getDefaultshippingAddress } from '../../services/shippingService';
 import { getPaymentMethods, getDefaultPaymentMethods } from '../../services/paymentService';
-import Button from '../../components/common/Button';
 import ErrorMessage from '../../components/common/ErrorMessage'; 
 import AddressList from '../../components/Checkout/Address/AddressList';
 import AddressForm from '../../components/Checkout/Address/AddressForm';
 import PaymentForm from '../../components/Checkout/Payment/PaymentForm';
 import PaymentList from '../../components/Checkout/Payment/PaymentList';
-import PaymentItem from '../../components/Checkout/Payment/PaymentItem';
 import SummarySection from '../../components/Checkout/shared/SummarySection';
 import Loading from '../../components/common/Loading/Loading';
 import './Checkout.css';
@@ -22,13 +19,16 @@ function Checkout() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const [isAddressExpanded, setIsAddressExpanded] = useState(false);
+  const [showAddressForm, setShowAddressForm] =useState(false);
   const [isAddressEdit, setIsAddressEdit] = useState(false);
   const [addressBeingEdited, setAddressBeingEdited] = useState(null);
+  
   const [isPaymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
   const [paymentMethodBeingEdited, setPaymentMethodBeingEdited] = useState(null);
 
-  const [isAddressExpanded, setIsAddressExpanded] = useState(false);
   const [isPaymentExpanded, setIsPaymentExpanded] = useState(false);
+
 
   async function loadData() {
     setLoading(true);
@@ -73,6 +73,12 @@ function Checkout() {
     return ()=> {mounted = false}
   },[])
 
+  const handleAddressToggle = () => {
+    setShowAddressForm(false);
+    setAddressBeingEdited(null);
+    setIsAddressExpanded((prev)=> !prev)
+  }
+
   const handleAddressSubmit = (formData) => {console.log(formData) };
   const handlePaymentSubmit = (formData) => {console.log(formData) };
   const handleAddressEdit = (address) => { 
@@ -102,12 +108,11 @@ function Checkout() {
                   <p>{selectedAddress?.address1}</p>
                   <p>{selectedAddress?.city}, {selectedAddress?.postalCode}</p>
                 </div>}
-              isExpanded={isAddressExpanded}
-              onToggle={()=> {
-                console.log(`Expand ${JSON.stringify(selectedAddress)}`);
-                setIsAddressExpanded(true);
-              }}>
-                <AddressList
+              isExpanded={isAddressExpanded || showAddressForm || !selectedAddress}
+              onToggle={handleAddressToggle}>
+                {
+                !showAddressForm && !addressBeingEdited ? 
+                (<AddressList
                   addresses={addresses}
                   selectedAddress={selectedAddress}
                   onSelect={(address) => {
@@ -115,15 +120,16 @@ function Checkout() {
                   }}
                   onEdit={handleAddressEdit}
                   onAdd={() => console.log("Add address")} >
-                </AddressList>
-                { isAddressEdit && addressBeingEdited && (
-                  <div>IS BEING EDITED</div>
-                ) }
-                <AddressForm
-                  onSubmit={handleAddressSubmit}
-                  initialValues={null}
-                  isEdit={false} >
-                </AddressForm>
+                </AddressList> )
+                : (
+                  <AddressForm
+                    onSubmit={handleAddressSubmit}
+                    initialValues={null}
+                    isEdit={false} >
+                  </AddressForm>
+                  )
+                }
+              
             </SummarySection>
 
             
