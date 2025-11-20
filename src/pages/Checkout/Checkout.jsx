@@ -139,7 +139,7 @@ function Checkout() {
               onToggle={()=> {
                 console.log(`Expand ${JSON.stringify(selectedPayment)}`);
                 // toggleAddrExpanded()
-                setIsAddressExpanded(true);
+                setIsPaymentExpanded(true);
               }}>
                 <PaymentList
                   paymentMethods={payments}
