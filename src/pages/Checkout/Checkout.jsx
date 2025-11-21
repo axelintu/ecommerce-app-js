@@ -10,8 +10,11 @@ import PaymentList from '../../components/Checkout/Payment/PaymentList';
 import SummarySection from '../../components/Checkout/shared/SummarySection';
 import Loading from '../../components/common/Loading/Loading';
 import './Checkout.css';
+import Button from '../../components/common/Button';
+import { CartProvider, useCart } from '../../context/CartContext';
 
 function Checkout() {
+  const cartItems = useCart();
   const [addresses, setAddresses] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [payments, setPayments] = useState([]);
@@ -72,23 +75,67 @@ function Checkout() {
     if (mounted) loadData();
     return ()=> {mounted = false}
   },[])
-
+  
   const handleAddressToggle = () => {
     setShowAddressForm(false);
     setAddressBeingEdited(null);
     setIsAddressExpanded((prev)=> !prev)
   }
-
-  const handleAddressSubmit = (formData) => {console.log(formData) };
-  const handlePaymentSubmit = (formData) => {console.log(formData) };
-  const handleAddressEdit = (address) => { 
-    setAddressBeingEdited(address);
-    console.log(address) 
+  const handleAddressSelect = (address) => {
+    setSelectedAddress(address);
+    setShowAddressForm(false);
+    setAddressBeingEdited(null);
+    setIsAddressExpanded(false);
+  }
+  const handleAddressNew = () => {
+    setShowAddressForm(true);
+    setAddressBeingEdited(null);
+    setIsAddressExpanded(true);
+  }
+  const handleAddressSubmit = (formData) => {
+    let item = null;
+    let updatedItems = [];
+    if (addressBeingEdited) {
+      item = {formData}
+      updatedItems = addresses.map((address)=>{
+        if(address._id === item._id) {
+          address = item;
+        }
+      })
+    }
+    else {
+      item = { "_id" : new Date(), ... formData }
+      updatedItems =[...addresses, item]
+    }
+    setAddresses(updatedItems);
   };
+  const handleAddressEdit = (address) => { 
+    setShowAddressForm(true);
+    setAddressBeingEdited(address);
+    setIsAddressExpanded(true);
+  };
+  const handleAddredDelete = (address) => {
+    let updatedAddresses = addresses.filter((add)=> add._id !== address._id);
+    if(selectedAddress._id===addresses._id && updatedAddresses.length > 0) {
+      selectedAddress(updatedAddresses[0])
+    } else {
+      setSelectedAddress(null);
+    }
+    setAddresses(updatedAddresses);
+  }
+  const handleCancelForm = () => {
+
+  }
+  const handlePaymentSubmit = (formData) => {console.log(formData) };
+
   const handlePaymentEdit = (payment) => { 
     setPaymentMethodBeingEdited(payment);
     console.log(payment) 
   };
+
+  const handleCreateOrder = () => {
+
+  }
 
   return (
     loading 
@@ -115,17 +162,17 @@ function Checkout() {
                 (<AddressList
                   addresses={addresses}
                   selectedAddress={selectedAddress}
-                  onSelect={(address) => {
-                    setSelectedAddress(address);
-                  }}
-                  onEdit={handleAddressEdit}
-                  onAdd={() => console.log("Add address")} >
+                  onSelect={(address)=> {handleAddressSelect(address)}}
+                  onEdit={(address)=> { handleAddressEdit(address);}}
+                  onDelete={(address) => {handleAddredDelete(address)}}
+                  onAdd={handleAddressNew} >
                 </AddressList> )
                 : (
                   <AddressForm
                     onSubmit={handleAddressSubmit}
-                    initialValues={null}
-                    isEdit={false} >
+                    onCancel={handleCancelForm}
+                    initialValues={addressBeingEdited || {}}
+                    isEdit={!!addressBeingEdited}>
                   </AddressForm>
                   )
                 }
@@ -166,9 +213,50 @@ function Checkout() {
                   isEdit={false} >
                 </PaymentForm>
             </SummarySection>
+
+
+
+            <SummarySection 
+              title="3. Revisa tu pedido"
+              selected={true} 
+              isExpanded={true}
+            >
+              <CartView></CartView>
+            </SummarySection>
           </div>
           <div className="checkout-right">
-            Right column
+            <div className="checkout-summary">
+              <h3>Resumen de la orden</h3>
+              <div className="summary-details">
+                <p>
+                  <strong>Dirección de envío: </strong>{selectedAddress?.name}
+                </p>
+                <p>
+                  <strong>Método de pago: </strong>{selectedPayment?.alias}
+                </p>
+                <div className="order-costs">
+                  <p><strong>Subtotal: </strong>$0.00</p>
+                  <p><strong>IVA (16%): </strong>$0.00</p>
+                  <p><strong>Envío: </strong>$0.00</p>
+                  <p><strong>Total: </strong>$0.00</p>
+                  <p><strong>Fecha estimada de entrega: </strong>{new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toLocaleDateString()}</p>
+                </div>
+                <Button className="play-button"
+                disabled={!selectedAddress||selectedPayment||cartItems|| cartItems === 0}
+                onClick={handleCreateOrder}
+                >
+                  {
+                  !cartItems || cartItems.length === 0 
+                  ? 'No hay productos en el carrito'
+                  : selectedAddress
+                    ? 'Selecciona una dirección de envío'
+                    : !selectedPayment 
+                      ? 'Selecciona un método de pago'
+                      : 'Confirmar y realizar pago'
+                }
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       )

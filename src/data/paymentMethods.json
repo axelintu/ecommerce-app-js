@@ -1,6 +1,7 @@
 [
     {
         "_id": "690eb4b4f62bb3fb3e9947f3",
+        "alias": "Tarjeta de Oro",
         "userId": "67fc9bda370302bf46079352",
         "type": "credit_card",
         "cardNumber": "4444444444444444",
@@ -12,6 +13,7 @@
     },
     {
         "_id": "691262743278bbc102261a4a",
+        "alias": "Tarjeta de MasterCard",
         "userId": "67fc9bda370302bf46079352",
         "type": "credit_card",
         "cardNumber": "4444444444445555",
