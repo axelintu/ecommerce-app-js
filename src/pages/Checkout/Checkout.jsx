@@ -124,7 +124,9 @@ function Checkout() {
     setAddresses(updatedAddresses);
   }
   const handleCancelForm = () => {
-
+    setShowAddressForm(false);
+    setAddressBeingEdited(null);
+    setIsAddressExpanded(true);
   }
   const handlePaymentSubmit = (formData) => {console.log(formData) };
 

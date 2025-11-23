@@ -9,6 +9,7 @@ export default function Input({
   disabled = false,
   className = "",
   id,
+  name
 }) {
   const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -21,6 +22,7 @@ export default function Input({
       )}
       <input
         id={inputId}
+        name={name}
         type={type}
         value={value}
         onChange={onChange}

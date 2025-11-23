@@ -6,6 +6,7 @@ function AddressItem({address, isDefault, onSelect, onEdit}) {
     <div className={`address-item ${isDefault} ? "default" : ""`}>
       <div className="address-content">
         <h4>{address.name}</h4>
+        <p>_id: {address._id}</p>
         <p>{address.address1}</p>
         <p>{address.address2}</p>
         <p>{address.city}, {address.postalCode}</p>

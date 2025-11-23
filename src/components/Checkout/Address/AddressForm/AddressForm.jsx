@@ -4,34 +4,54 @@ import Input from '../../../common/Input/Input';
 import Button from '../../../common/Button';
 import './AddressForm.css';
 
-function AddressForm({isEdit = false, onSubmit, initialValues = {}}) {
-  const [formData, setFormData]= useState({
-    "name": "",
-    "address1": "",
-    "address2": "",
-    "postalCode": "",
-    "city": "",
-    "country": "",
-    "reference":  "",
-    "default": false,
+function AddressForm({
+  isEdit = false,
+  onCancel,
+  onSubmit,
+  initialValues = {}
+}) {
+  const [formData, setFormData] = useState({
+    name: "",
+    address1: "",
+    address2: "",
+    postalCode: "",
+    city: "",
+    country: "",
+    reference:  "",
+    default: false,
     ...initialValues
   });
+  // const [country, setCountry] = useState({country: initialValues.country});
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
   };
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    console.log(e.target);
+  const handleChange = (eOrPayload) => {
+    let name, value, type, checked;
+    if (eOrPayload && eOrPayload.target) {
+      ({ name, value, type, checked } = eOrPayload.target);
+    } else if (eOrPayload && typeof eOrPayload === 'object' && 'name' in eOrPayload) {
+      ({ name, value } = eOrPayload);
+      type = typeof value === 'boolean' ? 'checkbox' : 'text';
+      checked = value === true;
+    } else {
+      return;
+    }
     setFormData((prev)=> ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-    }))
-    
+    }));
   }
+  // const handleChangeCountry = (e) => {
+  //   const [name, value] = e.target;
+  //   setCountry((prev)=> (
+  //     {[name]: value}
+  //   ))
+  // }
   return (
     <form className="address-form" onSubmit={handleSubmit}>
       <h3>{isEdit ? "Editar Dirección" : "Nueva Dirección"}</h3>
+      <div>{formData?._id}</div>
       <Input
         label="Nombre de la dirección"
         name="name"
@@ -74,6 +94,10 @@ function AddressForm({isEdit = false, onSubmit, initialValues = {}}) {
         onChange={handleChange}
         type="text"
       />
+      {/* <input name="pais"
+        onChange={(e)=>{handleChangeCountry(e)}}
+        value={country.country}
+      /> */}
       <Input
         label="Referencia:"
         name="reference"
@@ -98,6 +122,11 @@ function AddressForm({isEdit = false, onSubmit, initialValues = {}}) {
         <Button type="submit">
           {isEdit ? "Guardar Cambios" : "Agregar Dirección"}
         </Button>
+        {onCancel && (
+          <Button type="button" variant="secondary" onClick={onCancel}>
+            Cancelar
+          </Button>
+        )}
       </div>
     </form>
   );
