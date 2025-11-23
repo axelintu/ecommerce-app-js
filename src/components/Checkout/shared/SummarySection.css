@@ -26,12 +26,17 @@
 }
 
 .summary-content {
-  margin-top: 8px;
   color: var(--muted);
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: var(--gap);
+  justify-content: space-between;
+}
+
+.summary-content p {
+  margin-top: 0;
 }
 
 .summary-badge {

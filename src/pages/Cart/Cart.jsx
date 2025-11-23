@@ -2,7 +2,7 @@ import './Cart.css';
 import Button from '../../components/common/Button';
 import Icon from '../../components/common/Icon'
 import { useCart } from '../../context/CartContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CartView from '../../components/Cart/CartView/CartView';
 
 function Cart() {
@@ -21,9 +21,11 @@ function Cart() {
         <Icon name="cart" size={100}></Icon>
         <h2>Tu carrito está vacío</h2>
         <p>Agrega algunos productos para empezar a comprar</p>
-        <Button to="/" variant="primary">
+        <Link to="/">
+        <Button variant="primary">
           Continuar comprando
         </Button>
+        </Link>
       </div>
     );
   }
