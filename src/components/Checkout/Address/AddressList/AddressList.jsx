@@ -7,8 +7,10 @@ function AddressList({
     selectedAddress,
     onSelect,
     onEdit,
-    onAdd
+    onAdd,
+    onDelete
   }) {
+  console.log(addresses);
   return (
     <div className="address-list">
       <div className="address-list-header">
@@ -17,9 +19,16 @@ function AddressList({
       </div>
       <div className="address-list-content">
         {addresses.map((address) => {
-          return(
-          <AddressItem key={address.id || address.name} address={address} isDefault={selectedAddress?.name===address.name} onSelect={onSelect} onEdit={onEdit} />
-        )
+          return (
+            <AddressItem
+              key={address._id || address.id || address.name}
+              address={address}
+              isDefault={selectedAddress?.name === address.name}
+              onSelect={onSelect}
+              onEdit={onEdit}
+              onDelete={onDelete}
+            />
+          );
         })}
       </div>
     </div>

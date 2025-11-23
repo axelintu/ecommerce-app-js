@@ -21,7 +21,6 @@ function AddressForm({
     default: false,
     ...initialValues
   });
-  // const [country, setCountry] = useState({country: initialValues.country});
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
@@ -42,12 +41,6 @@ function AddressForm({
       [name]: type === "checkbox" ? checked : value,
     }));
   }
-  // const handleChangeCountry = (e) => {
-  //   const [name, value] = e.target;
-  //   setCountry((prev)=> (
-  //     {[name]: value}
-  //   ))
-  // }
   return (
     <form className="address-form" onSubmit={handleSubmit}>
       <h3>{isEdit ? "Editar Dirección" : "Nueva Dirección"}</h3>

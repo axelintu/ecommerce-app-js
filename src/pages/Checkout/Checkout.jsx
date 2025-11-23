@@ -96,39 +96,42 @@ function Checkout() {
     let item = null;
     let updatedItems = [];
     if (addressBeingEdited) {
-      item = {formData}
-      updatedItems = addresses.map((address)=>{
-        if(address._id === item._id) {
-          address = item;
-        }
-      })
-    }
-    else {
-      item = { "_id" : new Date(), ... formData }
-      updatedItems =[...addresses, item]
+      item = { ...addressBeingEdited, ...formData };
+      updatedItems = addresses.map((address) =>
+        address._id === item._id ? item : address
+      );
+    } else {
+      const newId = Date.now().toString();
+      item = { _id: newId, ...formData };
+      updatedItems = [...addresses, item];
     }
     setAddresses(updatedItems);
-  };
-  const handleAddressEdit = (address) => { 
-    setShowAddressForm(true);
-    setAddressBeingEdited(address);
-    setIsAddressExpanded(true);
-  };
-  const handleAddredDelete = (address) => {
-    let updatedAddresses = addresses.filter((add)=> add._id !== address._id);
-    if(selectedAddress._id===addresses._id && updatedAddresses.length > 0) {
-      selectedAddress(updatedAddresses[0])
-    } else {
-      setSelectedAddress(null);
-    }
-    setAddresses(updatedAddresses);
-  }
-  const handleCancelForm = () => {
+
     setShowAddressForm(false);
     setAddressBeingEdited(null);
     setIsAddressExpanded(true);
   }
-  const handlePaymentSubmit = (formData) => {console.log(formData) };
+  const handleAddressEdit = (address) => { 
+    setShowAddressForm(true);
+    setAddressBeingEdited(address);
+    setIsAddressExpanded(true);
+  }
+  const handleAddressDelete = (address) => {
+    const updatedAddresses = addresses.filter((add)=> add._id !== address._id);
+    if (selectedAddress && selectedAddress._id === address._id) {
+      if (updatedAddresses.length > 0) {
+        setSelectedAddress(updatedAddresses[0]);
+      } else {
+        setSelectedAddress(null);
+      }
+    }
+    setAddresses(updatedAddresses);
+  }
+  const handleCancelAddressForm = () => {
+    setShowAddressForm(false);
+    setAddressBeingEdited(null);
+    setIsAddressExpanded(true);
+  }
 
   const handlePaymentEdit = (payment) => { 
     setPaymentMethodBeingEdited(payment);
@@ -166,13 +169,13 @@ function Checkout() {
                   selectedAddress={selectedAddress}
                   onSelect={(address)=> {handleAddressSelect(address)}}
                   onEdit={(address)=> { handleAddressEdit(address);}}
-                  onDelete={(address) => {handleAddredDelete(address)}}
+                  onDelete={(address) => {handleAddressDelete(address)}}
                   onAdd={handleAddressNew} >
                 </AddressList> )
                 : (
                   <AddressForm
                     onSubmit={handleAddressSubmit}
-                    onCancel={handleCancelForm}
+                    onCancel={handleCancelAddressForm}
                     initialValues={addressBeingEdited || {}}
                     isEdit={!!addressBeingEdited}>
                   </AddressForm>
@@ -180,9 +183,6 @@ function Checkout() {
                 }
               
             </SummarySection>
-
-            
-
             <SummarySection 
               title="2. Método de pago" 
               selected={selectedPayment} 
@@ -215,9 +215,6 @@ function Checkout() {
                   isEdit={false} >
                 </PaymentForm>
             </SummarySection>
-
-
-
             <SummarySection 
               title="3. Revisa tu pedido"
               selected={true} 

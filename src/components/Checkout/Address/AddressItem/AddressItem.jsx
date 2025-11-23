@@ -1,9 +1,9 @@
 import Button from '../../../common/Button';
 import './AddressItem.css';
 
-function AddressItem({address, isDefault, onSelect, onEdit}) {
+function AddressItem({address, isDefault, onSelect, onEdit, onDelete}) {
   return (
-    <div className={`address-item ${isDefault} ? "default" : ""`}>
+    <div className={`address-item ${isDefault ? "default" : ""}`}>
       <div className="address-content">
         <h4>{address.name}</h4>
         <p>_id: {address._id}</p>
@@ -19,6 +19,9 @@ function AddressItem({address, isDefault, onSelect, onEdit}) {
         </Button>
         <Button variant="secondary" onClick={()=> onEdit(address)}>
           Editar
+        </Button>
+        <Button variant="danger" onClick={() => onDelete(address)}>
+          Eliminar
         </Button>
       </div>
     </div>
