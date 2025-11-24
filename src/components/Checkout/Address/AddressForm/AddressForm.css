@@ -1,3 +1,12 @@
-.AddressForm {
+.form-actions {
+  display: flex;
+  gap: var(--gap);
+}
 
+.form-default {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  align-items: center;
+  padding: .5rem 0;
 }

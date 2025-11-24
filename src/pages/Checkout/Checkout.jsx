@@ -11,20 +11,18 @@ import SummarySection from '../../components/Checkout/shared/SummarySection';
 import Loading from '../../components/common/Loading/Loading';
 import './Checkout.css';
 import Button from '../../components/common/Button';
-import { CartProvider, useCart } from '../../context/CartContext';
+import { useCart } from '../../context/CartContext';
 
 function Checkout() {
   const cartItems = useCart();
-  const [addresses, setAddresses] = useState([]);
-  const [selectedAddress, setSelectedAddress] = useState(null);
-  const [payments, setPayments] = useState([]);
-  const [selectedPayment, setSelectedPayment] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  // Address States
+  const [addresses, setAddresses] = useState([]);
+  const [selectedAddress, setSelectedAddress] = useState(null);
+  
   const [isAddressExpanded, setIsAddressExpanded] = useState(false);
   const [showAddressForm, setShowAddressForm] =useState(false);
-  const [isAddressEdit, setIsAddressEdit] = useState(false);
   const [addressBeingEdited, setAddressBeingEdited] = useState(null);
   
   const [isPaymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
@@ -76,6 +74,7 @@ function Checkout() {
     return ()=> {mounted = false}
   },[])
   
+  // Handle Adress Functions  
   const handleAddressToggle = () => {
     setShowAddressForm(false);
     setAddressBeingEdited(null);
@@ -83,6 +82,11 @@ function Checkout() {
   }
   const handleAddressSelect = (address) => {
     setSelectedAddress(address);
+    setShowAddressForm(false);
+    setAddressBeingEdited(null);
+    setIsAddressExpanded(false);
+  }
+  const handleAddressNoChange = () => {
     setShowAddressForm(false);
     setAddressBeingEdited(null);
     setIsAddressExpanded(false);
@@ -106,6 +110,7 @@ function Checkout() {
       updatedItems = [...addresses, item];
     }
     setAddresses(updatedItems);
+    if (updatedItems.length === 1) setSelectedAddress(updatedItems[0]);
 
     setShowAddressForm(false);
     setAddressBeingEdited(null);
@@ -156,22 +161,32 @@ function Checkout() {
               selected={selectedAddress} 
               summaryContent={
                 <div className='selected-address'>
-                  <p>{selectedAddress?.name}</p>
+                  <h3>{selectedAddress?.name}</h3>
                   <p>{selectedAddress?.address1}</p>
                   <p>{selectedAddress?.city}, {selectedAddress?.postalCode}</p>
                 </div>}
               isExpanded={isAddressExpanded || showAddressForm || !selectedAddress}
               onToggle={handleAddressToggle}>
                 {
-                !showAddressForm && !addressBeingEdited ? 
-                (<AddressList
-                  addresses={addresses}
-                  selectedAddress={selectedAddress}
-                  onSelect={(address)=> {handleAddressSelect(address)}}
-                  onEdit={(address)=> { handleAddressEdit(address);}}
-                  onDelete={(address) => {handleAddressDelete(address)}}
-                  onAdd={handleAddressNew} >
-                </AddressList> )
+                !showAddressForm && !addressBeingEdited
+                ? (<>
+                  <AddressList
+                    addresses={addresses}
+                    selectedAddress={selectedAddress}
+                    onSelect={(address)=> {handleAddressSelect(address)}}
+                    onEdit={(address)=> { handleAddressEdit(address);}}
+                    onDelete={(address) => {handleAddressDelete(address)}}
+                    onAdd={handleAddressNew} >
+                  </AddressList> 
+                  {(addresses.length > 0) && <div>
+                    <Button 
+                      onClick={handleAddressNoChange}
+                    >
+                      Confirmar Dirección
+                    </Button>
+                  </div>}
+                </>
+                )
                 : (
                   <AddressForm
                     onSubmit={handleAddressSubmit}
@@ -240,6 +255,13 @@ function Checkout() {
                   <p><strong>Total: </strong>$0.00</p>
                   <p><strong>Fecha estimada de entrega: </strong>{new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toLocaleDateString()}</p>
                 </div>
+                { !selectedAddress || !selectedPayment 
+                  ? <div>
+                      { !selectedAddress ? 'Agrega una dirección de envío.' : '' }
+                      { !selectedPayment ? 'Agrega un método de pago.' : '' }
+                    </div>
+                  : <div> { '' } </div>
+                }
                 <Button className="play-button"
                 disabled={!selectedAddress||selectedPayment||cartItems|| cartItems === 0}
                 onClick={handleCreateOrder}

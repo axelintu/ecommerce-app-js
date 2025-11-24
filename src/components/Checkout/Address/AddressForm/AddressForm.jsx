@@ -44,9 +44,8 @@ function AddressForm({
   return (
     <form className="address-form" onSubmit={handleSubmit}>
       <h3>{isEdit ? "Editar Dirección" : "Nueva Dirección"}</h3>
-      <div>{formData?._id}</div>
       <Input
-        label="Nombre de la dirección"
+        label="Nombre de la dirección:"
         name="name"
         value={formData.name}
         onChange={handleChange}
@@ -87,10 +86,6 @@ function AddressForm({
         onChange={handleChange}
         type="text"
       />
-      {/* <input name="pais"
-        onChange={(e)=>{handleChangeCountry(e)}}
-        value={country.country}
-      /> */}
       <Input
         label="Referencia:"
         name="reference"
@@ -98,7 +93,7 @@ function AddressForm({
         onChange={handleChange}
         type="text"
       />
-      <div className="form-checkbox">
+      <div className="form-checkbox form-default">
         <input
           type="checkbox"
           name="default"
@@ -107,7 +102,7 @@ function AddressForm({
           id="defaultAddress"
         />
         <label htmlFor="defaultAddress">
-          Establecer como dirección predeterminada: {" "}
+          {" "}Establecer como dirección predeterminada
         </label>
       </div>
       <div className="form-actions">

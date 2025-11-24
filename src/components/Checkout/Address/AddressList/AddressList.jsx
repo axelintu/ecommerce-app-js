@@ -10,14 +10,15 @@ function AddressList({
     onAdd,
     onDelete
   }) {
-  console.log(addresses);
   return (
     <div className="address-list">
       <div className="address-list-header">
         <h3>Direcciones de envío</h3>
         <Button onClick={onAdd}>Agregar Nueva Dirección</Button>
       </div>
-      <div className="address-list-content">
+      { addresses.length > 0 
+      ? 
+      (<div className="address-list-content">
         {addresses.map((address) => {
           return (
             <AddressItem
@@ -30,7 +31,10 @@ function AddressList({
             />
           );
         })}
-      </div>
+      </div>)
+      : 
+      (<p>Comienza agregando una dirección.</p>)
+      }
     </div>
   );
 }

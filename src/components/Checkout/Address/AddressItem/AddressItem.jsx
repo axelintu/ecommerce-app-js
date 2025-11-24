@@ -6,7 +6,6 @@ function AddressItem({address, isDefault, onSelect, onEdit, onDelete}) {
     <div className={`address-item ${isDefault ? "default" : ""}`}>
       <div className="address-content">
         <h4>{address.name}</h4>
-        <p>_id: {address._id}</p>
         <p>{address.address1}</p>
         <p>{address.address2}</p>
         <p>{address.city}, {address.postalCode}</p>
@@ -14,9 +13,12 @@ function AddressItem({address, isDefault, onSelect, onEdit, onDelete}) {
         {isDefault && <span className="default-badge">Predeterminada</span>}
       </div>
       <div className="address-actions">
-        <Button onClick={()=> onSelect(address)}>
+        {!isDefault && <Button 
+          onClick={()=> { if (!isDefault) onSelect(address) }} 
+          disabled={isDefault}
+        >
           {isDefault?"Seleccionada":"Seleccionar"}
-        </Button>
+        </Button> }
         <Button variant="secondary" onClick={()=> onEdit(address)}>
           Editar
         </Button>

@@ -9,9 +9,12 @@ function SummarySection({
   onToggle,
   children
 }) {
+  const handleToggle = () => {
+    onToggle();
+  }
   return(
     <div className={`summary-section ${isExpanded ? "expanded" : ''}`}>
-      <div className="summary-header">
+      <div className="summary-header" onClick={handleToggle}>
         <div className="summary-title">
           <h3>{title}</h3>
           {!isExpanded && <div className="summary-badge">✓</div>}
