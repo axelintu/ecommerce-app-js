@@ -25,10 +25,13 @@ function Checkout() {
   const [showAddressForm, setShowAddressForm] =useState(false);
   const [addressBeingEdited, setAddressBeingEdited] = useState(null);
   
-  const [isPaymentMethodEdit, setIsPaymentMethodEdit] = useState(false);
-  const [paymentMethodBeingEdited, setPaymentMethodBeingEdited] = useState(null);
+  // PaymentMethod States
+  const [payments, setPayments] = useState([]);
+  const [selectedPayment, setSelectedPayment] = useState(null);
 
   const [isPaymentExpanded, setIsPaymentExpanded] = useState(false);
+  const [showPaymentMethodForm, setShowPaymentMethodForm] = useState(false);
+  const [paymentMethodBeingEdited, setPaymentMethodBeingEdited] = useState(null);
 
 
   async function loadData() {
@@ -53,11 +56,11 @@ function Checkout() {
         id: p._id || Date.now().toString(),
         alias: p.alias || `Tarjeta ****${(p.cardNumber || "").slice(-4)}`,
         cardNumber: p.cardNumber || "",
-        placeHolder: p.placeHolder || "",
+        placeHolder: p.placeHolderName || "",
         expiryDate: p.expiryDate || "",
         isDefault: p.isDefault || false,
       }));
-      setPayments(normalizedPayments || []);
+      setPayments(payList || []);
       setSelectedAddress(defaultAdd);
       setSelectedPayment(defaultPay);
     } catch (error) {
@@ -78,7 +81,7 @@ function Checkout() {
   const handleAddressToggle = () => {
     setShowAddressForm(false);
     setAddressBeingEdited(null);
-    setIsAddressExpanded((prev)=> !prev)
+    setIsAddressExpanded((prev)=> !prev);
   }
   const handleAddressSelect = (address) => {
     setSelectedAddress(address);
@@ -137,16 +140,74 @@ function Checkout() {
     setAddressBeingEdited(null);
     setIsAddressExpanded(true);
   }
+// Handle Payment Functions  
+  const handleTogglePayment = () => {
+    setShowPaymentMethodForm(false);
+    setPaymentMethodBeingEdited(null);
+    setIsPaymentExpanded((prev)=> !prev);
+  }
+  const handlePaymentMethodSelect = (payment) => { 
+    setSelectedPayment(payment);
+    setShowPaymentMethodForm(false);
+    setPaymentMethodBeingEdited(null);
+    setIsPaymentExpanded(false);
+  }
+  const handlePaymentNoChange = () => {
+    setShowPaymentMethodForm(false);
+    setPaymentMethodBeingEdited(null);
+    setIsPaymentExpanded(false);
+  }
+  const handlePrepareNewPayment = () => {
+    setShowPaymentMethodForm(true);
+    setPaymentMethodBeingEdited(null);
+    setIsPaymentExpanded(true);
+  }
+  const handleSubmitNewPayment = (formData) => {
+    let item = null;
+    let updatedItems = [];
+    if (paymentMethodBeingEdited) {
+      item = { ...paymentMethodBeingEdited, ...formData }
+      updatedItems = payments.map((payment) =>
+        payment._id === item._id ? item : payment
+      )
+    } else {
+      const newId = Date.now().toString();
+      item = { _id: newId, ...formData};
+      updatedItems = [...payments, item];
+    }
+    setPayments(updatedItems);
+    if (updatedItems.length === 1) setSelectedPayment(updatedItems[0]);
 
-  const handlePaymentEdit = (payment) => { 
+    setShowPaymentMethodForm(false);
+    setPaymentMethodBeingEdited(null);
+    setIsPaymentExpanded(true);
+  }
+  const handleEditPaymentMethod = (payment) => {
+    setShowPaymentMethodForm(true);
     setPaymentMethodBeingEdited(payment);
-    console.log(payment) 
-  };
+    setIsPaymentExpanded(true);
+  }
+  const handleDeletePaymentMethod = (payment) => {
+    const updatedsMethods = payments.filter((pay)=> pay._id !== payment._id);
+    if (selectedPayment && selectedPayment._id === payment.id) {
+      if (updatedsMethods.length > 0) {
+        setSelectedPayment(updatedsMethods[0]);
+      } else {
+        setSelectedPayment(null);
+      }
+    }
+    setPayments(updatedsMethods);
+  }
+  const handleCancelPaymentForm = () => {
+    setShowPaymentMethodForm(false);
+    setPaymentMethodBeingEdited(null);
+    setIsPaymentExpanded(true);
+  }
 
   const handleCreateOrder = () => {
 
   }
-
+  
   return (
     loading 
     ? (<div className="checkout-loading">
@@ -174,7 +235,7 @@ function Checkout() {
                     addresses={addresses}
                     selectedAddress={selectedAddress}
                     onSelect={(address)=> {handleAddressSelect(address)}}
-                    onEdit={(address)=> { handleAddressEdit(address);}}
+                    onEdit={(address)=> { handleAddressEdit(address)}}
                     onDelete={(address) => {handleAddressDelete(address)}}
                     onAdd={handleAddressNew} >
                   </AddressList> 
@@ -196,39 +257,49 @@ function Checkout() {
                   </AddressForm>
                   )
                 }
-              
             </SummarySection>
             <SummarySection 
               title="2. Método de pago" 
               selected={selectedPayment} 
               summaryContent={
                 <div className='selected-payment'>
-                  <p>{selectedPayment?.alias}</p>
+                  <h3>{selectedPayment?.alias}</h3>
                   <p>{selectedPayment?.cardHolderName}</p>
+                  {/* <p>{selectedPayment?.}</p> */}
                   <p>{selectedPayment?.expiryDate}</p>
                 </div>}
-              isExpanded={isPaymentExpanded}
-              onToggle={()=> {
-                console.log(`Expand ${JSON.stringify(selectedPayment)}`);
-                setIsPaymentExpanded(true);
-              }}>
-                <PaymentList
-                  paymentMethods={payments}
-                  selectedMethod={selectedPayment}
-                  onSelect={(method) => {
-                    setSelectedPayment(method);
-                  }}
-                  onEdit={handlePaymentEdit}
-                  onAdd={() => console.log("Add payment method")} >
-                </PaymentList>
-                { isPaymentMethodEdit && paymentMethodBeingEdited && (
-                  <div>IS BEING EDITED</div>
-                ) }
-                <PaymentForm
-                  onSubmit={handlePaymentEdit}
-                  initialValues={null}
-                  isEdit={false} >
-                </PaymentForm>
+              isExpanded={isPaymentExpanded || showPaymentMethodForm || !selectedPayment}
+              onToggle={handleTogglePayment}
+              >
+                {
+                  !showPaymentMethodForm && !paymentMethodBeingEdited
+                  ? (<>
+                  <PaymentList
+                    paymentMethods={payments}
+                    selectedMethod={selectedPayment}
+                    onSelect={(method) => { handlePaymentMethodSelect(method)}}
+                    onEdit={(method)=> {handleEditPaymentMethod(method)}}
+                    onDelete={(method)=>{handleDeletePaymentMethod(method)}}
+                    onAdd={handlePrepareNewPayment} >
+                  </PaymentList>
+                  {(payments.length > 0) && <div>
+                    <Button 
+                      onClick={handlePaymentNoChange}
+                    >
+                      Confirmar Método de Pago
+                    </Button>
+                  </div>}
+                  </>)
+                  :
+                  (
+                  <PaymentForm
+                    onSubmit={handleSubmitNewPayment}
+                    onCancel={handleCancelPaymentForm}
+                    initialValues={paymentMethodBeingEdited || {}}
+                    isEdit={!!paymentMethodBeingEdited} >
+                  </PaymentForm>
+                  )
+                }
             </SummarySection>
             <SummarySection 
               title="3. Revisa tu pedido"

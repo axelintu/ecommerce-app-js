@@ -10,5 +10,5 @@ export function getShippingAddresses() {
 
 export async function getDefaultshippingAddress() {
   const addresses = await getShippingAddresses();
-  return addresses.find((a)=> a.isDefault || a.default || addresses[0] || null);
+  return addresses.find((a)=> a.isDefault === true || a.default === true || addresses[0] || null);
 }
