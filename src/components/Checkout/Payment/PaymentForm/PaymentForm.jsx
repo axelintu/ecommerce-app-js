@@ -30,8 +30,8 @@ function PaymentForm({isEdit = false, onSubmit, initialValues={}}) {
       <h3>{isEdit ? "Editar Tarjeta" : "Nueva Tarjeta"}</h3>
       <Input
         label="Alias de la tarjeta"
-        name="name"
-        value={formData.name}
+        name="alias"
+        value={formData.alias}
         onChange={handleChange}
         type="text"
       />

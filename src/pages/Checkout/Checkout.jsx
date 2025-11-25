@@ -264,6 +264,7 @@ function Checkout() {
               summaryContent={
                 <div className='selected-payment'>
                   <h3>{selectedPayment?.alias}</h3>
+                  <p>{selectedPayment?.cardNumber}</p>
                   <p>{selectedPayment?.cardHolderName}</p>
                   {/* <p>{selectedPayment?.}</p> */}
                   <p>{selectedPayment?.expiryDate}</p>
@@ -334,7 +335,9 @@ function Checkout() {
                   : <div> { '' } </div>
                 }
                 <Button className="play-button"
-                disabled={!selectedAddress||selectedPayment||cartItems|| cartItems === 0}
+                disabled={
+                  !selectedAddress || selectedPayment || cartItems || cartItems === 0 
+                }
                 onClick={handleCreateOrder}
                 >
                   {

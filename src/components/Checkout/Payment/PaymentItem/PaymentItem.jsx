@@ -13,7 +13,6 @@ function PaymentItem({
     <div className={`checkout-list-item ${isDefault ? "default" : ""}`}>
       <div className="checkout-list-item-content">
         <h4>{paymentMethod.alias}</h4>
-        <p>{paymentMethod.isDefault}</p>
         <p>{paymentMethod.cardHolderName}</p>
         <p>{paymentMethod.type}</p>
         <p>{paymentMethod.expiryDate}</p>
