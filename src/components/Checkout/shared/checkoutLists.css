@@ -1,26 +1,26 @@
-/* .address-list {
+.checkout-list {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: var(--gap);
 }
 
-.address-list-header {
+.checkout-list-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--gap);
 }
 
-.address-list-header h3 {
+.checkout-list-header h3 {
   margin: 0;
   font-size: clamp(20px, 2vw, 24px);
   color: var(--text);
   font-weight: 600;
 }
 
-.address-list-content {
+.checkout-list-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
-} */
+}

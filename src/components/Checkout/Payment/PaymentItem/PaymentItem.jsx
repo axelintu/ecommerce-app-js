@@ -1,17 +1,15 @@
 import Button from '../../../common/Button';
 import './PaymentItem.css';
+import '../../shared/checkoutListItems.css';
 
 function PaymentItem({paymentMethod, isDefault, onSelect, onEdit}) {
   return (
-    <div className={`payment-method-item ${isDefault} ? "default" : ""`}>
-          <div className="payment-method-content">
             <h4>{paymentMethod.cardNumber}</h4>
             <p>{paymentMethod.cardHolderName}</p>
             <p>{paymentMethod.type}</p>
             <p>{paymentMethod.expiryDate}</p>
             {isDefault && <span className="default-badge">Predeterminada</span>}
           </div>
-          <div className="payment-method-actions">
             <Button onClick={()=> onSelect(paymentMethod)}>
               {isDefault?"Seleccionada":"Seleccionar"}
             </Button>
@@ -20,6 +18,9 @@ function PaymentItem({paymentMethod, isDefault, onSelect, onEdit}) {
             </Button>
           </div>
         </div>
+    <div className={`checkout-list-item ${isDefault ? "default" : ""}`}>
+      <div className="checkout-list-item-content">
+      <div className="checkout-list-item-actions">
   );
 }
 

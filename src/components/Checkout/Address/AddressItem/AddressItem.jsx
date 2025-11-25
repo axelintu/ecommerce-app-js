@@ -1,18 +1,25 @@
 import Button from '../../../common/Button';
 import './AddressItem.css';
+import '../../shared/checkoutListItems.css';
 
-function AddressItem({address, isDefault, onSelect, onEdit, onDelete}) {
+function AddressItem({
+  address,
+  isDefault,
+  onSelect,
+  onEdit,
+  onDelete
+}) {
   return (
-    <div className={`address-item ${isDefault ? "default" : ""}`}>
-      <div className="address-content">
+    <div className={`checkout-list-item ${isDefault ? "default" : ""}`}>
+      <div className="checkout-list-item-content">
         <h4>{address.name}</h4>
         <p>{address.address1}</p>
         <p>{address.address2}</p>
         <p>{address.city}, {address.postalCode}</p>
         <p>{address.reference}</p>
-        {isDefault && <span className="default-badge">Predeterminada</span>}
+        {isDefault && <div className="default-badge">Predeterminada</div>}
       </div>
-      <div className="address-actions">
+      <div className="checkout-list-item-actions">
         {!isDefault && <Button 
           onClick={()=> { if (!isDefault) onSelect(address) }} 
           disabled={isDefault}
