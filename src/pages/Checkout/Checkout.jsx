@@ -12,9 +12,13 @@ import Loading from '../../components/common/Loading/Loading';
 import './Checkout.css';
 import Button from '../../components/common/Button';
 import { useCart } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 function Checkout() {
-  const cartItems = useCart();
+  const {cartItems, getTotalPrice} = useCart();
+  const total = getTotalPrice();
+  const navigate = useNavigate();
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   // Address States
@@ -33,6 +37,16 @@ function Checkout() {
   const [showPaymentMethodForm, setShowPaymentMethodForm] = useState(false);
   const [paymentMethodBeingEdited, setPaymentMethodBeingEdited] = useState(null);
 
+  // 
+  const formatMoney = (value) => new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN"}).format(value);
+  const subtotal = typeof total === "number" ? total : 0;
+  const TAX_RATE = 0.16;
+  const SHIPPING_RATE = 350;
+  const FREE_SHIPPING_THRESHOLD = 1000;
+
+  const taxAmount = parseFloat((subtotal*TAX_RATE).toFixed(2));
+  const shippingCost = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_RATE;
+  const grandTotal = parseFloat((subtotal + taxAmount + shippingCost).toFixed(2));
 
   async function loadData() {
     setLoading(true);
@@ -70,6 +84,15 @@ function Checkout() {
       setLoading(false);
     }
   }
+
+  useEffect(()=>{
+    if (!cartItems ||cartItems.length === 0) {
+      navigate("/cart");
+    }
+  }, [cartItems, navigate]);
+
+  
+
 
   useEffect(()=>{
     let mounted = true;
@@ -207,7 +230,6 @@ function Checkout() {
   const handleCreateOrder = () => {
 
   }
-  
   return (
     loading 
     ? (<div className="checkout-loading">
@@ -264,7 +286,7 @@ function Checkout() {
               summaryContent={
                 <div className='selected-payment'>
                   <h3>{selectedPayment?.alias}</h3>
-                  <p>{selectedPayment?.cardNumber}</p>
+                  <p>**** {selectedPayment?.cardNumber?.slice(-4) || "----"}</p>
                   <p>{selectedPayment?.cardHolderName}</p>
                   {/* <p>{selectedPayment?.}</p> */}
                   <p>{selectedPayment?.expiryDate}</p>
@@ -321,10 +343,10 @@ function Checkout() {
                   <strong>Método de pago: </strong>{selectedPayment?.alias}
                 </p>
                 <div className="order-costs">
-                  <p><strong>Subtotal: </strong>$0.00</p>
-                  <p><strong>IVA (16%): </strong>$0.00</p>
-                  <p><strong>Envío: </strong>$0.00</p>
-                  <p><strong>Total: </strong>$0.00</p>
+                  <p><strong>Subtotal: </strong>{formatMoney(subtotal)}</p>
+                  <p><strong>IVA (16%): </strong>{formatMoney(taxAmount)}</p>
+                  <p><strong>Envío: </strong>{formatMoney(shippingCost)}</p>
+                  <p><strong>Total: </strong>{formatMoney(grandTotal)}</p>
                   <p><strong>Fecha estimada de entrega: </strong>{new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toLocaleDateString()}</p>
                 </div>
                 { !selectedAddress || !selectedPayment 
@@ -336,26 +358,18 @@ function Checkout() {
                 }
                 <Button className="play-button"
                 disabled={
-                  !selectedAddress || selectedPayment || cartItems || cartItems === 0 
+                  !selectedAddress || !selectedPayment || !cartItems || cartItems === 0 
                 }
                 onClick={handleCreateOrder}
                 >
-                  {
-                  !cartItems || cartItems.length === 0 
-                  ? 'No hay productos en el carrito'
-                  : selectedAddress
-                    ? 'Selecciona una dirección de envío'
-                    : !selectedPayment 
-                      ? 'Selecciona un método de pago'
-                      : 'Confirmar y realizar pago'
-                }
+                  Confirmar y pagar
                 </Button>
               </div>
             </div>
           </div>
         </div>
       )
-    );
+);
 }
 
 export default Checkout;

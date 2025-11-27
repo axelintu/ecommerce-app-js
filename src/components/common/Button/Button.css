@@ -51,6 +51,15 @@
   background: rgba(var(--accent-rgb), 0.1);
 }
 
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c82333;
+}
+
 /* Button Sizes */
 .btn-sm {
   padding: 8px 16px;

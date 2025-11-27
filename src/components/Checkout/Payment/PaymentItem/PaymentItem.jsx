@@ -9,10 +9,15 @@ function PaymentItem({
   onEdit,
   onDelete 
 }) {
+  const maskCardNumber = (number) => {
+    if (!number) return "**** **** **** ****";
+    return `**** **** **** ${number.slice(-4)}`; 
+  }
   return (
     <div className={`checkout-list-item ${isDefault ? "default" : ""}`}>
       <div className="checkout-list-item-content">
         <h4>{paymentMethod.alias}</h4>
+        <p>{maskCardNumber(paymentMethod.cardNumber)}</p>
         <p>{paymentMethod.cardHolderName}</p>
         <p>{paymentMethod.type}</p>
         <p>{paymentMethod.expiryDate}</p>

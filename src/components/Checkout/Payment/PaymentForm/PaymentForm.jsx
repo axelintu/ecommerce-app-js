@@ -27,7 +27,7 @@ function PaymentForm({isEdit = false, onSubmit, initialValues={}}) {
   }
   return (
     <form className="address-form" onSubmit={handleSubmit}>
-      <h3>{isEdit ? "Editar Tarjeta" : "Nueva Tarjeta"}</h3>
+      <h3>{isEdit ? "Editar Método de Pago" : "Nuevo Método de Pago"}</h3>
       <Input
         label="Alias de la tarjeta"
         name="alias"
@@ -48,6 +48,7 @@ function PaymentForm({isEdit = false, onSubmit, initialValues={}}) {
         value={formData.cardNumber}
         onChange={handleChange}
         type="text"
+        placeHolder="1234-5678-9012-3456"
       />
       <Input
         label="Nombre del Titular:"
@@ -62,6 +63,7 @@ function PaymentForm({isEdit = false, onSubmit, initialValues={}}) {
         value={formData.expiryDate}
         onChange={handleChange}
         type="text"
+        placeHolder="MM/YY"
       />
       <div className="form-checkbox">
         <input

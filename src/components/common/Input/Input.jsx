@@ -9,7 +9,8 @@ export default function Input({
   disabled = false,
   className = "",
   id,
-  name
+  name,
+  ...otherProps
 }) {
   const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -29,6 +30,7 @@ export default function Input({
         placeholder={placeholder}
         disabled={disabled}
         className="input-field"
+        {...otherProps}
       />
     </div>
   );
