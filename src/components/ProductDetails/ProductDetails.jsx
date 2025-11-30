@@ -5,6 +5,7 @@ import { getProductById } from "../../services/productService";
 import Button from "../common/Button";
 import ErrorMessage from "../common/ErrorMessage/ErrorMessage";
 import Loading from "../common/Loading/Loading";
+import './ProductDetails.css';
 
 export default function ProductDetails({ productId }) {
   const { addToCart } = useCart();
@@ -41,7 +42,7 @@ export default function ProductDetails({ productId }) {
 
   if (!product) return null;
 
-  const { name, description, price, stock, imagesUrl, category } = product;
+  const { name, description, price, stock, images, category } = product;
   const stockBadge = stock > 0 ? "success" : "error";
   const stockLabel = stock > 0 ? "En stock" : "Agotado";
   const handleAddToCart = (e) => {
@@ -57,7 +58,7 @@ export default function ProductDetails({ productId }) {
       </nav>
       <div className="product-details">
         <div className="product-images">
-          {imagesUrl?.map((img, index) => {
+          {images?.map((img, index) => {
             return <img key={index} src={img} alt={name} />;
           })}
         </div>

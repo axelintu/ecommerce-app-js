@@ -1,0 +1,8 @@
+.product-details img {
+  max-width: 100%;
+}
+
+.product-details {
+  display: flex;
+  flex: 1 1 1;
+}
