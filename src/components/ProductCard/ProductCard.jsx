@@ -22,10 +22,9 @@ function ProductCard({ product, orientation = "vertical"  }) {
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(product, 1);
-    console.log(product, "agregado al carrito");
   }
 
-  const productLink = `/product/${product.id}`;
+  const productLink = `/product/${product._id}`;
   const cardClass = `product-card product-card--${orientation}`;
 
   return (

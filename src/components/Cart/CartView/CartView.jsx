@@ -9,7 +9,7 @@ function CartView() {
     <div className="cart-items">
       {cartItems &&
         cartItems.map((item) => (
-          <div className="cart-item" key={item.id}>
+          <div className="cart-item" key={item._id}>
             <div className="cart-item-image">
               <img src={item.image} alt={item.name} />
             </div>
@@ -23,7 +23,7 @@ function CartView() {
               <Button
                 variant="secondary"
                 size="sm"
-                onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                onClick={() => updateQuantity(item._id, item.quantity - 1)}
               >
                 <Icon name="minus" size={15}></Icon>
               </Button>
@@ -31,7 +31,7 @@ function CartView() {
               <Button
                 variant="secondary"
                 size="sm"
-                onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                onClick={() => updateQuantity(item._id, item.quantity + 1)}
               >
                 <Icon name="plus" size={15}></Icon>
               </Button>
@@ -41,7 +41,7 @@ function CartView() {
               ${(item.price * item.quantity).toFixed(2)}
             </div>
 
-            <Button size="sm" onClick={() => removeFromCart(item.id)}>
+            <Button size="sm" onClick={() => removeFromCart(item._id)}>
               <Icon name="close" size={15}></Icon>
             </Button>
           </div>

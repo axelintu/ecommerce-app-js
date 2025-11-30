@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "_id": "1",
     "name": "Paquete de 5 cuadernos de raya B5",
     "description": "Cinco cuadernos de alta calidad con lomos codificados por colores para ayudarte a organizarte entre asignaturas. Cada uno de estos cuadernos B5 tiene 30 páginas delgadas, pero resistentes a la tinta de resaltadores y bolígrafos sin traspasar. El diseño de las páginas se presenta con líneas horizontales con un espacio entre ellas de 6 mm (0,24\").",
     "price": 99.99,
@@ -19,7 +19,7 @@
     "o": "https://www.muji.us/collections/paper-goods/products/5-pack-notebook"
   },
   {
-    "id": 2,
+    "_id": "2",
     "name": "Cuaderno de bolsillo japonés con marcapáginas",
     "description": "Un cuaderno sencillo hecho con la misma técnica de encuadernación que una novela de bolsillo. Incluye un marcapáginas de hilo rojo para marcar la página.",
     "price": 79.99,
@@ -36,7 +36,7 @@
     "o": "https://www.muji.us/collections/paper-goods/products/recycled-paper-bind-plain-pocket-notebook-9s62"
   },
   {
-    "id": 3,
+    "_id": "3",
     "name": "Agenda mensual de papel reciclado",
     "description": "Un planificador que te permite escribir libremente la fecha para que puedas empezar a usarlo en cualquier momento.",
     "price": 39.90,
@@ -52,7 +52,7 @@
     "o": "https://www.muji.us/collections/paper-goods/products/recycled-paper-monthly-planner-9s67"
   },
   {
-    "id": 4,
+    "_id": "4",
     "name": "Agenda semana de papel reciclado",
     "description": "Un planificador que te permite escribir libremente la fecha para que puedas empezar a usarlo en cualquier momento.",
     "price": 130.00,
@@ -68,7 +68,7 @@
     "o": "https://www.muji.us/collections/paper-goods/products/recycled-paper-weekly-planner-9s67"
   },
   {
-    "id": 5,
+    "_id": "5",
     "name": "Rollo de notas adhesivas de colores perforadas",
     "description": "Dale un toque de color a tus notas y mantente organizado con nuestro rollo de notas adhesivas de colores perforadas. Con tres opciones vibrantes, puedes etiquetar y recordar fácilmente cada detalle importante. El rollo está preperforado en incrementos de 40 mm (1,6\"), lo que facilita anotar recordatorios o mensajes de cualquier longitud.",
     "price": 119.99,
@@ -92,7 +92,7 @@
     "o": "https://www.muji.us/collections/paper-goods/products/perforated-color-sticky-note-roll-ndfa3a-23aw?variant=44044394430654"
   },
   {
-    "id": 6,
+    "_id": "6",
     "name": "Sticky notes de gatos",
     "description": "¡Dale un toque felino a tu organización con nuestras Notas Adhesivas de Gatos! Elige entre 3 encantadores diseños de gatos para decorar tus cuadernos y agendas. Con este set de notas adhesivas, nunca olvidarás una tarea. Mantén tus notas lindas y organizadas con nuestras notas adhesivas de temática felina.",
     "price": 119.99,

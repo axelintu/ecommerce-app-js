@@ -44,6 +44,10 @@ export default function ProductDetails({ productId }) {
   const { name, description, price, stock, imagesUrl, category } = product;
   const stockBadge = stock > 0 ? "success" : "error";
   const stockLabel = stock > 0 ? "En stock" : "Agotado";
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    addToCart(product, 1);
+  }
 
   return (
     <div className="product-container">
@@ -64,7 +68,7 @@ export default function ProductDetails({ productId }) {
           <span className={`${stockBadge}`}>{stockLabel}</span>
         </div>
         <div className="product-actions">
-          <Button onClick={(e) => addToCart(e)}>Agregar al carrito</Button>
+          <Button onClick={(e) => handleAddToCart(e)}>Agregar al carrito</Button>
           <Link to="/cart">Ver el carrito</Link>
         </div>
       </div>

@@ -227,7 +227,7 @@ function Checkout() {
   }
   const handleDeletePaymentMethod = (payment) => {
     const updatedsMethods = payments.filter((pay)=> pay._id !== payment._id);
-    if (selectedPayment && selectedPayment._id === payment.id) {
+    if (selectedPayment && selectedPayment._id === payment._id) {
       if (updatedsMethods.length > 0) {
         setSelectedPayment(updatedsMethods[0]);
       } else {
