@@ -3,7 +3,7 @@ import Input from '../../../common/Input/Input';
 import Button from '../../../common/Button';
 import './PaymentForm.css';
 
-function PaymentForm({isEdit = false, onSubmit, initialValues={}}) {
+function PaymentForm({isEdit = false, onSubmit, onCancel, initialValues={}}) {
   const [formData, setFormData]= useState({
     "name": "",
     "type": "",
@@ -82,6 +82,11 @@ function PaymentForm({isEdit = false, onSubmit, initialValues={}}) {
         <Button type="submit">
           {isEdit ? "Guardar Cambios" : "Agregar Tarjeta"}
         </Button>
+        {onCancel && (
+          <Button type="button" variant="secondary" onClick={onCancel}>
+            Cancelar
+          </Button>
+        )}
       </div>
     </form>
   );
