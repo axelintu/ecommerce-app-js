@@ -4,6 +4,7 @@ import "./App.css";
 import Layout from "../../layout";
 import Home from "../../pages/Home";
 import Login from "../../pages/Login";
+import OrderConfirmation from "../../pages/OrderConfirmation/";
 import Product from "../../pages/Product";
 import Profile from "../../pages/Profile";
 import Cart from "../../pages/Cart/Cart";
@@ -50,6 +51,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/order-confirmation" element={<OrderConfirmation/>} />
             <Route
               path="/settings"
               element={
