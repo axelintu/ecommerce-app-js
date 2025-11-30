@@ -272,14 +272,14 @@ function Checkout() {
     };
 
     //localStorage
-    const fowOrders = localStorage.getItem('fowOerders');
+    const fowOrders = localStorage.getItem('fowOrders');
     let orders = [];
     try {
       orders = JSON.parse(fowOrders);
-      if(!Array.isArray(fowOrders)) orders = [];
+      if(!Array.isArray(orders)) orders = [];
     } catch(e) {
       orders = [];
-    }
+    }    
     orders.push(order);
     localStorage.setItem("fowOrders", JSON.stringify(orders));
     setIsOrderFinished();
