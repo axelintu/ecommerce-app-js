@@ -15,7 +15,11 @@ import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 
 function Checkout() {
-  const {cartItems, getTotalPrice} = useCart();
+  const { 
+    cartItems, 
+    clearCart, 
+    getTotalPrice 
+  } = useCart();
   const total = getTotalPrice();
   const navigate = useNavigate();
   
@@ -37,8 +41,11 @@ function Checkout() {
   const [showPaymentMethodForm, setShowPaymentMethodForm] = useState(false);
   const [paymentMethodBeingEdited, setPaymentMethodBeingEdited] = useState(null);
 
+  const [isOrderFinished, setIsOrderFinished] = useState(false);
   // 
   const formatMoney = (value) => new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN"}).format(value);
+
+
   const subtotal = typeof total === "number" ? total : 0;
   const TAX_RATE = 0.16;
   const SHIPPING_RATE = 350;
@@ -77,6 +84,9 @@ function Checkout() {
       setPayments(payList || []);
       setSelectedAddress(defaultAdd);
       setSelectedPayment(defaultPay);
+
+      // setIsAddressExpanded(!defaultAdd);
+      // setIsPaymentExpanded(!defaultPay);
     } catch (error) {
       setError('No se pudieron cargar las direcciones o métodos de pago');
       console.error(error);
@@ -86,10 +96,15 @@ function Checkout() {
   }
 
   useEffect(()=>{
-    if (!cartItems ||cartItems.length === 0) {
-      navigate("/cart");
+    // No podemos estar en checkout sin carrito
+    if(!cartItems || cartItems.length === 0) { 
+      // Si acbamos de confirmar la orden el carrito se vació, 
+      // pero no debemos navegar hacia cart, sino hacia /order-confirmation
+      if(isOrderFinished === false) {
+        navigate("/cart");
+      }
     }
-  }, [cartItems, navigate]);
+  },[cartItems, navigate]);
 
   
 
@@ -228,7 +243,48 @@ function Checkout() {
   }
 
   const handleCreateOrder = () => {
+    // No podemos crear una orden si alguna de estas condiciones *no 
+    // (!/===0) se cumple 
+    if (
+      !selectedAddress ||
+      !selectedPayment ||
+      !cartItems ||
+      cartItems.length === 0
+    ) {
+      return; // Early return si no tenemos carrito/pago/dirección
+    }
+    
+    const order = {
+      id: Date.now().toString(),
+      date: new Date().toISOString(),
+      items: cartItems.map((item)=>{
+        return {
+          ...item,
+          subtotal: item.price * item.quantity
+        }
+      }),
+      subtotal,
+      tax: taxAmount,
+      shippingCost: shippingCost,
+      shippingAddress: selectedAddress,
+      paymentMethod: selectedPayment,
+      status: "confirmed"
+    };
 
+    //localStorage
+    const fowOrders = localStorage.getItem('fowOerders');
+    let orders = [];
+    try {
+      orders = JSON.parse(fowOrders);
+      if(!Array.isArray(fowOrders)) orders = [];
+    } catch(e) {
+      orders = [];
+    }
+    orders.push(order);
+    localStorage.setItem("fowOrders", JSON.stringify(orders));
+    setIsOrderFinished();
+    navigate("/order-confirmation", { state: {order} })
+    clearCart();
   }
   return (
     loading 
