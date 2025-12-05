@@ -6,6 +6,8 @@ import Button from "../common/Button";
 import ErrorMessage from "../common/ErrorMessage/ErrorMessage";
 import Loading from "../common/Loading/Loading";
 import './ProductDetails.css';
+import ProductDescription from "../ProductDescription/ProductDescription";
+import ProductFeatures from "../ProductFeatures/ProductFeatures";
 
 export default function ProductDetails({ productId }) {
   const { addToCart } = useCart();
@@ -42,13 +44,15 @@ export default function ProductDetails({ productId }) {
 
   if (!product) return null;
 
-  const { name, description, price, stock, images, category } = product;
+  const { name, description, features, price, stock, image, images, category } = product;
   const stockBadge = stock > 0 ? "success" : "error";
   const stockLabel = stock > 0 ? "En stock" : "Agotado";
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(product, 1);
   }
+  console.log(Object.entries(features.data));
+  
 
   return (
     <div className="product-container">
@@ -58,17 +62,35 @@ export default function ProductDetails({ productId }) {
       </nav>
       <div className="product-details">
         <div className="product-images">
-          {images?.map((img, index) => {
-            return <img key={index} src={img} alt={name} />;
-          })}
+          { images.length > 0
+            ? images?.map((img, index) => {
+              return <img key={index} src={img} alt={name} />;
+              })
+            : image ? <img src={image} alt={name} /> : ''
+          }
         </div>
         <div className="product-info">
           <h3>{name}</h3>
-          <p>{description}</p>
-          <span>{price}</span>
-          <span className={`${stockBadge}`}>{stockLabel}</span>
+          <ProductDescription desc={description}></ProductDescription>
+          <ProductFeatures features={features}></ProductFeatures>
+          
+          {/* { features.data && 
+            ( <div><ul> 
+              {
+              Object.entries(features.data).map(
+                ([key, value])=> <li style={{whiteSpace: "pre-wrap"}}><strong>{key}:</strong> {value}</li>
+              )
+              }
+            </ul>
+            </div>
+            )
+          } */}
         </div>
         <div className="product-actions">
+          <div>
+            <span>{price}</span>
+            <span className={`${stockBadge}`}>{stockLabel}</span>
+          </div>
           <Button onClick={(e) => handleAddToCart(e)}>Agregar al carrito</Button>
           <Link to="/cart">Ver el carrito</Link>
         </div>

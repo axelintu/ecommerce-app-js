@@ -1,111 +1,528 @@
 [
   {
-    "_id": "1",
-    "name": "Paquete de 5 cuadernos de raya B5",
-    "description": "Cinco cuadernos de alta calidad con lomos codificados por colores para ayudarte a organizarte entre asignaturas. Cada uno de estos cuadernos B5 tiene 30 páginas delgadas, pero resistentes a la tinta de resaltadores y bolígrafos sin traspasar. El diseño de las páginas se presenta con líneas horizontales con un espacio entre ellas de 6 mm (0,24\").",
+    "_id": "1764535731828",
+    "name": "Medalla del Gacha ZENSE 2024",
+    "description": {
+      "type": "p",
+      "data": ["Esta es una medalla exclusiva para el gacha celebrado en el LIVE TOUR 2024 \"Zensei\" de Yorushika."]
+      },
+    "features": {
+      "type": "li",
+      "data": {
+        "Color": "Plata",
+        "Material": "Hierro",
+        "Tamaño": "27mm"
+      }
+    },
+    "notes": [{
+      "type": "alert",
+      "data": "*Estas medallas se utilizaron en el gacha celebrado en el LIVE TOUR 2024 \"Zensei\". Se han limpiado y desinfectado. \nAl no ser nuevas, pueden presentar pequeños arañazos. Tenga esto en cuenta antes de comprar."
+    }
+    ],
     "price": 99.99,
-    "image": "/images/products/5-cuadernos-raya/4548076316145_01_1260_1260x1260_result.jpg",
-    "images": [
-      "/images/products/5-cuadernos-raya/4548076316145_01_1260_1260x1260_result.jpg",
-      "/images/products/5-cuadernos-raya/4548076316145_02_1260_1260x1260_result.jpg",
-      "/images/products/5-cuadernos-raya/4548076316145_1260_1260x1260_result.jpg",
-      "/images/products/5-cuadernos-raya/muji13815_1330x1269_result.jpg",
-      "/images/products/5-cuadernos-raya/Notebooks_cbf3e10b-79db-4886-9c3b-29b2ca9f31b0_1500x917_result.jpg"
-    ],
-    "category": "Papelería",
+    "image": "/images/prods/yorushika/1764535731828/YORUSHIKA_w6ZbzfHh_251110_medal_zensei2024.jpg",
+    "images": [],
+    "artist": {
+      "_id": "yorushika",
+      "name": "Yorushika (ヨルシカ)"
+    },
+    "category": {
+      "_id": "tour-merch",
+      "name": "Tour Merch"
+    },
     "stock": 25,
-    "typeName": "",
-    "type": "",
-    "o": "https://www.muji.us/collections/paper-goods/products/5-pack-notebook"
+    "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=101191"
   },
   {
-    "_id": "2",
-    "name": "Cuaderno de bolsillo japonés con marcapáginas",
-    "description": "Un cuaderno sencillo hecho con la misma técnica de encuadernación que una novela de bolsillo. Incluye un marcapáginas de hilo rojo para marcar la página.",
-    "price": 79.99,
-    "image": "/images/products/cuaderno-plano-japones/1071188810010210811488087120_m.jpg",
-    "images": [
-      "/images/products/cuaderno-plano-japones/1071188810010210811488087120_m.jpg",
-      "/images/products/cuaderno-plano-japones/4550182111262_org_2000x2000_m.jpg",
-      "/images/products/cuaderno-plano-japones/4550182111286_02_org_2000x2000_m.jpg"
+    "_id": "1764557132830",
+    "name": "Camiseta de Plagiarism Re-enactment (盗作再演)",
+    "description": {
+      "type": "p",
+      "data": ["Camiseta de la gira Plagiarism Re-enactment."]
+    },
+    "features": {
+      "type": "li",
+      "data": {
+        "Color": "Azul marino",
+        "Material": "65 % poliéster, 35 % algodón",
+        "Talla": "Solo disponible en M"
+      }
+    },
+    "notes": [{
+      "type": "info",
+      "data": "Largo: 8cm \nBusto: 62cm \nAncho de hombros: 57cm \nLargo de manga: 29cm"
+    }
     ],
-    "category": "Papelería",
-    "stock": 40,
-    "typeName": "Tamaño",
-    "type": "A6",
-    "o": "https://www.muji.us/collections/paper-goods/products/recycled-paper-bind-plain-pocket-notebook-9s62"
+    "price": 99.99,
+    "image": "/images/prods/yorushika/1764557132830/re_yorushika_tousaku_0815_en5tsHew3y_01.jpg",
+    "images": [
+      "/images/prods/yorushika/1764557132830/re_yorushika_tousaku_0815_en5tsHew3y_01.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_01.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_02.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_03.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_04.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_05.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_06.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_07.jpg",
+      "/images/prods/yorushika/1764557132830/yorushika_0801_fc_T_S5tbHFfZ_08.jpg"
+    ],
+    "artist": {
+      "_id": "yorushika",
+      "name": "Yorushika (ヨルシカ)"
+    },
+    "category": {
+      "_id": "tshirt",
+      "name": "Playeras"
+    },
+    "stock": 25,
+    "o": ""
   },
   {
-    "_id": "3",
-    "name": "Agenda mensual de papel reciclado",
-    "description": "Un planificador que te permite escribir libremente la fecha para que puedas empezar a usarlo en cualquier momento.",
-    "price": 39.90,
-    "image": "/images/products/agenda-mes-papel-reciclado/4550182109757_02_1260_1260x1260_m.jpg",
-    "images": [
-      "/images/products/agenda-mes-papel-reciclado/4550182109757_02_1260_1260x1260_m.jpg",
-      "/images/products/agenda-mes-papel-reciclado/4550182109757_org_2000x2000_m.jpg"
+    "_id": "1764563602636",
+    "name": "Camiseta larga de Plagiarism Re-enactment (盗作再演)",
+    "description": {
+      "type": "p",
+      "data": ["Camiseta de la gira Plagiarism Re-enactment."]
+    },
+    "features": {
+      "type": "li",
+      "data": {
+        "Color": "Negro",
+        "Material": "Cuerpo: 100% Algodón ",
+        "Talla": "Solo disponible en M"
+      }
+    },
+    "notes": [
+      {
+        "note": "Largo: 80cm",
+        "class": "info"
+      },
+      {
+        "note": "Busto: 65cm",
+        "class": "info"
+      },
+      {
+        "note": "Ancho de hombros: 67cm",
+        "class": "info"
+      },
+      {
+        "note": "Largo de manga: 69cm",
+        "class": "info"
+      }
     ],
-    "category": "Papelería",
-    "stock": 30,
-        "typeName": "",
-    "type": "",
-    "o": "https://www.muji.us/collections/paper-goods/products/recycled-paper-monthly-planner-9s67"
+    "price": 99.99,
+    "image": "/images/prods/yorushika/1764563602636/re_yorushika_tousaku_0815_en5tsHew3y_04.jpg",
+    "images": [
+      "/images/prods/yorushika/1764563602636/re_yorushika_tousaku_0815_en5tsHew3y_04.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_01.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_02.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_03.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_04.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_05.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_06.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_07.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_08.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_09.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_10.jpg",
+      "/images/prods/yorushika/1764563602636/yorushika_0801_longT_S5tbHFfZ_11.jpg"
+    ],
+    "artist": {
+      "_id": "yorushika",
+      "name": "Yorushika (ヨルシカ)"
+    },
+    "category": {
+      "_id": "tshirt",
+      "name": "Playeras"
+    },
+    "stock": 25,
+    "o": ""
   },
   {
-    "_id": "4",
-    "name": "Agenda semana de papel reciclado",
-    "description": "Un planificador que te permite escribir libremente la fecha para que puedas empezar a usarlo en cualquier momento.",
-    "price": 130.00,
-    "image": "/images/products/agenda-semana-papel-reciclado/4550182109740_org_2000x2000_m.jpg",
-    "images": [
-      "images/products/agenda-semana-papel-reclicado/4550182109740_org_2000x2000_m.jpg",
-      "images/products/agenda-semana-papel-reclicado/4550182109740_02_1260_1260x1260_m.jpg"
+    "_id": "1764564515173",
+    "name": "Bolsa de tela reversible con temática de Plagiarism",
+    "description": {
+      "type": "p",
+      "data": ["Este bolso tote reversible presenta bordado."]
+    },
+    "features": 
+    {
+      "type": "p",
+      "data": {
+        "Colores": "Gris, Blanco",
+        "Material": "Nailon, Poliéster",
+        "Tamaño": "[Cuerpo] Aprox. 36 cm de ancho x 36 cm de alto x 14 cm de profundidad. \n[Asa] Aprox. 1 cm de grosor x 65 cm de largo. Tenga en cuenta que el color y los detalles del producto real pueden variar con respecto a la fotografía."
+      }
+    },
+    "notes": [{
+      "note": "Aprox. 1 cm de grosor x 65 cm de largo. Tenga en cuenta que el color y los detalles del producto real pueden variar con respecto a la fotografía.",
+      "class": "info"
+    }
     ],
-    "category": "Papelería",
-    "stock": 80,
-        "typeName": "",
-    "type": "",
-    "o": "https://www.muji.us/collections/paper-goods/products/recycled-paper-weekly-planner-9s67"
+    "price": 99.99,
+    "image": "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_00.jpg",
+    "images": [
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_00.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_01.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_02.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_03.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_04.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_05.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_06.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_07.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_08.jpg",
+      "/images/prods/yorushika/1764564515173/yorushika_0801_tote_S5tbHFfZ_09.jpg"
+    ],
+    "artist": {
+      "_id": "yorushika",
+      "name": "Yorushika (ヨルシカ)"
+    },
+    "category": {
+      "_id": "tote-bags",
+      "name": "Tote Bags"
+    },
+    "stock": 25,
+    "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=93445"
   },
   {
-    "_id": "5",
-    "name": "Rollo de notas adhesivas de colores perforadas",
-    "description": "Dale un toque de color a tus notas y mantente organizado con nuestro rollo de notas adhesivas de colores perforadas. Con tres opciones vibrantes, puedes etiquetar y recordar fácilmente cada detalle importante. El rollo está preperforado en incrementos de 40 mm (1,6\"), lo que facilita anotar recordatorios o mensajes de cualquier longitud.",
-    "price": 119.99,
-    "image": "/images/products/rollo-adhesivo-colores/4550583366797_01_org_2000x2000_m.jpg",
-    "images": [
-      "/images/products/rollo-adhesivo-colores/4550583366797_01_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366797_03_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366797_04_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366797_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366803_01_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366803_04_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366803_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366810_01_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366810_04_org_2000x2000_m.jpg",
-      "/images/products/rollo-adhesivo-colores/4550583366810_org_2000x2000_m.jpg"
+    "_id": "1764566424812",
+    "name": "Plagiarism Re-enactment (盗作再演): LLavero de peluche de perro de azúcar",
+    "description":
+      {
+        "type": "p",
+        "data": ["Este es un llavero de peluche de Corgi diseñado por Suis. Contiene un caramelo konpeito en su interior."]
+      }
+    ,
+    "features": 
+    {
+      "type": "li",
+      "data": {
+        "Materiales": "Algodón, poliéster, hierro, resina ABS",
+        "Tamaño": "[Bolsa] Aprox. W8 x H10 x D6cm. \n[Dulces Konpeito] Tamaño de la bolsa: Aprox. W7 x H7cm",
+        "Consumir preferentemente antes de": "junio de 2026",
+        "Instrucciones de almacenamiento": "Almacenar en un lugar fresco y oscuro, alejado de la luz solar directa, altas temperaturas y humedad. Consumir lo antes posible después de abrir."
+      }
+    },
+    "notes": [
+      {
+        "note": "Se pueden encontrar puntos negros en la superficie, pero estos son inherentes a los ingredientes y no afectan la calidad. ",
+        "class": "info"
+      }
     ],
-    "category": "Papelería",
-    "typeName": "Color",
-    "type": "Amarillo",
-    "stock": 50,
-    "o": "https://www.muji.us/collections/paper-goods/products/perforated-color-sticky-note-roll-ndfa3a-23aw?variant=44044394430654"
+    "price": 99.99,
+    "image": "/images/prods/yorushika/1764566424812/re_yorushika_tousaku_0815_en5tsHew3y_13.jpg",
+    "images": [
+      "/images/prods/yorushika/1764566424812/re_yorushika_tousaku_0815_en5tsHew3y_13.jpg",
+      "/images/prods/yorushika/1764566424812/yorushika_0801_konpeitoukey_S5tbHFfZ_01.jpg",
+      "/images/prods/yorushika/1764566424812/yorushika_0801_konpeitoukey_S5tbHFfZ_02.jpg",
+      "/images/prods/yorushika/1764566424812/yorushika_0801_konpeitoukey_S5tbHFfZ_03.jpg",
+      "/images/prods/yorushika/1764566424812/yorushika_0801_konpeitoukey_S5tbHFfZ_04.jpg",
+      "/images/prods/yorushika/1764566424812/yorushika_0801_konpeitoukey_S5tbHFfZ_05.jpg",
+      "/images/prods/yorushika/1764566424812/yorushika_0801_konpeitoukey_S5tbHFfZ_06.jpg"
+    ],
+    "artist": {
+      "_id": "yorushika",
+      "name": "Yorushika (ヨルシカ)"
+    },
+    "category": {
+      "_id": "keychain",
+      "name": "Llaveros"
+    },
+    "stock": 25,
+    "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=94163"
   },
   {
-    "_id": "6",
-    "name": "Sticky notes de gatos",
-    "description": "¡Dale un toque felino a tu organización con nuestras Notas Adhesivas de Gatos! Elige entre 3 encantadores diseños de gatos para decorar tus cuadernos y agendas. Con este set de notas adhesivas, nunca olvidarás una tarea. Mantén tus notas lindas y organizadas con nuestras notas adhesivas de temática felina.",
-    "price": 119.99,
-    "image": "/images/products/sticky-notes-gatos/4550583873516_01_org_2000x2000_m.jpg",
-    "images": [
-      "/images/products/sticky-notes-gatos/4550583873516_01_org_2000x2000_m.jpg",
-      "/images/products/sticky-notes-gatos/4550583873516_02_org_2000x2000_m.jpg",
-      "/images/products/sticky-notes-gatos/4550583873516_org_2000x2000_m.jpg"
+    "_id": "1764649677154",
+    "name": "Abanico plegable de Plagiarism Re-enactment (盗作再演)",
+    "description": {
+      "type": "p",
+      "data": ["Este abanico plegable lleva una inscripción \"plagio\" oculta."]
+    }
+    ,
+    "features": {
+      "type": "li",
+      "data": {
+        "Color": "Azul",
+        "Materiales": "[Abanico] Bambú, poliéster; \n[Bolsa] Algodón, poliéster; \n[Dije] Aleación de zinc",
+        "Tamaño": "[Bolsa] Aprox. 21 cm de largo; Aprox. 4,5 cm de ancho x 22 cm de alto"
+      }
+    }
+    ,
+    "notes": [{
+      "note": "Tenga en cuenta que el color y los detalles del producto real pueden variar con respecto a la fotografía.",
+      "class": "info"
+    }
     ],
-    "category": "Papelería",
-    "typeName": "",
-    "type": "",
-    "stock": 50,
-    "o": "https://www.muji.us/collections/paper-goods/products/cat-sticky-notes-24ss"
+    "price": 99.99,
+    "image": "/images/prods/yorushika/1764649677154/re_yorushika_tousaku_0815_en5tsHew3y_14.jpg",
+    "images": [
+      "/images/prods/yorushika/1764649677154/re_yorushika_tousaku_0815_en5tsHew3y_14.jpg",
+      "/images/prods/yorushika/1764649677154/yorushika_0801_sensu_S5tbHFfZ_01.jpg",
+      "/images/prods/yorushika/1764649677154/yorushika_0801_sensu_S5tbHFfZ_02.jpg",
+      "/images/prods/yorushika/1764649677154/yorushika_0801_sensu_S5tbHFfZ_03.jpg",
+      "/images/prods/yorushika/1764649677154/yorushika_0801_sensu_S5tbHFfZ_04.jpg",
+      "/images/prods/yorushika/1764649677154/yorushika_0801_sensu_S5tbHFfZ_05.jpg",
+      "/images/prods/yorushika/1764649677154/yorushika_0801_sensu_S5tbHFfZ_066.jpg",
+      "/images/prods/yorushika/1764649677154/yorushika_0801_sensu_S5tbHFfZ_07.jpg"
+    ],
+    "artist": {
+      "_id": "yorushika",
+      "name": "Yorushika (ヨルシカ)"
+    },
+    "category": {
+      "_id": "tour-merch",
+      "name": "Tour Merch"
+    },
+    "stock": 25,
+    "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=94164"
+  },
+  {
+    "_id": "1764724545076",
+    "name": "Playera Slaughter To Prevail - BABY SLAUGHTER",
+    "description": {
+      "type": "p",
+      "data": [
+        "Prepárate para el apocalipsis más adorable.",
+        "Esta camiseta oficial crossover trae el caos kawaii de *BABYMETAL* al brutal universo de *Slaughter to Prevail*. El estampado frontal presenta un oso rosa demoníaco, guerreros chibi, calabazas en llamas y suficiente actitud para arrasar un estadio.",
+        "Lo lindo se encuentra con la crueldad. El metal se encuentra con la locura.",
+        "Esta camiseta es suave, transpirable y está diseñada para resistir tanto en pogo como en reinos mágicos. Su impresión de alta calidad garantiza que cada detalle se mantenga nítido tanto en el escenario como en la calle."
+      ]
+    },
+    "features": {
+      "type": "li",
+      "data": [
+        "Colaboración oficial de BABYMETAL x Slaughter To Prevail",
+        "Gráfico frontal de gran tamaño con arte de personaje personalizado.",
+        "Serigrafía duradera y de alta calidad.",
+        "Camisa de algodón Gildan Hammer suave y transpirable",
+        "Edición limitada, solo para verdaderos fanáticos"
+      ]
+    },
+    "notes": [{
+      "note": {
+        "Representaciones del producto" : "Tenga en cuenta que la mayoría de las imágenes de nuestra tienda son maquetas, no fotos reales. Estas representaciones digitales muestran el aspecto final del producto, pero el producto real puede variar ligeramente."
+      },
+      "class": "info"
+    }
+    ],
+    "price": 454.99,
+    "image": "/images/prods/babymetal/1764724545076/slaughter-to-prevail-x-babymetal-babyslaugher-bear-t-shirt-265761.png",
+    "images": [
+      "/images/prods/babymetal/1764724545076/slaughter-to-prevail-x-babymetal-babyslaugher-bear-t-shirt-265761.png",
+      "/images/prods/babymetal/1764724545076/slaughter-to-prevail-x-babymetal-babyslaugher-bear-t-shirt-7719429.jpg",
+      "/images/prods/babymetal/1764724545076/slaughter-to-prevail-x-babymetal-babyslaugher-bear-t-shirt-8439721.jpg"
+    ],
+    "artist": {
+      "_id": "babymetal",
+      "name": "BABYMETAL"
+    },
+    "category": {
+      "_id": "tshirt",
+      "name": "Playeras"
+    },
+    "stock": 25,
+    "o": "https://firstblood.store/products/slaughter-to-prevail-x-babymetal-bear-t-shirt?variant=55546383925513&country=AO&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=1&gad_campaignid=22647768197&gbraid=0AAAAA9jr4_Pfc1nWTcCfKhszICd_2apg8&gclid=Cj0KCQiAubrJBhCbARIsAHIdxD_TGXN2o8bs6DhFcILbcThJdpmN9a6Xhkgt5CrOCvxHLWR4o1leTjkaAlmNEALw_wcB"
+  },
+  {
+    "_id": "1764728068770",
+    "name": "Spirit foxes Tote Bag",
+    "description": {
+      "type": "p",
+      "data": [
+        "Bolso de mano Spirit foxes 100% algodón negro."
+      ]
+    },
+    "features": null,
+    "notes": [{
+      "note": {
+        "Representaciones del producto" : "Tenga en cuenta que la mayoría de las imágenes de nuestra tienda son maquetas, no fotos reales. Estas representaciones digitales muestran el aspecto final del producto, pero el producto real puede variar ligeramente."
+      },
+      "class": "info"
+    }
+    ],
+    "price": 454.99,
+    "image": "/images/prods/babymetal/1764728068770/SPIRIT_FOXES-TOTE_2048x@2x.jpg",
+    "images": [],
+    "artist": {
+      "_id": "babymetal",
+      "name": "BABYMETAL"
+    },
+    "category": {
+      "_id": "tote-bags",
+      "name": "Tote Bags"
+    },
+    "stock": 25,
+    "o": "https://babymetalstoreuk.com/collections/tour-2025/products/spirit-foxes-tote-bag"
+  },
+  {
+    "_id": "1764728380647",
+    "name": "Abanico plegable exclusivo intuit dome con logotipo",
+    "description": {
+      "type": "p",
+      "data": [
+        "Abanico negro con logo BABYMETAL."
+      ]
+    },
+    "features": null,
+    "notes": [{
+      "note": {
+        "Representaciones del producto" : "Tenga en cuenta que la mayoría de las imágenes de nuestra tienda son maquetas, no fotos reales. Estas representaciones digitales muestran el aspecto final del producto, pero el producto real puede variar ligeramente."
+      },
+      "class": "info"
+    }
+    ],
+    "price": 454.99,
+    "image": "/images/prods/babymetal/1764728380647/8Y.99131.32.png",
+    "images": [
+      "/images/prods/babymetal/1764728380647/1.32.png",
+      "/images/prods/babymetal/1764728380647/1.32-1.png"
+    ],
+    "artist": {
+      "_id": "babymetal",
+      "name": "BABYMETAL"
+    },
+    "category": {
+      "_id": "tour-merch",
+      "name": "Tour Merch"
+    },
+    "stock": 25,
+    "o": "https://babymetal.store/collections/accessories/products/american-flag-logo-fan"
+  },
+  {
+    "_id": "1764730439085",
+    "name": "Playera BAND-MAID TOUR 2025 FINAL ROUND",
+    "description": {
+      "type": "p",
+      "data": [
+        "×ISANA KAGAMI 2024-T.",
+        "Obra diseñada por ISANA KAGAMI.",
+        "Con gratitud y respeto por ISANA KAGAMI."
+      ]
+    },
+    "features": {
+        "type": "li",
+        "data": {
+          "Largo": "73cm",
+          "Ancho": "55cm"
+        }
+    },
+    "notes": [
+      {
+        "note": "Las imágenes del producto son solo para fines ilustrativos. En cuanto al color y la textura.",
+        "class": "info"
+      },
+      {
+        "note": "El color real del producto puede variar ligeramente del color que se ve en la pantalla según el monitor, el sistema operativo y la versión del navegador. Gracias por su comprensión. - Las medidas de las tallas son aproximadas y pueden variar ligeramente según el producto.",
+        "class": "info"
+      }
+    ],
+    "price": 454.99,
+    "image": "/images/prods/band-maid/1764730439085/BMHTKAGAMInormal.jpg",
+    "images": [],
+    "artist": {
+      "_id": "band-maid",
+      "name": "BAND-MAID"
+    },
+    "category": {
+      "_id": "tshirt",
+      "name": "Playeras"
+    },
+    "stock": 25,
+    "o": "https://bandmaid.tokyo/product/69290/%5B%E5%8F%97%E6%B3%A8%E8%B2%A9%E5%A3%B2%5D%5Bpre-orders%5D-%C3%97ISANA-KAGAMI-2024-T"
+  },
+  {
+    "_id": "1764816543962",
+    "name": "BAND-MAID \"Epic Narratives\" Edición Limitada (CD + Blu-ray + LIBRO DE FOTOS)",
+    "description": {
+      "type": "p",
+      "data":
+        ["¡Lanzamiento de la primera edición limitada! Este artículo está disponible por orden de llegada. Por primera vez en tres años y medio, BAND-MAID lanzará un álbum muy esperado. ¡Pide \"Epic Narratives\" de BAND-MAID ahora y recibe una postal de edición limitada de BAND-MAID como beneficio de compra!",
+        "Título : BAND-MAID \"Narrativas Épicas\" Edición Limitada (CD + Blu-ray + LIBRO DE FOTOS)."
+      ]
+    },
+    "features": {
+        "type": "li",
+        "data": 
+        [
+          "a","b"
+        ]
+
+    },
+    "notes": [
+      {
+        "note": "Las imágenes del producto son solo para fines ilustrativos. En cuanto al color y la textura.",
+        "class": "info"
+      },
+      {
+        "note": "El color real del producto puede variar ligeramente del color que se ve en la pantalla según el monitor, el sistema operativo y la versión del navegador. Gracias por su comprensión. - Las medidas de las tallas son aproximadas y pueden variar ligeramente según el producto.",
+        "class": "info"
+      }
+    ],
+    "price": 454.99,
+    "image": "/images/prods/band-maid/1764816543962/band_maid_epic_narratives.jpg",
+    "images": [
+      "/images/prods/band-maid/1764816543962/band_maid_epic_narratives.jpg",
+      "/images/prods/band-maid/1764816543962/band_maid_epic_narratives_post_card.jpg",
+      "/images/prods/band-maid/1764816543962/content_BM_EN_JK-image_shokai-tsujo_S.jpg"
+    ],
+    "artist": {
+      "_id": "band-maid",
+      "name": "BAND-MAID"
+    },
+    "category": {
+      "_id": "cd-dvd-bluray",
+      "name": "CD/DVD/Blu-Ray"
+    },
+    "stock": 25,
+    "o": "https://ampedjapan.com/en-mx/products/band-maid-10th-anniversary-tour-final-in-yokohama-arena-nov-26-2023-2-blu-ray-photobook-one-time-only-pressing"
+  },
+  {
+    "_id": "1764731341551",
+    "name": "Final de la gira del 10.º aniversario de BAND-MAID en el Yokohama Arena (26 de noviembre de 2023) [2 Blu-ray + Álbum de fotos] EDICIÓN ÚNICA",
+    "description": {
+      "type": "li",
+      "data":
+        ["El nuevo BLU-RAY + FOTOLIBRO LIVE 2 de BAND-MAID, \"FINAL DE LA GIRA DEL 10.º ANIVERSARIO en el YOKOHAMA ARENA (26 de noviembre de 2023)\", ya está disponible para los fans internacionales de BAND-MAID.",
+        "Las esperadísimas canciones en directo y el metraje de la última actuación de la gira del 10.º aniversario de BAND-MAID en el Yokohama Arena se presentarán en vídeo de alta calidad. Contiene 33 canciones, ¡la más larga en la historia de BAND-MAID! Además del vídeo principal, esta edición de lujo, limitada y de una sola edición, viene en un lujoso paquete especial que incluye un Blu-ray extra con material documental inédito de las integrantes, como el día de su actuación en el Yokohama Arena, y un fotolibro de 100 páginas . El metraje documental viene completo con subtítulos en inglés.",
+        "¡Maestros y princesas del mundo, no se pierdan esta edición!"
+      ]
+    },
+    "features": {
+        "type": "li",
+        "data": {
+          "[Blu-ray Disc 1]": "10TH ANNIVERSARY TOUR FINAL in YOKOHAMA ARENA (Nov.26,2023) \nDOMINATION \nglory \nalone \nPlay \nUnleash!!!!! \nThrill  \nShambles \nDon't you tell ME \nAfter Life \nSense \nInfluencer \nfrom now on \nDaydreaming \nMemorable \nabout Us \nMirage \nBubble \nRock in me \nDifferent(Acoustic) \nanemone(Acoustic) \nChoose me(Acoustic) \nonset \nBrightest Star \nFREEDOM \nBLACK HOLE \nDICE \nHATE? \nNO GOD \nMagie \nManners \nChoose me \nFORWARD \nendless Story",
+          "[Blu-ray Disc-2]" : "10TH ANNIVERSARY TOUR FINAL in YOKOHAMA ARENA Documentary",
+          "[PHOTOBOOK]": "100 páginas",
+          "RECORD LABEL": "PONY CANYON",
+          "Número de discos": "2",
+          "REGION": "Free - suitable for most players worldwide",
+          "Sonido": "Stereo"
+        }
+    },
+    "notes": [
+      {
+        "note": "Las imágenes del producto son solo para fines ilustrativos. En cuanto al color y la textura.",
+        "class": "info"
+      },
+      {
+        "note": "El color real del producto puede variar ligeramente del color que se ve en la pantalla según el monitor, el sistema operativo y la versión del navegador. Gracias por su comprensión. - Las medidas de las tallas son aproximadas y pueden variar ligeramente según el producto.",
+        "class": "info"
+      }
+    ],
+    "price": 454.99,
+    "image": "/images/prods/band-maid/1764731341551/BAND-MAID10THANNIVERSARYTOURFINALinYOKOHAMAARENA_Nov.26_2023_2Blu-ray_PHOTOBOOK_ONE-TIME-ONLYPRESSING.jpg",
+    "images": [
+      "/images/prods/band-maid/1764731341551/BAND-MAID10THANNIVERSARYTOURFINALinYOKOHAMAARENA_Nov.26_2023_2Blu-ray_PHOTOBOOK_ONE-TIME-ONLYPRESSING.jpg",
+      "/images/prods/band-maid/1764731341551/BAND-MAID10THANNIVERSARYTOURFINALinYOKOHAMAARENA_8de6b39e-8105-41ab-8435-27150c41de0e.jpg"
+    ],
+    "artist": {
+      "_id": "band-maid",
+      "name": "BAND-MAID"
+    },
+    "category": {
+      "_id": "cd-dvd-bluray",
+      "name": "CD/DVD/Blu-Ray"
+    },
+    "stock": 25,
+    "o": "https://ampedjapan.com/en-mx/products/band-maid-epic-narratives-limited-edition-cd-blu-ray-photo-book"
   }
 ]

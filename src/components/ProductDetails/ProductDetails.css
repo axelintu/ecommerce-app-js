@@ -1,8 +1,19 @@
 .product-details img {
   max-width: 100%;
 }
-
+.product-images {
+  flex-basis: 100%;
+}
 .product-details {
   display: flex;
-  flex: 1 1 1;
+}
+.product-details > div:nth-child(2),
+.product-details > div:nth-child(1) {
+  flex: 1.5;
+  flex-direction: row;
+}
+.product-details > div:nth-child(3) {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
 }
