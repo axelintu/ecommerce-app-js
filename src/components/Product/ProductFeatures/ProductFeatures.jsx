@@ -6,29 +6,27 @@ function ProductFeatures({
   features = { type: '', data: [] },
   productClass = 'default'
 }) {
+  if (!features) return null;
   const { type, data } = features;
   const ChildElement = type || 'div';
   const ParentWrapper = ChildElement === 'li' ? 'ul' : React.Fragment;
-  const whiteSpace = {whiteSpace: "pre-wrap"};
 
   const typeOfData = getDataType(data);
-  
   if (typeOfData === 'noPrint') return; 
 
   const renderData = (typeOfData) => {
     
     switch (typeOfData) {
       case 'stringOrNumber':
-        return <ChildElement className={`whiteSpace ${type}`}> {data} </ChildElement>;
+        return <ChildElement className={`white-space ${type}`}> {data} </ChildElement>;
       case 'object':
         const featureList = Object.entries(data);
         return featureList.map(([key,value])=> {
-          return (<ChildElement key={key} className={`whiteSpace ${type}`}><strong>{key}:</strong> {value} </ChildElement>)
+          return (<ChildElement key={key} className={`white-space ${type}`}><strong>{key}:</strong> {value} </ChildElement>)
         });
-        break;
       case 'array':
         return data.map((feature, i)=> {
-          return (<ChildElement key={i} className={`whiteSpace ${type}`}>{feature}</ChildElement>)
+          return (<ChildElement key={i} className={`white-space ${type}`}>{feature}</ChildElement>)
         })
       default:
         break;
