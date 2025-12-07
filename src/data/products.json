@@ -440,12 +440,16 @@
       ]
     },
     "features": {
-        "type": "li",
+        "type": "p",
         "data": 
-        [
-          "a","b"
-        ]
-
+          {
+            "Título" : "BAND-MAID \"Narrativas Épicas\" Edición Limitada (CD + Blu-ray + LIBRO DE FOTOS)",
+            "[LISTA DE CANCIONES DEL CD]": "\nMemorable \nRuinas \nMejor amiga \nProtegerte \nMUÉSTRALES＊BAND-MAID con The Warning \nTú y yo \nMagia \nCuento prohibido \nComportarse con cuidado \nLa estrella más brillante \nEl único \nCartas para ti \n¡TAMAYA! \nLlegar a la cima",
+            "[CONTENIDO Blu-ray]": "*Solo incluido con la primera edición limitada. \nVideo en vivo de la mesera “EL DÍA DE LA CRIADA” realizado el 10 de mayo de 2024",
+            "Fecha de lanzamiento": " (2024/9/25)",
+            "Número de discos": "1 disco principal (CD), 1 disco extra (Blu-ray)",
+            "Formato": "Álbum, CD + Blu-ray + LIBRO DE FOTOS","Sello": "Pony Canyon"
+          }
     },
     "notes": [
       {
