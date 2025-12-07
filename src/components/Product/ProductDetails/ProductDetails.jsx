@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
-import { getProductById } from "../../services/productService";
-import Button from "../common/Button";
-import ErrorMessage from "../common/ErrorMessage/ErrorMessage";
-import Loading from "../common/Loading/Loading";
+import { useCart } from "../../../context/CartContext";
+import { getProductById } from "../../../services/productService";
+import Button from "../../common/Button";
+import ErrorMessage from "../../common/ErrorMessage/ErrorMessage";
+import Loading from "../../common/Loading/Loading";
 import './ProductDetails.css';
 import ProductFeatures from "../ProductFeatures/ProductFeatures";
 

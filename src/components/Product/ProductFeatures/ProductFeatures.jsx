@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductFeatures.css';
-import { getDataType } from '../Product/shared/product';
+import { getDataType } from '../shared/product';
 
 function ProductFeatures({
   features = { type: '', data: [] },
