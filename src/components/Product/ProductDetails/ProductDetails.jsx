@@ -7,6 +7,7 @@ import ErrorMessage from "../../common/ErrorMessage/ErrorMessage";
 import Loading from "../../common/Loading/Loading";
 import './ProductDetails.css';
 import ProductFeatures from "../ProductFeatures/ProductFeatures";
+import ProductNotes from "../ProductNotes/ProductNotes";
 
 export default function ProductDetails({ productId }) {
   const { addToCart } = useCart();
@@ -43,7 +44,7 @@ export default function ProductDetails({ productId }) {
 
   if (!product) return null;
 
-  const { name, description, features, price, stock, image, images, category } = product;
+  const { name, description, features, notes, price, stock, image, images, category } = product;
   const stockBadge = stock > 0 ? "success" : "error";
   const stockLabel = stock > 0 ? "En stock" : "Agotado";
   const handleAddToCart = (e) => {
@@ -70,7 +71,7 @@ export default function ProductDetails({ productId }) {
           <h3>{name}</h3>
           <ProductFeatures productClass='description' features={description}></ProductFeatures>
           <ProductFeatures productClass='features' features={features}></ProductFeatures>
-          
+          <ProductNotes notes={notes} />
         </div>
         <div className="product-actions">
           <div>
