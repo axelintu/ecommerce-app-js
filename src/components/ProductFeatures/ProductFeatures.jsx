@@ -1,56 +1,44 @@
 import React from 'react';
 import './ProductFeatures.css';
+import { getDataType } from '../Product/shared/product';
 
 function ProductFeatures({
-  features = { type: '', data: []}
+  features = { type: '', data: [] },
+  productClass = 'default'
 }) {
   const { type, data } = features;
   const ChildElement = type || 'div';
   const ParentWrapper = ChildElement === 'li' ? 'ul' : React.Fragment;
-  const getType = (data) => {
-    // typeOfData
-    return Array.isArray(data) 
-    ? 'array' 
-    : typeof data === "object" && typeof data === null
-      ? 'object'
-      : 'default';
-  }
+  const whiteSpace = {whiteSpace: "pre-wrap"};
 
-  function getTypeOfFeatures(variable) {
-    const type = typeof variable;
-    if (type === 'string' || type === 'number') {
-      return 'stringOrNumber';
-    } else if (type === 'boolean' || type === 'bigint' || type === 'symbol' || type === 'undefined' || type === 'function' || variable === null) {
-      return `'noPrint'`;
-    }
-    if (Array.isArray(variable)) {
-      return 'array';
-    }
-    if (type === 'object') {
-      return 'object';
-    }
-  }
-
-  if (getTypeOfFeatures(data) === 'noPrint') {
-    return;
-  } else {
-    
-  }
-
-  console.log(getType({}))
+  const typeOfData = getDataType(data);
   
-  const featureList = Object.entries(data);
+  if (typeOfData === 'noPrint') return; 
+
+  const renderData = (typeOfData) => {
+    
+    switch (typeOfData) {
+      case 'stringOrNumber':
+        return <ChildElement className={`whiteSpace ${type}`}> {data} </ChildElement>;
+      case 'object':
+        const featureList = Object.entries(data);
+        return featureList.map(([key,value])=> {
+          return (<ChildElement key={key} className={`whiteSpace ${type}`}><strong>{key}:</strong> {value} </ChildElement>)
+        });
+        break;
+      case 'array':
+        return data.map((feature, i)=> {
+          return (<ChildElement key={i} className={`whiteSpace ${type}`}>{feature}</ChildElement>)
+        })
+      default:
+        break;
+    }
+  }
 
   return (
-    <div className="product-features">
+    <div className={`product-${productClass}`}>
       <ParentWrapper>
-      {featureList.map(([key,value])=>{
-        return (
-          <ChildElement key={key} className={type} style={{whiteSpace: "pre-wrap"}}>
-          <strong>{key}:</strong> {value}
-          </ChildElement>
-        )
-      })}
+      { renderData(typeOfData) }
       </ParentWrapper>
     </div>
   );

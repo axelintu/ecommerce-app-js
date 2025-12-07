@@ -6,7 +6,6 @@ import Button from "../common/Button";
 import ErrorMessage from "../common/ErrorMessage/ErrorMessage";
 import Loading from "../common/Loading/Loading";
 import './ProductDetails.css';
-import ProductDescription from "../ProductDescription/ProductDescription";
 import ProductFeatures from "../ProductFeatures/ProductFeatures";
 
 export default function ProductDetails({ productId }) {
@@ -50,9 +49,7 @@ export default function ProductDetails({ productId }) {
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(product, 1);
-  }
-  console.log(Object.entries(features.data));
-  
+  }  
 
   return (
     <div className="product-container">
@@ -71,20 +68,9 @@ export default function ProductDetails({ productId }) {
         </div>
         <div className="product-info">
           <h3>{name}</h3>
-          <ProductDescription desc={description}></ProductDescription>
-          <ProductFeatures features={features}></ProductFeatures>
+          <ProductFeatures productClass='description' features={description}></ProductFeatures>
+          <ProductFeatures productClass='features' features={features}></ProductFeatures>
           
-          {/* { features.data && 
-            ( <div><ul> 
-              {
-              Object.entries(features.data).map(
-                ([key, value])=> <li style={{whiteSpace: "pre-wrap"}}><strong>{key}:</strong> {value}</li>
-              )
-              }
-            </ul>
-            </div>
-            )
-          } */}
         </div>
         <div className="product-actions">
           <div>
