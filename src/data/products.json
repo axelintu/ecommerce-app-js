@@ -24,14 +24,22 @@
     "images": [],
     "artist": {
       "_id": "yorushika",
-      "name": "Yorushika (ヨルシカ)"
+      "name": "Yorushika (ヨルシカ)",
+      "description": "Banda de rock/pop japonesa formada en 2017. Conocida por sus letras introspectivas y su sonido emotivo que mezcla elementos de rock alternativo con pop melódico. Característica distintiva: los miembros se presentan de manera anónima sin mostrar sus rostros. Ha ganado popularidad por su música líricamente profunda.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "tour-merch",
       "name": "Tour Merch",
       "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "merch-oficial"
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=101191"
@@ -71,14 +79,22 @@
     ],
     "artist": {
       "_id": "yorushika",
-      "name": "Yorushika (ヨルシカ)"
+      "name": "Yorushika (ヨルシカ)",
+      "description": "Banda de rock/pop japonesa formada en 2017. Conocida por sus letras introspectivas y su sonido emotivo que mezcla elementos de rock alternativo con pop melódico. Característica distintiva: los miembros se presentan de manera anónima sin mostrar sus rostros. Ha ganado popularidad por su música líricamente profunda.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "apparel",
       "name": "Ropa Exclusiva/Merch Oficial",
       "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "merch-oficial"
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": ""
@@ -134,14 +150,22 @@
     ],
     "artist": {
       "_id": "yorushika",
-      "name": "Yorushika (ヨルシカ)"
+      "name": "Yorushika (ヨルシカ)",
+      "description": "Banda de rock/pop japonesa formada en 2017. Conocida por sus letras introspectivas y su sonido emotivo que mezcla elementos de rock alternativo con pop melódico. Característica distintiva: los miembros se presentan de manera anónima sin mostrar sus rostros. Ha ganado popularidad por su música líricamente profunda.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "apparel",
       "name": "Ropa Exclusiva/Merch Oficial",
       "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "merch-oficial"
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": ""
@@ -183,14 +207,22 @@
     ],
     "artist": {
       "_id": "yorushika",
-      "name": "Yorushika (ヨルシカ)"
+      "name": "Yorushika (ヨルシカ)",
+      "description": "Banda de rock/pop japonesa formada en 2017. Conocida por sus letras introspectivas y su sonido emotivo que mezcla elementos de rock alternativo con pop melódico. Característica distintiva: los miembros se presentan de manera anónima sin mostrar sus rostros. Ha ganado popularidad por su música líricamente profunda.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "tote-bags",
       "name": "Tote Bags",
       "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "accesorios"
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=93445"
@@ -233,14 +265,22 @@
     ],
     "artist": {
       "_id": "yorushika",
-      "name": "Yorushika (ヨルシカ)"
+      "name": "Yorushika (ヨルシカ)",
+      "description": "Banda de rock/pop japonesa formada en 2017. Conocida por sus letras introspectivas y su sonido emotivo que mezcla elementos de rock alternativo con pop melódico. Característica distintiva: los miembros se presentan de manera anónima sin mostrar sus rostros. Ha ganado popularidad por su música líricamente profunda.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "keychain",
       "name": "Llaveros",
       "description": "Pequeños accesorios decorativos para llevar contigo. Desde llaveros de peluche hasta diseños exclusivos de tus artistas.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "accesorios"
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=94163"
@@ -281,14 +321,22 @@
     ],
     "artist": {
       "_id": "yorushika",
-      "name": "Yorushika (ヨルシカ)"
+      "name": "Yorushika (ヨルシカ)",
+      "description": "Banda de rock/pop japonesa formada en 2017. Conocida por sus letras introspectivas y su sonido emotivo que mezcla elementos de rock alternativo con pop melódico. Característica distintiva: los miembros se presentan de manera anónima sin mostrar sus rostros. Ha ganado popularidad por su música líricamente profunda.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "tour-merch",
       "name": "Tour Merch",
       "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "merch-oficial"
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=94164"
@@ -329,14 +377,22 @@
     ],
     "artist": {
       "_id": "babymetal",
-      "name": "BABYMETAL"
+      "name": "BABYMETAL",
+      "description": "Grupo de metal/pop japonés formado en 2010. Combina el J-pop y cultura idol con heavy metal de manera única. Conocido por sus coreografías elaboradas, su sonido experimental y su comunidad global de fans apasionados.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "apparel",
       "name": "Ropa Exclusiva/Merch Oficial",
       "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "merch-oficial"
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://firstblood.store/products/slaughter-to-prevail-x-babymetal-bear-t-shirt?variant=55546383925513&country=AO&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=1&gad_campaignid=22647768197&gbraid=0AAAAA9jr4_Pfc1nWTcCfKhszICd_2apg8&gclid=Cj0KCQiAubrJBhCbARIsAHIdxD_TGXN2o8bs6DhFcILbcThJdpmN9a6Xhkgt5CrOCvxHLWR4o1leTjkaAlmNEALw_wcB"
@@ -361,14 +417,22 @@
     "images": [],
     "artist": {
       "_id": "babymetal",
-      "name": "BABYMETAL"
+      "name": "BABYMETAL",
+      "description": "Grupo de metal/pop japonés formado en 2010. Combina el J-pop y cultura idol con heavy metal de manera única. Conocido por sus coreografías elaboradas, su sonido experimental y su comunidad global de fans apasionados.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "tote-bags",
       "name": "Tote Bags",
       "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "accesorios"
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://babymetalstoreuk.com/collections/tour-2025/products/spirit-foxes-tote-bag"
@@ -397,14 +461,22 @@
     ],
     "artist": {
       "_id": "babymetal",
-      "name": "BABYMETAL"
+      "name": "BABYMETAL",
+      "description": "Grupo de metal/pop japonés formado en 2010. Combina el J-pop y cultura idol con heavy metal de manera única. Conocido por sus coreografías elaboradas, su sonido experimental y su comunidad global de fans apasionados.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "tour-merch",
       "name": "Tour Merch",
       "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "merch-oficial"
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://babymetal.store/collections/accessories/products/american-flag-logo-fan"
@@ -442,14 +514,22 @@
     "images": [],
     "artist": {
       "_id": "band-maid",
-      "name": "BAND-MAID"
+      "name": "BAND-MAID",
+      "description": "Banda de rock/metal japonesa formada en 2013. Su concepto está inspirado en las Café Maids, combinando un uniforme temático con música de rock y metal potente. Reconocida por sus habilidades instrumentales excepcionales y su energía en vivo.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "apparel",
       "name": "Ropa Exclusiva/Merch Oficial",
       "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
       "imageURL": "https://placehold.co/800x600.png",
-      "parentCategory": "merch-oficial"
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
     },
     "stock": 25,
     "o": "https://bandmaid.tokyo/product/69290/%5B%E5%8F%97%E6%B3%A8%E8%B2%A9%E5%A3%B2%5D%5Bpre-orders%5D-%C3%97ISANA-KAGAMI-2024-T"
@@ -495,7 +575,9 @@
     ],
     "artist": {
       "_id": "band-maid",
-      "name": "BAND-MAID"
+      "name": "BAND-MAID",
+      "description": "Banda de rock/metal japonesa formada en 2013. Su concepto está inspirado en las Café Maids, combinando un uniforme temático con música de rock y metal potente. Reconocida por sus habilidades instrumentales excepcionales y su energía en vivo.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "cd-dvd-bluray",
@@ -548,7 +630,9 @@
     ],
     "artist": {
       "_id": "band-maid",
-      "name": "BAND-MAID"
+      "name": "BAND-MAID",
+      "description": "Banda de rock/metal japonesa formada en 2013. Su concepto está inspirado en las Café Maids, combinando un uniforme temático con música de rock y metal potente. Reconocida por sus habilidades instrumentales excepcionales y su energía en vivo.",
+      "imageURL": "https://placehold.co/800x600.png"
     },
     "category": {
       "_id": "cd-dvd-bluray",

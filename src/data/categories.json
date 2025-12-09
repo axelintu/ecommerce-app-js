@@ -1,5 +1,19 @@
 [
   {
+    "_id": "merch-oficial",
+    "name": "Merch Oficial",
+    "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+    "imageURL": "https://placehold.co/800x600.png",
+    "parentCategory": null
+  },
+  {
+    "_id": "accesorios",
+    "name": "Accesorios",
+    "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+    "imageURL": "https://placehold.co/800x600.png",
+    "parentCategory": null
+  },
+  {
     "_id": "tour-merch",
     "name": "Tour Merch",
     "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
