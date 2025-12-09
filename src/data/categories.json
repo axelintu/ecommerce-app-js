@@ -18,28 +18,52 @@
     "name": "Tour Merch",
     "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
     "imageURL": "https://placehold.co/800x600.png",
-    "parentCategory": "merch-oficial"
+    "parentCategory": {
+      "_id": "merch-oficial",
+      "name": "Merch Oficial",
+      "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": null
+    }
   },
   {
     "_id": "apparel",
     "name": "Ropa Exclusiva/Merch Oficial",
     "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
     "imageURL": "https://placehold.co/800x600.png",
-    "parentCategory": "merch-oficial"
+    "parentCategory": {
+      "_id": "merch-oficial",
+      "name": "Merch Oficial",
+      "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": null
+    }
   },
   {
     "_id": "tote-bags",
     "name": "Tote Bags",
     "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
     "imageURL": "https://placehold.co/800x600.png",
-    "parentCategory": "accesorios"
+    "parentCategory": {
+      "_id": "accesorios",
+      "name": "Accesorios",
+      "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": null
+    }
   },
   {
     "_id": "keychain",
     "name": "Llaveros",
     "description": "Pequeños accesorios decorativos para llevar contigo. Desde llaveros de peluche hasta diseños exclusivos de tus artistas.",
     "imageURL": "https://placehold.co/800x600.png",
-    "parentCategory": "accesorios"
+    "parentCategory": {
+      "_id": "accesorios",
+      "name": "Accesorios",
+      "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": null
+    }
   },
   {
     "_id": "cd-dvd-bluray",

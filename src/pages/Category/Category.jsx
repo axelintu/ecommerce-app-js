@@ -1,15 +1,10 @@
-import React from 'react';
 import './Category.css';
 import { useParams } from 'react-router-dom';
+import CategoryProducts from '../../components/Categories/CategoryProducts/CategoryProducts';
 
-function Category({}) {
+function Category() {
   const { categoryId } = useParams();
-    
-  return (
-    <div className="category">
-      <h1>Category</h1>
-    </div>
-  );
+  return <CategoryProducts categoryId={categoryId} />
 }
 
 export default Category;
