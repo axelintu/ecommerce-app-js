@@ -28,7 +28,10 @@
     },
     "category": {
       "_id": "tour-merch",
-      "name": "Tour Merch"
+      "name": "Tour Merch",
+      "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "merch-oficial"
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=101191"
@@ -72,7 +75,10 @@
     },
     "category": {
       "_id": "apparel",
-      "name": "Ropa Exclusiva/Merch Oficial"
+      "name": "Ropa Exclusiva/Merch Oficial",
+      "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "merch-oficial"
     },
     "stock": 25,
     "o": ""
@@ -132,7 +138,10 @@
     },
     "category": {
       "_id": "apparel",
-      "name": "Ropa Exclusiva/Merch Oficial"
+      "name": "Ropa Exclusiva/Merch Oficial",
+      "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "merch-oficial"
     },
     "stock": 25,
     "o": ""
@@ -178,7 +187,10 @@
     },
     "category": {
       "_id": "tote-bags",
-      "name": "Tote Bags"
+      "name": "Tote Bags",
+      "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "accesorios"
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=93445"
@@ -225,7 +237,10 @@
     },
     "category": {
       "_id": "keychain",
-      "name": "Llaveros"
+      "name": "Llaveros",
+      "description": "Pequeños accesorios decorativos para llevar contigo. Desde llaveros de peluche hasta diseños exclusivos de tus artistas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "accesorios"
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=94163"
@@ -270,7 +285,10 @@
     },
     "category": {
       "_id": "tour-merch",
-      "name": "Tour Merch"
+      "name": "Tour Merch",
+      "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "merch-oficial"
     },
     "stock": 25,
     "o": "https://store.plusmember.jp/yorushika/products/detail.php?product_id=94164"
@@ -315,7 +333,10 @@
     },
     "category": {
       "_id": "apparel",
-      "name": "Ropa Exclusiva/Merch Oficial"
+      "name": "Ropa Exclusiva/Merch Oficial",
+      "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "merch-oficial"
     },
     "stock": 25,
     "o": "https://firstblood.store/products/slaughter-to-prevail-x-babymetal-bear-t-shirt?variant=55546383925513&country=AO&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=1&gad_campaignid=22647768197&gbraid=0AAAAA9jr4_Pfc1nWTcCfKhszICd_2apg8&gclid=Cj0KCQiAubrJBhCbARIsAHIdxD_TGXN2o8bs6DhFcILbcThJdpmN9a6Xhkgt5CrOCvxHLWR4o1leTjkaAlmNEALw_wcB"
@@ -344,7 +365,10 @@
     },
     "category": {
       "_id": "tote-bags",
-      "name": "Tote Bags"
+      "name": "Tote Bags",
+      "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "accesorios"
     },
     "stock": 25,
     "o": "https://babymetalstoreuk.com/collections/tour-2025/products/spirit-foxes-tote-bag"
@@ -377,7 +401,10 @@
     },
     "category": {
       "_id": "tour-merch",
-      "name": "Tour Merch"
+      "name": "Tour Merch",
+      "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "merch-oficial"
     },
     "stock": 25,
     "o": "https://babymetal.store/collections/accessories/products/american-flag-logo-fan"
@@ -419,7 +446,10 @@
     },
     "category": {
       "_id": "apparel",
-      "name": "Ropa Exclusiva/Merch Oficial"
+      "name": "Ropa Exclusiva/Merch Oficial",
+      "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": "merch-oficial"
     },
     "stock": 25,
     "o": "https://bandmaid.tokyo/product/69290/%5B%E5%8F%97%E6%B3%A8%E8%B2%A9%E5%A3%B2%5D%5Bpre-orders%5D-%C3%97ISANA-KAGAMI-2024-T"
@@ -469,7 +499,10 @@
     },
     "category": {
       "_id": "cd-dvd-bluray",
-      "name": "CD/DVD/Blu-Ray"
+      "name": "CD/DVD/Blu-Ray",
+      "description": "Álbumes, videos en vivo y contenido exclusivo de tus artistas en formatos físicos. Disfruta de la mejor calidad de audio y video.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": null
     },
     "stock": 25,
     "o": "https://ampedjapan.com/en-mx/products/band-maid-10th-anniversary-tour-final-in-yokohama-arena-nov-26-2023-2-blu-ray-photobook-one-time-only-pressing"
@@ -519,7 +552,10 @@
     },
     "category": {
       "_id": "cd-dvd-bluray",
-      "name": "CD/DVD/Blu-Ray"
+      "name": "CD/DVD/Blu-Ray",
+      "description": "Álbumes, videos en vivo y contenido exclusivo de tus artistas en formatos físicos. Disfruta de la mejor calidad de audio y video.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": null
     },
     "stock": 25,
     "o": "https://ampedjapan.com/en-mx/products/band-maid-epic-narratives-limited-edition-cd-blu-ray-photo-book"

@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "tour-merch",
+    "name": "Tour Merch",
+    "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
+    "imageURL": "https://placehold.co/800x600.png",
+    "parentCategory": "merch-oficial"
+  },
+  {
+    "_id": "apparel",
+    "name": "Ropa Exclusiva/Merch Oficial",
+    "description": "Camisetas, sudaderas y prendas de ropa oficial de tus bandas y artistas favoritos. Llevá el estilo de tu artista a todos lados.",
+    "imageURL": "https://placehold.co/800x600.png",
+    "parentCategory": "merch-oficial"
+  },
+  {
+    "_id": "tote-bags",
+    "name": "Tote Bags",
+    "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
+    "imageURL": "https://placehold.co/800x600.png",
+    "parentCategory": "accesorios"
+  },
+  {
+    "_id": "keychain",
+    "name": "Llaveros",
+    "description": "Pequeños accesorios decorativos para llevar contigo. Desde llaveros de peluche hasta diseños exclusivos de tus artistas.",
+    "imageURL": "https://placehold.co/800x600.png",
+    "parentCategory": "accesorios"
+  },
+  {
+    "_id": "cd-dvd-bluray",
+    "name": "CD/DVD/Blu-Ray",
+    "description": "Álbumes, videos en vivo y contenido exclusivo de tus artistas en formatos físicos. Disfruta de la mejor calidad de audio y video.",
+    "imageURL": "https://placehold.co/800x600.png",
+    "parentCategory": null
+  }
+]
