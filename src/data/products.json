@@ -71,8 +71,8 @@
       "name": "Yorushika (ヨルシカ)"
     },
     "category": {
-      "_id": "tshirt",
-      "name": "Playeras"
+      "_id": "apparel",
+      "name": "Ropa Exclusiva/Merch Oficial"
     },
     "stock": 25,
     "o": ""
@@ -131,8 +131,8 @@
       "name": "Yorushika (ヨルシカ)"
     },
     "category": {
-      "_id": "tshirt",
-      "name": "Playeras"
+      "_id": "apparel",
+      "name": "Ropa Exclusiva/Merch Oficial"
     },
     "stock": 25,
     "o": ""
@@ -314,8 +314,8 @@
       "name": "BABYMETAL"
     },
     "category": {
-      "_id": "tshirt",
-      "name": "Playeras"
+      "_id": "apparel",
+      "name": "Ropa Exclusiva/Merch Oficial"
     },
     "stock": 25,
     "o": "https://firstblood.store/products/slaughter-to-prevail-x-babymetal-bear-t-shirt?variant=55546383925513&country=AO&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=1&gad_campaignid=22647768197&gbraid=0AAAAA9jr4_Pfc1nWTcCfKhszICd_2apg8&gclid=Cj0KCQiAubrJBhCbARIsAHIdxD_TGXN2o8bs6DhFcILbcThJdpmN9a6Xhkgt5CrOCvxHLWR4o1leTjkaAlmNEALw_wcB"
@@ -418,8 +418,8 @@
       "name": "BAND-MAID"
     },
     "category": {
-      "_id": "tshirt",
-      "name": "Playeras"
+      "_id": "apparel",
+      "name": "Ropa Exclusiva/Merch Oficial"
     },
     "stock": 25,
     "o": "https://bandmaid.tokyo/product/69290/%5B%E5%8F%97%E6%B3%A8%E8%B2%A9%E5%A3%B2%5D%5Bpre-orders%5D-%C3%97ISANA-KAGAMI-2024-T"
