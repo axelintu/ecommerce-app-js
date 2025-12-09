@@ -4,7 +4,7 @@ import CategoryProducts from '../../components/Categories/CategoryProducts/Categ
 
 function Category() {
   const { categoryId } = useParams();
-  return <CategoryProducts categoryId={categoryId} />
+  return <div className='category-container'><CategoryProducts categoryId={categoryId} /></div>
 }
 
 export default Category;

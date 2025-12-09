@@ -70,7 +70,7 @@ function CategoryProducts({ categoryId }) {
         <p className="category-products-muted">{category.description}</p>
       )}
       { products.length > 0 ? (
-        <div className="category-products-grid">
+        <div className="category-products-grid products-grid">
           {products.map((product) => (
             <ProductCard
               key={product._id}

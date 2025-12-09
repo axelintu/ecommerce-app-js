@@ -1,20 +1,7 @@
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
 .home-products h3 {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-}
-@media (max-width: 768px) {
-  .products-grid {
-    padding: 6px;
-  }
 }
