@@ -13,7 +13,8 @@ import ProtectedRoute from "../../pages/ProtectedRoute";
 import Checkout from "../../pages/Checkout";
 import Settings from "../../pages/Settings";
 import WishList from "../../pages/WishList";
-import Category from "../../pages/Category/Category";
+import Category from "../../pages/Category";
+import Artist from "../../pages/Artist";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/search" element={<SearchResults />} />
             <Route path="/product/:productId" element={<Product />} />
             <Route path="/category/:categoryId" element={<Category />} />
+            <Route path="/artist/:artistId" element={<Artist />} />
             <Route 
               path="/profile"
               element={

@@ -1,6 +1,6 @@
-import './Category.css';
 import { useParams } from 'react-router-dom';
-import CategoryProducts from '../../components/Categories/CategoryProducts/CategoryProducts';
+import CategoryProducts from '../../components/Categories/CategoryProducts';
+import './Category.css';
 
 function Category() {
   const { categoryId } = useParams();

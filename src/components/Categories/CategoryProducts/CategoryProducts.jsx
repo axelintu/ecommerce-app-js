@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../../common/Loading';
 import ErrorMessage from '../../common/ErrorMessage';
 import ProductCard from '../../ProductCard'
 import { getCategoryById, getProductsByCategoryAndChildren } from '../../../services/categoryService';
 import './CategoryProducts.css';
-import { Link } from 'react-router-dom';
 
 function CategoryProducts({ categoryId }) {
   const [category, setCategory] = useState(null);
