@@ -643,5 +643,347 @@
     },
     "stock": 25,
     "o": "https://ampedjapan.com/en-mx/products/band-maid-epic-narratives-limited-edition-cd-blu-ray-photo-book"
+  },
+  {
+    "_id": "1765323188757",
+    "name": "Correa RIHO SAYASHI 5.ª gira en vivo 2025 \"Too Much!\" Correa",
+    "description": {
+      "type": "p",
+      "data": [
+        "Mercancía oficial de RIHO SAYASHI 5th Live Tour 2025 Too Much!."
+      ]
+    },
+    "features": {
+      "type": "li",
+      "data": {
+        "Material": "Aleación de zinc, hierro, acero inoxidable, acrílico",
+        "Tamaño": "Longitud total: aprox. 14 cm, Longitud del dije 1: 8,3 cm, Longitud del dije 2: 8,5 cm",
+        "Embalaje": "Vinil"
+      }
+    },
+    "notes": [
+      {
+        "class": "info",
+        "data": "Ideal como recuerdo de gira. Lavar a mano para mantener la impresión."
+      }
+    ],
+    "price": 279.00,
+    "image": "/images/prods/riho-sayashi/1765323188757/Toomuch__SROG-0449.jpg",
+    "images": [
+      "/images/prods/riho-sayashi/1765323188757/Toomuch__SROG-0449.jpg"
+    ],
+    "artist": {
+      "_id": "riho-sayashi",
+      "name": "Riho Sayashi",
+      "description": "Cantante y artista japonesa, conocida por su paso como integrante de Morning Musume. Destaca por su potente voz, presencia escénica y versatilidad en proyectos solistas y musicales. Activa en actividades en Japón y proyectos relacionados con pop y entretenimiento.",
+      "imageURL": "https://placehold.co/800x600.png"
+    },
+    "category": {
+      "_id": "tour-merch",
+      "name": "Tour Merch",
+      "description": "Merch exclusiva vendida en los tours de tus artistas favoritos. Encuentra abanicos, medallas y accesorios limitados de tus giras favoritas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": {
+        "_id": "merch-oficial",
+        "name": "Merch Oficial",
+        "description": "Toda la mercancía oficial de tus artistas favoritos. Desde ropa hasta accesorios exclusivos vendidos en tours y tiendas oficiales.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
+    },
+    "stock": 120,
+    "o": "https://rihosayashi-store.jp/collections/all/products/riho-sayashi-5th-live-tour-2025-too-much-_strap"
+  },
+  {
+    "_id": "1765323188757",
+    "name": "Tote Bag del fan meeting de RIHO SAYASHI -PLAYGROUND!- vol.1",
+    "description": {
+      "type": "p",
+      "data": [
+        "Este es el producto oficial del \"RIHO SAYASHI Fan Meeting -PLAYGROUND!- vol.1\" que se llevó a cabo el sábado 28 de mayo de 2022 ."
+      ]
+    },
+    "features": {
+      "type": "li",
+      "data": {
+        "Material": "Algodón",
+        "Tamaño": "Aprox. 37 cm de alto x 24 cm de ancho x 12 cm de profundidad."
+      }
+    },
+    "notes": [
+      {
+        "class": "info",
+        "data": "*Tenga en cuenta que el producto real puede diferir de la foto."
+      }
+    ],
+    "price": 209.00,
+    "image": "/images/prods/riho-sayashi/1765343450030/06.jpg",
+    "images": [
+      "/images/prods/riho-sayashi/1765343450030/06.jpg"
+    ],
+    "artist": {
+      "_id": "riho-sayashi",
+      "name": "Riho Sayashi",
+      "description": "Cantante y artista japonesa, conocida por su paso como integrante de Morning Musume. Destaca por su potente voz, presencia escénica y versatilidad en proyectos solistas y musicales. Activa en actividades en Japón y proyectos relacionados con pop y entretenimiento.",
+      "imageURL": "https://placehold.co/800x600.png"
+    },
+    "category": {
+      "_id": "tote-bags",
+      "name": "Tote Bags",
+      "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
+    },
+    "stock": 120,
+    "o": "https://rihosayashi-store.jp/collections/bags/products/riho-sayashi-fan-meeting-playground-vol-1-totebag"
+  }
+  ,
+  {
+    "_id": "1765343611912",
+    "name": "Tote Bag del fan meeting de RIHO SAYASHI -PLAYGROUND!- vol.1",
+    "description": {
+      "type": "p",
+      "data": [
+        "Este es el producto oficial del \"RIHO SAYASHI Fan Meeting -PLAYGROUND!- vol.1\" que se llevó a cabo el sábado 28 de mayo de 2022 ."
+      ]
+    },
+    "features": {
+      "type": "li",
+      "data": {
+        "Material": "Algodón",
+        "Tamaño": "Aprox. 37 cm de alto x 24 cm de ancho x 12 cm de profundidad."
+      }
+    },
+    "notes": [
+      {
+        "class": "info",
+        "data": "*Tenga en cuenta que el producto real puede diferir de la foto."
+      }
+    ],
+    "price": 209.00,
+    "image": "/images/prods/riho-sayashi/1765343611912/sayashi_tote.jpg",
+    "images": [
+      "/images/prods/riho-sayashi/1765343611912/sayashi_tote.jpg",
+      "/images/prods/riho-sayashi/1765343611912/tote.jpg"
+    ],
+    "artist": {
+      "_id": "riho-sayashi",
+      "name": "Riho Sayashi",
+      "description": "Cantante y artista japonesa, conocida por su paso como integrante de Morning Musume. Destaca por su potente voz, presencia escénica y versatilidad en proyectos solistas y musicales. Activa en actividades en Japón y proyectos relacionados con pop y entretenimiento.",
+      "imageURL": "https://placehold.co/800x600.png"
+    },
+    "category": {
+      "_id": "tote-bags",
+      "name": "Tote Bags",
+      "description": "Bolsos de tela versátiles y funcionales con diseños exclusivos de tus artistas favoritos. Perfectos para llevar contigo a cualquier lugar.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
+    },
+    "stock": 120,
+    "o": "https://rihosayashi-store.jp/collections/bags/products/riho-sayashi-1st-live-2021-daybreak-totebag"
+  }
+  ,
+  {
+    "_id": "1765335147996",
+    "name": "UNISON Primera edición limitada B",
+    "description": {
+      "type": "p",
+      "data": [
+        "UNISON es el tercer miniálbum de Sayashi Riho . Se lanzó el 16 de noviembre de 2022 en tres ediciones: una regular y dos limitadas. La edición regular incluye cinco canciones nuevas, la Edición Limitada A incluye mucho contenido original, como ensayos de baile, y la Edición Limitada B contiene la primera reunión de fans de Riho Sayashi , celebrada en mayo de 2022, como recopilación"
+      ]
+    },
+    "features": {
+      "type": "li",
+      "data": {
+        "Fecha de lanzamiento": "16 de noviembre de 2022",
+        "Número de producto": "SAVR-0008",
+        "Especificaciones": "CD + DVD",
+        "＜CD＞": "\n1. Marge \n2. NOSOTROS LOS ÚNICOS \n 3. Estúpido \n4. Melancólico Blvd. \n5. DOOM PA",
+        "<DVD>": "\nUna recopilación de \"RIHO SAYASHI Fan Meeting PLAYGROUND! vol.1\", su primer encuentro de fans celebrado el día de su cumpleaños, el 28 de mayo de 2022."
+      }
+    },
+    "notes": null,
+    "price": 540.00,
+    "image": "/images/prods/riho-sayashi/1765335147996/1665559619-20221012-unison-limitedb.jpg",
+    "images": [
+      "/images/prods/riho-sayashi/1765335147996/1665559619-20221012-unison-limitedb.jpg"
+    ],
+    "artist": {
+      "_id": "riho-sayashi",
+      "name": "Riho Sayashi",
+      "description": "Cantante y artista japonesa, conocida por su paso como integrante de Morning Musume. Destaca por su potente voz, presencia escénica y versatilidad en proyectos solistas y musicales. Activa en actividades en Japón y proyectos relacionados con pop y entretenimiento.",
+      "imageURL": "https://placehold.co/800x600.png"
+    },
+    "category": {
+      "_id": "cd-dvd-bluray",
+      "name": "CD/DVD/Blu-Ray",
+      "description": "Álbumes, videos en vivo y contenido exclusivo de tus artistas en formatos físicos. Disfruta de la mejor calidad de audio y video.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": null
+    },
+    "stock": 120,
+    "o": "https://rihosayashi.jp/discography/discography-1100/"
+  }
+  ,
+  {
+    "_id": "1765342606155",
+    "name": "Llavero de peluche de coliflor",
+    "description": {
+      "type": "li",
+      "data": {
+        "Tamaño": "Aproximado: 120 mm de alto.",
+        "Material": "Poliéster"
+    },
+    "features": null
+    },
+    "notes": [
+      {
+        "class": "info",
+        "data": "Las imágenes son solo para fines ilustrativos. Las especificaciones y el color pueden diferir ligeramente del producto real. Gracias por su comprensión."
+      },
+      {
+        "class": "info",
+        "data": "Notas del producto. \nLas dimensiones se miden planas. Debido a la naturaleza del proceso de fabricación, pueden ocurrir ligeras variaciones en las dimensiones finales. Gracias por su comprensión."
+      }
+    ],
+    "price": 249.00,
+    "image": "/images/prods/ryokushaka/1765342606155/1db75db36a07d6bccad6028d34b22b69.jpeg",
+    "images": [
+      "/images/prods/ryokushaka/1765342606155/1db75db36a07d6bccad6028d34b22b69.jpeg",
+      "/images/prods/ryokushaka/1765342606155/m41847942187_3.jpg"
+    ],
+    "artist":   {
+      "_id": "ryokushaka",
+      "name": "Ryokuoushoku Shakai (緑黄色社会)",
+      "description": "Ryokuoushoku Shakai, abreviado como Ryokushaka, es una banda japonesa de pop rock formada en 2012 en la prefectura de Aichi. La banda está compuesta por la vocalista y guitarrista Haruko Nagaya, el guitarrista Issei Kobayashi, la tecladista Peppe y el bajista Shingo Anami.",
+      "imageURL": "/images/prods/ryokushaka/66844__0_0_0.jpg"
+    },
+    "category": {
+      "_id": "keychain",
+      "name": "Llaveros",
+      "description": "Pequeños accesorios decorativos para llevar contigo. Desde llaveros de peluche hasta diseños exclusivos de tus artistas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
+    },
+    "stock": 120,
+    "o": "https://ryokushaka.official.ec/items/112159637"
+  }
+  ,
+  {
+    "_id": "1765339725947",
+    "name": "Llavero de peluche de brócoli",
+    "description": {
+      "type": "li",
+      "data": {
+        "Tamaño": "Aproximado: 120 mm de alto.",
+        "Material": "Poliéster"
+    },
+    "features": null
+    },
+    "notes": [
+      {
+        "class": "info",
+        "data": "Las imágenes son solo para fines ilustrativos. Las especificaciones y el color pueden diferir ligeramente del producto real. Gracias por su comprensión."
+      },
+      {
+        "class": "info",
+        "data": "Notas del producto. \nLas dimensiones se miden planas. Debido a la naturaleza del proceso de fabricación, pueden ocurrir ligeras variaciones en las dimensiones finales. Gracias por su comprensión."
+      }
+    ],
+    "price": 249.00,
+    "image": "/images/prods/ryokushaka/1765339725947/a63997ad63a6852c55f2584b397c0108.jpeg",
+    "images": [
+      "/images/prods/ryokushaka/1765339725947/a63997ad63a6852c55f2584b397c0108.jpeg",
+      "/images/prods/ryokushaka/1765339725947/a937175909aabae15e37ce405875a9ad.jpg",
+      "/images/prods/ryokushaka/1765339725947/d126ecc119b0f4fdfe8306d2ec9cac56.jpg"
+    ],
+    "artist":   {
+      "_id": "ryokushaka",
+      "name": "Ryokuoushoku Shakai (緑黄色社会)",
+      "description": "Ryokuoushoku Shakai, abreviado como Ryokushaka, es una banda japonesa de pop rock formada en 2012 en la prefectura de Aichi. La banda está compuesta por la vocalista y guitarrista Haruko Nagaya, el guitarrista Issei Kobayashi, la tecladista Peppe y el bajista Shingo Anami.",
+      "imageURL": "/images/prods/ryokushaka/66844__0_0_0.jpg"
+    },
+    "category": {
+      "_id": "keychain",
+      "name": "Llaveros",
+      "description": "Pequeños accesorios decorativos para llevar contigo. Desde llaveros de peluche hasta diseños exclusivos de tus artistas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
+    },
+    "stock": 120,
+    "o": "https://ryokushaka.official.ec/items/112356613/"
+  }
+  ,
+  {
+    "_id": "1765342295387",
+    "name": "Llavero acrílico con logotipo (transparente) de Ryokuoushoku Shakai (緑黄色社会)",
+    "description": {
+      "type": "p",
+      "data": {
+        "Tamaño": "Aproximado: 83 mm de ancho x 25 mm de alto.",
+        "Material": "Acrílico, metal"
+      }
+    },
+    "features": null,
+    "notes": [
+      {
+        "class": "info",
+        "data": "Las imágenes son solo para fines ilustrativos. Las especificaciones y el color pueden diferir ligeramente del producto real. Gracias por su comprensión."
+      },
+      {
+        "class": "info",
+        "data": "Notas del producto. \nLas dimensiones se miden planas. Debido a la naturaleza del proceso de fabricación, pueden ocurrir ligeras variaciones en las dimensiones finales. Gracias por su comprensión."
+      }
+    ],
+    "price": 120.00,
+    "image": "/images/prods/ryokushaka/1765342295387/c0b4b02c929995851e7ed06e9904a534.jpeg",
+    "images": [
+      "/images/prods/ryokushaka/1765342295387/c0b4b02c929995851e7ed06e9904a534.jpeg"
+    ],
+    "artist":   {
+      "_id": "ryokushaka",
+      "name": "Ryokuoushoku Shakai (緑黄色社会)",
+      "description": "Ryokuoushoku Shakai, abreviado como Ryokushaka, es una banda japonesa de pop rock formada en 2012 en la prefectura de Aichi. La banda está compuesta por la vocalista y guitarrista Haruko Nagaya, el guitarrista Issei Kobayashi, la tecladista Peppe y el bajista Shingo Anami.",
+      "imageURL": "/images/prods/ryokushaka/66844__0_0_0.jpg"
+    },
+    "category": {
+      "_id": "keychain",
+      "name": "Llaveros",
+      "description": "Pequeños accesorios decorativos para llevar contigo. Desde llaveros de peluche hasta diseños exclusivos de tus artistas.",
+      "imageURL": "https://placehold.co/800x600.png",
+      "parentCategory": {
+        "_id": "accesorios",
+        "name": "Accesorios",
+        "description": "Accesorios prácticos y decorativos para completar tu colección. Bolsos, llaveros y más artículos de tus artistas.",
+        "imageURL": "https://placehold.co/800x600.png",
+        "parentCategory": null
+      }
+    },
+    "stock": 120,
+    "o": "https://ryokushaka.official.ec/items/96402326"
   }
 ]
