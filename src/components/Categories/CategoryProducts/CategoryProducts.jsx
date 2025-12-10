@@ -42,7 +42,7 @@ function CategoryProducts({ categoryId }) {
   if (loading) {
     return (
       <div className="category-products">
-        <Loading ></Loading>
+        <Loading>Cargando categoría y productos...</Loading>
       </div>
     )
   }

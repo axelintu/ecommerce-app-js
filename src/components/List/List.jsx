@@ -6,33 +6,34 @@ export default function List({
   title = "Productos",
   layout = "grid",
 }) {
-  let classList = "";
-  let orientationProduct = "";
-  if (layout === "grid") {
-    classList = "list-grid";
-    orientationProduct = "vertical";
-  } else {
-    classList = "list-vertical";
-    orientationProduct = "horizontal";
-  }
-
   return (
     <div className="list-container">
       <div className="list-header">
         <h1 className="list-title">{title}</h1>
       </div>
-
-      <div className={classList}>
-        {products.map((product) => {
-          return (
+      {layout === "grid" ? (
+        <div className="list-grid">
+          {products.map((product) => (
             <ProductCard
-              key={product._id || product.id}
+              key={product._id}
               product={product}
-              orientation={orientationProduct}
+              orientation="vertical"
+              className="list-item"
             />
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="list-vertical">
+          {products.map((product) => (
+            <ProductCard
+              key={product._id}
+              product={product}
+              orientation="horizontal"
+              className="list-item"
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

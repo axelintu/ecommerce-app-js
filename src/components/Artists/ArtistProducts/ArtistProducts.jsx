@@ -42,7 +42,7 @@ function ArtistProducts({ artistId }) {
   if (loading) {
     return (
       <div className="artist-products">
-        <Loading ></Loading>
+        <Loading>Cargando productos del artista...</Loading>
       </div>
     )
   }

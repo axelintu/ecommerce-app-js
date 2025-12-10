@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
-import ProductCard from "../../components/ProductCard";
+import List from "../../components/List";
 import BannerCarousel from "../../components/BannerCarousel";
 import homeImages from "../../data/homeImages.json";
 import Loader from "../../components/Loader";
@@ -31,17 +31,12 @@ export default function Home () {
       {loading ? (
         <Loader type="products" loadingMessage={"Cargando productos..."}></Loader>
       ) : products && products.length > 0 ? (
-        <div>
-          
-          <div className="container home-products">
-            <h3>Productos destacados</h3>
-          </div>
-          <div className="products-grid">
-            {products.map((product) => (
-              <ProductCard key={product._id} product={product} />
-            ))}
-          </div>
-        </div>
+        <List
+          title="Productos destacados"
+          products={products}
+          layout="grid"
+          limit="6"
+        />
       ) : (
         <div>No hay productos en el catalogo</div>
       )}
