@@ -3,17 +3,19 @@ import "./Header.css";
 import { useTheme } from "../../context/ThemeContext";
 import { getCurrentUser, isAuthenticated, logout } from "../../utils/auth";
 import { useCart } from "../../context/CartContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function Header() {
   let searchTerm = '';
   const [showUserMenu, toggleUserMenu] = useState(false);
   const toggleUserEvent = () => { toggleUserMenu(showUserMenu => !showUserMenu); };
-  const handleSearch = () => {};
   const onChangeSearchTerm = () => {};
   const {theme, isDarkMode, toggleTheme, sethTheme} = useTheme();
+  const navigate = useNavigate();
 
   const { getTotalItems } = useCart();
   const totalItems = getTotalItems();
+
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [isAuth, setIsAuth] = useState(true);
   const [user, setUser] = useState(getCurrentUser());
@@ -31,6 +33,22 @@ export default function Header() {
       window.addEventListener("storage", updateAuthState);
     };
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const query = searchQuery.trim();
+
+    if (query.length === 0) {
+      navigate("/search");
+      // setIsMobileSearchOpen(false);
+      // setIsMobileMenuOpen(false);
+      return;
+    }
+
+    navigate(`/search?q=${encodeURIComponent(query)}`);
+    // setIsMobileSearchOpen(false);
+    // setIsMobileMenuOpen(false);
+  };
 
   const handleRegister = () => {
     console.log("Redirigir a registro");
@@ -87,8 +105,8 @@ export default function Header() {
             id="header-search"
             type="text" 
             placeholder="Buscar productos" 
-            value={searchTerm} 
-            onChange={onChangeSearchTerm} 
+            value={searchQuery} 
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="search-input" />
           <button type="submit" className="search-btn" aria-label="Buscar">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-6">

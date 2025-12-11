@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
-import {useSearchParams} from 'react-router-dom';
-import './SearchResults.css';
+import { Link, useSearchParams } from 'react-router-dom';
 import List from '../../components/List';
 import ErrorMessage from '../../components/common/ErrorMessage'
 import Button from "../../components/common/Button";
 import { fetchProducts } from '../../services/productService';
 import Loading from '../../components/common/Loading/Loading';
-import { Link } from 'react-router-dom';
+import { returnDataAsString } from '../../components/Product/shared/product';
+import './SearchResults.css';
 
 function SearchResults() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const query = (searchParams.get("q") || "").trim();
   
   const [sortBy, setSortBy] = useState("name");
   const [sortOrder, setSortOrder] = useState("asc");
@@ -18,7 +19,6 @@ function SearchResults() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   
-  const query = (searchParams.get("q") || "").trim();
   const hasQuery = query.length > 0;
 
   useEffect(()=>{
@@ -53,7 +53,7 @@ function SearchResults() {
 
     let result = products.filter((product)=>{
       const matchesName = product.name.toLowerCase().includes(normalizedQuery);
-      const matchesDescription = product.description.toLowerCase().includes(normalizedQuery);
+      const matchesDescription = returnDataAsString(product.description).toLowerCase().includes(normalizedQuery);
       // const matchesCategory = product.category.name.toLowerCase().includes(normalizedQuery);
       
       // return  matchesName || matchesDescription || matchesCategory
@@ -113,20 +113,30 @@ function SearchResults() {
           <p>Esto puede tomar unos segundos.</p>
         </Loading>
       )}
-      {/* !loading && showsNoResults && (
-        <ErrorMessage>
+      {!loading && showsNoResults && (
+        <div className="search-results-message">
           <h3>No encontramos coincidencias</h3>
-          <p>Prueba con otros términos o recorre nuestras <Link to="/offers">ofertas destacadas</Link></p>
-        </ErrorMessage>
-      ) */}
-      {/* !loading && hasQuery && !showsNoResults (
-        <List products={filteredProducts} layout="vertical" title={`Resultados para ${query}`}></List>
-      ) */}
+          <p>
+            Prueba con otros términos o recorre nuestras{" "}
+            <Link to="/offers">ofertas destacadas</Link>.
+          </p>
+        </div>
+      )}
+      { !loading && hasQuery && !showsNoResults && (
+        <List 
+        products={filteredProducts} 
+        layout="vertical" 
+        title={`Resultados para ${query}`}
+        />
+      )}
       {!loading && !hasQuery && (
-        <ErrorMessage>
+        <div className="search-results-message">
           <h3>¿Buscas algo en especial?</h3>
-          <p>Comienza a escribir en la barra de búsqueda y te mostraremos los resultados aquí mismo.</p>
-        </ErrorMessage>
+          <p>
+            Comienza a escribir en la barra de búsqueda y te mostraremos los
+            resultados aquí mismo.
+          </p>
+        </div>
       )}
     </div>
   );
