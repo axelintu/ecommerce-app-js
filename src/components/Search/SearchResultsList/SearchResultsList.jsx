@@ -24,7 +24,7 @@ function SearchResultsList() {
         if (isMounted) setProducts(data);
       } catch (err) {
         setError(err);
-        console.error(error);
+        console.error(err);
       } finally {
         if (isMounted) setLoading(false);
       }
@@ -65,7 +65,7 @@ function SearchResultsList() {
   const showNoResults = hasQuery && !loading && filteredProducts.length === 0;
 
   return (
-    <div className="search-results">
+    <div className="search-results search-results-container">
       <header className='search-results-header'>
         <div>
           <h1 className='search-results-title'>

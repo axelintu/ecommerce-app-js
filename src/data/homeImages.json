@@ -1,36 +1,45 @@
 [
   {
-    "title": "Nuevas colecciones de verano",
-    "subtitle": "Descubre nuevas tendencias en moda",
+    "title": "BABYMETAL: Merch de Metal Kawaii",
+    "subtitle": "¡No te pierdas las camisetas y accesorios del Dios Zorro!",
     "image":
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop",
-    "buttonText": "Ver colección",
-    "buttonLink": "/collections/summer",
-    "backgroundColor": "#26336c"
+      "/images/banner/babymetal.jpg",
+    "buttonText": "Ver Colección del Fox God",
+    "buttonLink": "/artist/babymetal",
+    "backgroundColor": "#A50000"
   },
   {
-    "title": "Ofertas Especiales",
-    "subtitle": "Hasta 50% de descuento en productos seleccionados",
+    "title": "BAND-MAID: Merch del Maid-Rock",
+    "subtitle": "Descubre las últimas tazas y pines con el estilo inconfundible de las sirvientas rockeras. A sus órdenes, Maestro!",
     "image":
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&h=600&fit=crop",
-    "buttonText": "Ver Ofertas",
-    "buttonLink": "/offers",
-    "backgroundColor": "#8677b5"
+      "/images/banner/band-maid.jpg",
+    "buttonText": "Ver Merch de Servicio",
+    "buttonLink": "/artist/band-maid",
+    "backgroundColor": "#000000"
   },
   {
-    "title": "Tecnología Innovadora",
-    "subtitle": "Los últimos gadgets y dispositivos electrónicos",
+    "title": "Yorushika: Merch de Letras y Música",
+    "subtitle": "Lleva la poesía de n-buna y Suis en tu ropa. Merchandising que captura la atmósfera de sus 'historias musicales'.",
     "image":
-      "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=1200&h=600&fit=crop",
-    "buttonText": "Explorar",
-    "buttonLink": "/tech",
+      "/images/banner/yorushika.png",
+    "buttonText": "Explorar Artículos",
+    "buttonLink": "/artist/yorushika",
     "backgroundColor": "#3eb7ea"
   },
   {
-    "title": "Envío Gratis",
-    "subtitle": "En compras superiores a $50",
+    "title": "Riho Sayashi: Merch de su Actividad",
+    "subtitle": "Encuentra productos exclusivos de Riho. Desde artículos de sus shows hasta su photobook.",
     "image":
-      "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=1200&h=600&fit=crop",
+      "/images/banner/riho-sayashi.jpg",
+    "buttonText": "Ver Colección",
+    "buttonLink": "/artist/riho-sayashi",
+    "backgroundColor": "#8677b5"
+  },
+  {
+    "title": "Envío Gratis",
+    "subtitle": "En compras superiores a $999",
+    "image":
+      "/images/banner/profiles-banner.jpg",
     "buttonText": "Comprar Ahora",
     "buttonLink": "/free-shipping",
     "backgroundColor": "#79bf87"
