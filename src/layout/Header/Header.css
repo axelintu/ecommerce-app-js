@@ -191,6 +191,7 @@ header .logo svg {
   display: flex;
   align-items: center;
   gap: 16px;
+  align-content: space-between;
 }
 
 .action-btn {
@@ -223,7 +224,7 @@ header .logo svg {
   white-space: nowrap;
 }
 
-.badge {
+header .badge {
   position: absolute;
   top: 4px;
   right: 8px;
@@ -240,6 +241,8 @@ header .logo svg {
 /* User menu */
 .user-menu {
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .user-dropdown {
@@ -312,6 +315,7 @@ header .logo svg {
   display: flex;
   gap: 8px;
   align-items: center;
+
 }
 
 .btn-primary {
@@ -324,10 +328,13 @@ header .logo svg {
   cursor: pointer;
   transition: background 0.2s;
   font-size: 14px;
+  line-height: normal;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
   background: color-mix(in srgb, var(--accent) 90%, black);
+  color: #fff;
 }
 
 /* Navigation */
@@ -365,8 +372,36 @@ header .logo svg {
 /* Responsive */
 @media (max-width: 768px) {
   .header-content {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr; */
+    /* "first . third" 
+    ". second ."    
+    ". fourth .";*/
+    gap: 6px; 
+  }
+  .header-content >*:nth-child(1) {
+    /* grid-area: first; */
+    grid-area: 1 / 1  auto / span 2;
+  }
+
+  .header-content >*:nth-child(2) {
+    /* grid-area: second; */
+      grid-area: 3 / 1/ auto /span 2;
+  }
+
+  .header-content >*:nth-child(3) {
+    grid-area: 2 / 1 / auto / span 2;
+
+  }
+
+  .header-content >*:nth-child(4) {
+    grid-area: fourth;
+  }
+
+  a.action-btn,
+  button.action-btn {
+    margin-bottom: 0;
   }
 
   .logo {
@@ -381,6 +416,7 @@ header .logo svg {
   .header-actions {
     justify-self: center;
     order: 2;
+    width: 100%;
   }
 
   .action-text {
@@ -409,6 +445,7 @@ header .logo svg {
   }
 
   .action-btn {
+    /* max-width: 100px; */
     min-width: 40px;
     padding: 8px;
   }
@@ -419,7 +456,7 @@ header .logo svg {
   }
 
   .auth-buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 4px;
   }
 }

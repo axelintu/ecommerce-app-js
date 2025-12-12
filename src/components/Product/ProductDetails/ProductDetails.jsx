@@ -5,9 +5,10 @@ import { getProductById } from "../../../services/productService";
 import Button from "../../common/Button";
 import ErrorMessage from "../../common/ErrorMessage/ErrorMessage";
 import Loading from "../../common/Loading/Loading";
-import './ProductDetails.css';
 import ProductFeatures from "../ProductFeatures/ProductFeatures";
 import ProductNotes from "../ProductNotes/ProductNotes";
+import './ProductDetails.css';
+import Badge from "../../common/Badge";
 
 export default function ProductDetails({ productId }) {
   const { addToCart } = useCart();
@@ -53,12 +54,19 @@ export default function ProductDetails({ productId }) {
   }  
 
   return (
-    <div className="product-container">
-      <nav className="product-navigation">
-        <Link to="/">Inicio</Link>
-        <Link to={`/category/${category._id}`}>${category.name}</Link>
+    <>
+    <div className="product-navigation">
+      <nav className="product-navigation-container">
+        <Link to="/">Inicio</Link> {" » "}
+        <Link to={`/category/${category._id}`}>{`${category.name}`}</Link>
       </nav>
+    </div>
+    <div className="product-container">
+      <h3>{name}</h3>
       <div className="product-details">
+        {
+          image && (<img className="product-image" src={image} alt={name} />)
+        }
         <div className="product-images">
           { images.length > 0
             ? images?.map((img, index) => {
@@ -68,7 +76,6 @@ export default function ProductDetails({ productId }) {
           }
         </div>
         <div className="product-info">
-          <h3>{name}</h3>
           <ProductFeatures productClass='description' features={description}></ProductFeatures>
           <ProductFeatures productClass='features' features={features}></ProductFeatures>
           <ProductNotes notes={notes} />
@@ -76,12 +83,15 @@ export default function ProductDetails({ productId }) {
         <div className="product-actions">
           <div>
             <span>{price}</span>
-            <span className={`${stockBadge}`}>{stockLabel}</span>
+            <Badge variant="success" text={stockLabel}>
+            <span className={`${stockBadge}`}>{}</span>
+            </Badge>
           </div>
           <Button onClick={(e) => handleAddToCart(e)}>Agregar al carrito</Button>
           <Link to="/cart">Ver el carrito</Link>
         </div>
       </div>
     </div>
+    </>
   );
 }

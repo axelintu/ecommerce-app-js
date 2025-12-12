@@ -12,6 +12,7 @@
   overflow: hidden;
   box-shadow: var(--elev-2);
   background: var(--surface);
+  background-color: #000;
 }
 
 /* Slides */
