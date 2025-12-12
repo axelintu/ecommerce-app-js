@@ -6,7 +6,8 @@ import Badge from "../common/Badge";
 
 function ProductCard({ product, orientation = "vertical"  }) {
   const { addToCart } = useCart();
-  const { name, price, stock, image } = product;
+  const { name, price, stock, image, artist } = product;
+  const { artistName } = artist;
 
   if (!product) {
     return (

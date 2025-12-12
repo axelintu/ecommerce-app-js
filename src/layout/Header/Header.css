@@ -75,7 +75,7 @@ header .logo svg {
   grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: center;
-  padding: 6px 0;
+  padding: 0 0;
 }
 
 /* Logo */
@@ -210,7 +210,7 @@ header .logo svg {
   min-width: 60px;
 }
 
-.action-btn:hover {
+.header .action-btn:hover {
   color: var(--accent);
 }
 
@@ -228,7 +228,7 @@ header .badge {
   position: absolute;
   top: 4px;
   right: 8px;
-  background: var(--danger);
+  background: var(--color-purple);
   color: white;
   font-size: 10px;
   font-weight: 600;
