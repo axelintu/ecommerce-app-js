@@ -15,12 +15,7 @@ import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 
 function Checkout() {
-  const { 
-    cartItems, 
-    clearCart, 
-    getTotalPrice 
-  } = useCart();
-  const total = getTotalPrice();
+  const { cartItems, clearCart, getTotalPrice } = useCart();
   const navigate = useNavigate();
   
   const [loading, setLoading] = useState(false);
@@ -45,7 +40,7 @@ function Checkout() {
   // 
   const formatMoney = (value) => new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN"}).format(value);
 
-
+  const total = getTotalPrice();
   const subtotal = typeof total === "number" ? total : 0;
   const TAX_RATE = 0.16;
   const SHIPPING_RATE = 350;
@@ -171,6 +166,7 @@ function Checkout() {
         setSelectedAddress(null);
       }
     }
+
     setAddresses(updatedAddresses);
   }
   const handleCancelAddressForm = () => {
@@ -265,7 +261,8 @@ function Checkout() {
       }),
       subtotal,
       tax: taxAmount,
-      shippingCost: shippingCost,
+      shipping: shippingCost,
+      total: grandTotal,
       shippingAddress: selectedAddress,
       paymentMethod: selectedPayment,
       status: "confirmed"
@@ -286,146 +283,184 @@ function Checkout() {
     navigate("/order-confirmation", { state: {order} })
     clearCart();
   }
-  return (
-    loading 
-    ? (<div className="checkout-loading">
-      <Loading><p>Cargando direcciones y métodos de pago</p></Loading>
-    </div> )
-    : error 
-      ? (<ErrorMessage>{error}</ErrorMessage>)
-      : (<div className='checkout-container'>
-          <div className="checkout-left">
-            <SummarySection 
-              title="1. Dirección de envio" 
-              selected={selectedAddress} 
-              summaryContent={
-                <div className='selected-address'>
-                  <h3>{selectedAddress?.name}</h3>
-                  <p>{selectedAddress?.address1}</p>
-                  <p>{selectedAddress?.city}, {selectedAddress?.postalCode}</p>
-                </div>}
-              isExpanded={isAddressExpanded || showAddressForm || !selectedAddress}
-              onToggle={handleAddressToggle}>
-                {
-                !showAddressForm && !addressBeingEdited
-                ? (<>
-                  <AddressList
-                    addresses={addresses}
-                    selectedAddress={selectedAddress}
-                    onSelect={(address)=> {handleAddressSelect(address)}}
-                    onEdit={(address)=> { handleAddressEdit(address)}}
-                    onDelete={(address) => {handleAddressDelete(address)}}
-                    onAdd={handleAddressNew} >
-                  </AddressList> 
-                  {(addresses.length > 0) && <div>
-                    <Button 
-                      onClick={handleAddressNoChange}
-                    >
-                      Confirmar Dirección
-                    </Button>
-                  </div>}
-                </>
-                )
-                : (
-                  <AddressForm
-                    onSubmit={handleAddressSubmit}
-                    onCancel={handleCancelAddressForm}
-                    initialValues={addressBeingEdited || {}}
-                    isEdit={!!addressBeingEdited}>
-                  </AddressForm>
-                  )
-                }
-            </SummarySection>
-            <SummarySection 
-              title="2. Método de pago" 
-              selected={selectedPayment} 
-              summaryContent={
-                <div className='selected-payment'>
-                  <h3>{selectedPayment?.alias}</h3>
-                  <p>**** {selectedPayment?.cardNumber?.slice(-4) || "----"}</p>
-                  <p>{selectedPayment?.cardHolderName}</p>
-                  {/* <p>{selectedPayment?.}</p> */}
-                  <p>{selectedPayment?.expiryDate}</p>
-                </div>}
-              isExpanded={isPaymentExpanded || showPaymentMethodForm || !selectedPayment}
-              onToggle={handleTogglePayment}
-              >
-                {
-                  !showPaymentMethodForm && !paymentMethodBeingEdited
-                  ? (<>
-                  <PaymentList
-                    paymentMethods={payments}
-                    selectedMethod={selectedPayment}
-                    onSelect={(method) => { handlePaymentMethodSelect(method)}}
-                    onEdit={(method)=> {handleEditPaymentMethod(method)}}
-                    onDelete={(method)=>{handleDeletePaymentMethod(method)}}
-                    onAdd={handlePrepareNewPayment} >
-                  </PaymentList>
-                  {(payments.length > 0) && <div>
-                    <Button 
-                      onClick={handlePaymentNoChange}
-                    >
-                      Confirmar Método de Pago
-                    </Button>
-                  </div>}
-                  </>)
-                  :
-                  (
-                  <PaymentForm
-                    onSubmit={handleSubmitNewPayment}
-                    onCancel={handleCancelPaymentForm}
-                    initialValues={paymentMethodBeingEdited || {}}
-                    isEdit={!!paymentMethodBeingEdited} >
-                  </PaymentForm>
-                  )
-                }
-            </SummarySection>
-            <SummarySection 
-              title="3. Revisa tu pedido"
-              selected={true} 
-              isExpanded={true}
-            >
-              <CartView></CartView>
-            </SummarySection>
-          </div>
-          <div className="checkout-right">
-            <div className="checkout-summary">
-              <h3>Resumen de la orden</h3>
-              <div className="summary-details">
-                <p>
-                  <strong>Dirección de envío: </strong>{selectedAddress?.name}
-                </p>
-                <p>
-                  <strong>Método de pago: </strong>{selectedPayment?.alias}
-                </p>
-                <div className="order-costs">
-                  <p><strong>Subtotal: </strong>{formatMoney(subtotal)}</p>
-                  <p><strong>IVA (16%): </strong>{formatMoney(taxAmount)}</p>
-                  <p><strong>Envío: </strong>{formatMoney(shippingCost)}</p>
-                  <p><strong>Total: </strong>{formatMoney(grandTotal)}</p>
-                  <p><strong>Fecha estimada de entrega: </strong>{new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toLocaleDateString()}</p>
-                </div>
-                { !selectedAddress || !selectedPayment 
-                  ? <div>
-                      { !selectedAddress ? 'Agrega una dirección de envío.' : '' }
-                      { !selectedPayment ? 'Agrega un método de pago.' : '' }
-                    </div>
-                  : <div> { '' } </div>
-                }
-                <Button className="play-button"
-                disabled={
-                  !selectedAddress || !selectedPayment || !cartItems || cartItems === 0 
-                }
-                onClick={handleCreateOrder}
-                >
-                  Confirmar y pagar
-                </Button>
-              </div>
+  return loading ? (
+    <div className="checkout-loading">
+      <Loading>
+        <p>Cargando direcciones y métodos de pago</p>
+      </Loading>
+    </div>
+  ) : error ? (
+    <ErrorMessage>{error}</ErrorMessage>
+  ) : (
+    <div className="checkout-container">
+      <div className="checkout-left">
+        <SummarySection
+          title="1. Dirección de envio"
+          selected={selectedAddress}
+          summaryContent={
+            <div className="selected-address">
+              <h3>{selectedAddress?.name}</h3>
+              <p>{selectedAddress?.address1}</p>
+              <p>
+                {selectedAddress?.city}, {selectedAddress?.postalCode}
+              </p>
             </div>
+          }
+          isExpanded={isAddressExpanded || showAddressForm || !selectedAddress}
+          onToggle={handleAddressToggle}
+        >
+          {!showAddressForm && !addressBeingEdited ? (
+            <>
+              <AddressList
+                addresses={addresses}
+                selectedAddress={selectedAddress}
+                onSelect={(address) => {
+                  handleAddressSelect(address);
+                }}
+                onEdit={(address) => {
+                  handleAddressEdit(address);
+                }}
+                onDelete={(address) => {
+                  handleAddressDelete(address);
+                }}
+                onAdd={handleAddressNew}
+              ></AddressList>
+              {addresses.length > 0 && (
+                <div>
+                  <Button onClick={handleAddressNoChange}>
+                    Confirmar Dirección
+                  </Button>
+                </div>
+              )}
+            </>
+          ) : (
+            <AddressForm
+              onSubmit={handleAddressSubmit}
+              onCancel={handleCancelAddressForm}
+              initialValues={addressBeingEdited || {}}
+              isEdit={!!addressBeingEdited}
+            ></AddressForm>
+          )}
+        </SummarySection>
+        <SummarySection
+          title="2. Método de pago"
+          selected={selectedPayment}
+          summaryContent={
+            <div className="selected-payment">
+              <h3>{selectedPayment?.alias}</h3>
+              <p>**** {selectedPayment?.cardNumber?.slice(-4) || "----"}</p>
+              <p>{selectedPayment?.cardHolderName}</p>
+              {/* <p>{selectedPayment?.}</p> */}
+              <p>{selectedPayment?.expiryDate}</p>
+            </div>
+          }
+          isExpanded={
+            isPaymentExpanded || showPaymentMethodForm || !selectedPayment
+          }
+          onToggle={handleTogglePayment}
+        >
+          {!showPaymentMethodForm && !paymentMethodBeingEdited ? (
+            <>
+              <PaymentList
+                paymentMethods={payments}
+                selectedMethod={selectedPayment}
+                onSelect={(method) => {
+                  handlePaymentMethodSelect(method);
+                }}
+                onEdit={(method) => {
+                  handleEditPaymentMethod(method);
+                }}
+                onDelete={(method) => {
+                  handleDeletePaymentMethod(method);
+                }}
+                onAdd={handlePrepareNewPayment}
+              ></PaymentList>
+              {payments.length > 0 && (
+                <div>
+                  <Button onClick={handlePaymentNoChange}>
+                    Confirmar Método de Pago
+                  </Button>
+                </div>
+              )}
+            </>
+          ) : (
+            <PaymentForm
+              onSubmit={handleSubmitNewPayment}
+              onCancel={handleCancelPaymentForm}
+              initialValues={paymentMethodBeingEdited || {}}
+              isEdit={!!paymentMethodBeingEdited}
+            ></PaymentForm>
+          )}
+        </SummarySection>
+        <SummarySection
+          title="3. Revisa tu pedido"
+          selected={true}
+          isExpanded={true}
+        >
+          <CartView></CartView>
+        </SummarySection>
+      </div>
+      <div className="checkout-right">
+        <div className="checkout-summary">
+          <h3>Resumen de la orden</h3>
+          <div className="summary-details">
+            <p>
+              <strong>Dirección de envío: </strong>
+              {selectedAddress?.name}
+            </p>
+            <p>
+              <strong>Método de pago: </strong>
+              {selectedPayment?.alias}
+            </p>
+            <div className="order-costs">
+              <p>
+                <strong>Subtotal: </strong>
+                {formatMoney(subtotal)}
+              </p>
+              <p>
+                <strong>IVA (16%): </strong>
+                {formatMoney(taxAmount)}
+              </p>
+              <p>
+                <strong>Envío: </strong>
+                {formatMoney(shippingCost)}
+              </p>
+              <p>
+                <strong>Total: </strong>
+                {formatMoney(grandTotal)}
+              </p>
+              <p>
+                <strong>Fecha estimada de entrega: </strong>
+                {new Date(
+                  Date.now() + 7 * 24 * 60 * 60 * 1000
+                ).toLocaleDateString()}
+              </p>
+            </div>
+            {!selectedAddress || !selectedPayment ? (
+              <div>
+                {!selectedAddress ? "Agrega una dirección de envío." : ""}
+                {!selectedPayment ? "Agrega un método de pago." : ""}
+              </div>
+            ) : (
+              <div> {""} </div>
+            )}
+            <Button
+              className="play-button"
+              disabled={
+                !selectedAddress ||
+                !selectedPayment ||
+                !cartItems ||
+                cartItems === 0
+              }
+              onClick={handleCreateOrder}
+            >
+              Confirmar y pagar
+            </Button>
           </div>
         </div>
-      )
-);
+      </div>
+    </div>
+  );
 }
 
 export default Checkout;

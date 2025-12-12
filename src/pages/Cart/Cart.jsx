@@ -10,7 +10,8 @@ function Cart() {
     cartItems,
     clearCart,
     getTotalItems,
-    getTotalPrice
+    getTotalPrice,
+    total
   } = useCart();
 
   const navigate = useNavigate();

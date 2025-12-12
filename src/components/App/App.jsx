@@ -5,6 +5,7 @@ import Layout from "../../layout";
 import Home from "../../pages/Home";
 import Login from "../../pages/Login";
 import OrderConfirmation from "../../pages/OrderConfirmation/";
+import Orders from "../../pages/Orders/";
 import Product from "../../pages/Product";
 import Profile from "../../pages/Profile";
 import Cart from "../../pages/Cart/Cart";
@@ -56,6 +57,7 @@ function App() {
               }
             />
             <Route path="/order-confirmation" element={<OrderConfirmation/>} />
+            <Route path="/orders" element={<Orders/>} />
             <Route
               path="/settings"
               element={
