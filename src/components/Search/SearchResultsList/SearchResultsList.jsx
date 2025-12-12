@@ -1,62 +1,54 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { fetchProducts } from '../../../services/productService';
 import List from '../../List';
 import Button from "../../common/Button";
-import { fetchProducts } from '../../../services/productService';
 import Loading from '../../../components/common/Loading/Loading';
-import { returnDataAsString } from '../../../components/Product/shared/product';
+import { productDataAsString } from '../../../components/Product/shared/product';
 import './SearchResultsList.css';
 
 function SearchResultsList() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const query = (searchParams.get("q") || "").trim();
-  
-  const [sortBy, setSortBy] = useState("name");
-  const [sortOrder, setSortOrder] = useState("asc");
-  const [products, setProducts] = useState([]);
-
-  const [error, setError] = useState("");
+  const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState("");
   
-  const hasQuery = query.length > 0;
+  const query = (searchParams.get("q") || "").trim();
 
-  useEffect(()=>{
+  useEffect(() => {
     let isMounted = true;
-    setLoading(true);
     const loadProducts = async () => {
-      
       try {
+        setLoading(true);
         const data = await fetchProducts();
-        if(isMounted) { 
-          setProducts(data) 
-        };
-      }
-      catch (err) {
-        console.log(err);
+        if (isMounted) setProducts(data);
+      } catch (err) {
         setError(err);
+        console.error(error);
+      } finally {
+        if (isMounted) setLoading(false);
       }
-      finally {
-        setLoading(false);
-      }
-    }
+    };
     loadProducts();
     return () => {
       isMounted = false;
-    }
-  }, []);
+    };
+  },[]);
   
+  const [sortBy, setSortBy] = useState("name");
+  const [sortOrder, setSortOrder] = useState("asc");
 
-  const filteredProducts = useMemo(()=>{
+  const filteredProducts = useMemo(() => {
     if (!query) return [];
     const normalizedQuery = query.toLowerCase();
-
-    let result = products.filter((product)=>{
+    let result = products.filter((product) => {
       const matchesName = product.name.toLowerCase().includes(normalizedQuery);
-      const matchesDescription = returnDataAsString(product.description).toLowerCase().includes(normalizedQuery);
-      // const matchesCategory = product.category.name.toLowerCase().includes(normalizedQuery);
-      
-      // return  matchesName || matchesDescription || matchesCategory
-      return  matchesName || matchesDescription 
+      const matchesDescription = productDataAsString(product.description)
+        ?.toLowerCase()
+        .includes(normalizedQuery);
+      const matchesCategory = product.category.name.toLowerCase().includes(normalizedQuery);
+      const matchesArtist = product.artist.name.toLowerCase().includes(normalizedQuery);
+      return  matchesName || matchesDescription || matchesCategory || matchesArtist;
     });
     result = result.sort((a,b)=>{
       let valA = sortBy === "price" ? a.price : a.name.toLowerCase();
@@ -66,11 +58,11 @@ function SearchResultsList() {
       if (valA>valB) return sortOrder === "asc" ? 1 : -1;
       return 0;
     });
-
     return result;
   }, [query,products,sortBy,sortOrder]);
 
-  const showsNoResults = hasQuery && !loading && filteredProducts.length === 0;
+  const hasQuery = query.length > 0;
+  const showNoResults = hasQuery && !loading && filteredProducts.length === 0;
 
   return (
     <div className="search-results">
@@ -89,11 +81,10 @@ function SearchResultsList() {
             }
           </p>
         </div>
-      </header>
       { hasQuery && (
         <div className="search-result-controls">
           <label htmlFor="">Ordernar por:</label>
-          <select value={sortBy} onChange={(e) => e.target.value}>
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="name">Nombre</option>
             <option value="price">Precio</option>
           </select>
@@ -106,13 +97,14 @@ function SearchResultsList() {
           </Button>
         </div>
       )}
+      </header>
       {loading && (
         <Loading>
           <h3>Buscando productos...</h3>
           <p>Esto puede tomar unos segundos.</p>
         </Loading>
       )}
-      {!loading && showsNoResults && (
+      {!loading && showNoResults && (
         <div className="search-results-message">
           <h3>No encontramos coincidencias</h3>
           <p>
@@ -121,11 +113,11 @@ function SearchResultsList() {
           </p>
         </div>
       )}
-      { !loading && hasQuery && !showsNoResults && (
+      {!loading && hasQuery && !showNoResults && (
         <List 
-        products={filteredProducts} 
-        layout="vertical" 
-        title={`Resultados para ${query}`}
+          products={filteredProducts}
+          layout="vertical"
+          title={`Resultados para "${query}"`}
         />
       )}
       {!loading && !hasQuery && (

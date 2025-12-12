@@ -17,14 +17,14 @@ export function getDataType (data) {
   }
 }
 
-export function returnDataAsString (data) {
+export function productDataAsString (data) {
   const typeOfData = getDataType(data);
   
   switch (typeOfData) {
     case 'stringOrNumber':
       return String(data);
     case 'array':
-      return data.map(item => returnDataAsString(item)).join(', ');
+      return data.map(item => productDataAsString(item)).join(', ');
     case 'object':
       return JSON.stringify(data, null, 2);
     case 'noPrint':

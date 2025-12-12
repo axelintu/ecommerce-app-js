@@ -3,19 +3,20 @@ import "./Header.css";
 import { useTheme } from "../../context/ThemeContext";
 import { getCurrentUser, isAuthenticated, logout } from "../../utils/auth";
 import { useCart } from "../../context/CartContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 export default function Header() {
-  let searchTerm = '';
+  const [searchParams] = useSearchParams();
   const [showUserMenu, toggleUserMenu] = useState(false);
   const toggleUserEvent = () => { toggleUserMenu(showUserMenu => !showUserMenu); };
-  const onChangeSearchTerm = () => {};
   const {theme, isDarkMode, toggleTheme, sethTheme} = useTheme();
   const navigate = useNavigate();
+
+  const query = (searchParams.get("q") || "").trim();
 
   const { getTotalItems } = useCart();
   const totalItems = getTotalItems();
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(query);
 
   const [isAuth, setIsAuth] = useState(true);
   const [user, setUser] = useState(getCurrentUser());
